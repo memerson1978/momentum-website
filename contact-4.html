@@ -250,6 +250,7 @@
     .c-form form{grid-template-columns:1fr;}
   }
 </style>
+<style>.c-photo{min-height:0;aspect-ratio:2/1;margin-bottom:48px}.c-photo img{object-position:50% 46%}.c-grid{align-items:start}@media (max-width:860px){.c-photo{aspect-ratio:4/3;margin-bottom:32px}}</style>
 </head>
 <body>
 <header class="site">
@@ -280,8 +281,8 @@
 
   <section class="c-main">
     <div class="wrap">
+      <div class="c-photo"><img width="1080" height="1080" src="images/residence-office.webp" alt="The Residence, Momentum's office at Wickham Hall"></div>
       <div class="c-grid">
-        <div class="c-photo"><img src="images/b40fec271628.webp" alt="The Residence, Momentum's office at Wickham Hall"></div>
         <div class="c-details">
           <div class="c-address">
             <p class="co">Momentum Sales Progression Ltd.</p>
@@ -301,7 +302,8 @@
               <p>With plenty of on-site parking, arriving here is hassle-free, so you can dive right into your productive day.</p>
             </div>
           </div>
-          <div class="c-form">
+        </div>
+        <div class="c-form">
             <h2>Enquire here:</h2>
             <form method="POST" data-form="contact"><input type="hidden" name="_subject" value="New enquiry from the website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="" data-next="contact"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
               <div class="field"><label for="c-first">First Name</label><input id="c-first" name="first-name" type="text" autocomplete="given-name"></div>
@@ -311,7 +313,6 @@
               <button class="btn btn-navy full" type="submit">Send</button>
             </form>
           </div>
-        </div>
       </div>
     </div>
   </section>
