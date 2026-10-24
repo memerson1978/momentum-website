@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>About Us | Momentum Sales Progression</title>
+<meta name="description" content="Meet the Momentum team: former legal, financial and property professionals setting a new standard in sales progression.">
+<link rel="canonical" href="https://www.momentumsp.co.uk/about">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<script src="assets/site.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  :root{
+    color-scheme: light;
+    --navy:#0C3C60;
+    --navy-deep:#072136;
+    --green:#8BD27D;
+    --green-bright:#96E487;
+    --grey:#F7F7F7;
+    --white:#FFFFFF;
+    --ink:#072136;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--white);color:var(--ink);
+    font-family:"Nunito Sans","Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Nunito","Segoe UI",sans-serif;color:var(--navy-deep);font-weight:400;line-height:1.18;margin:0;text-wrap:balance;}
+  h1{font-size:clamp(2.2rem,4.4vw,2.9rem);}
+  h2{font-size:clamp(1.7rem,3.2vw,2.4rem);}
+  h3{font-size:1.25rem;font-weight:700;}
+  p{margin:0 0 1rem;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .band{padding:64px 0;}
+  .center{text-align:center;}
+  .navy{background:var(--navy);color:#fff;}
+  .navy h1,.navy h2,.navy h3{color:#fff;}
+  .deep{background:var(--navy-deep);color:#fff;}
+  .green{background:var(--green);color:var(--navy-deep);}
+  .greybg{background:var(--grey);}
+  .narrow{max-width:760px;margin-left:auto;margin-right:auto;}
+  section.hero{padding-bottom:38px;}
+  section.intro{padding-top:16px;padding-bottom:54px;}
+  section.green.intro-width{padding-top:58px;padding-bottom:58px;}
+  section.intro p{font-size:1.16rem;}
+
+  /* buttons */
+  .btn{display:inline-block;font-family:"Nunito",sans-serif;font-weight:700;font-size:1rem;padding:.7rem 1.6rem;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:opacity .15s;}
+  .btn:hover{opacity:.88;}
+  .btn-green{background:var(--green);color:var(--navy-deep);}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn-portal{background:#fff;color:var(--navy);border:1.6px solid var(--green);padding:.46rem 1.05rem;font-size:.92rem;border-radius:6px;transition:background .15s,color .15s;}
+  .btn-portal:hover{background:var(--green);color:var(--navy-deep);}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef1f4;}
+  .navrow{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px;flex-wrap:wrap;}
+  .brand img{height:63px;display:block;}
+  nav.primary{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  nav.primary a{font-family:"Nunito",sans-serif;font-weight:600;font-size:.98rem;color:var(--navy-deep);}
+  nav.primary a:hover{color:var(--navy);}
+
+  /* hero */
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+  .hero h1{color:#fff;}
+  .hero p{color:#fff;font-size:1.16rem;}
+  .hero img{width:100%;height:auto;border-radius:8px;display:block;}
+
+  /* why grid */
+  .why-divider{width:74px;height:3px;background:var(--navy);border-radius:2px;margin:16px auto 0;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 26px;margin-top:38px;}
+  .why-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;}
+  .why-item .ic{height:90px;display:grid;place-items:center;flex:none;margin-bottom:4px;}
+  .why-item .ic svg{height:90px !important;width:auto !important;display:block;}
+  .why-item b{font-family:"Nunito",sans-serif;font-weight:800;font-size:1.05rem;color:var(--navy-deep);line-height:1.3;}
+
+  /* bullets */
+  ul.tick{list-style:none;padding:0;margin:1.2rem 0;display:flex;flex-direction:column;gap:.7rem;}
+  ul.tick li{position:relative;padding-left:1.8rem;}
+  ul.tick li::before{content:"•";position:absolute;left:.3rem;top:-.05rem;color:var(--green);font-size:1.3rem;line-height:1;}
+  .navy ul.tick li::before{color:var(--green);}
+
+  /* testimonial green */
+  .quote-lead{font-size:1.18rem;line-height:1.6;}
+  .quote-by{font-family:"Nunito",sans-serif;font-weight:700;margin-top:1rem;}
+  .speech{background:#fff;color:var(--navy-deep);border-radius:20px;padding:30px 40px;position:relative;box-shadow:0 16px 42px -26px rgba(7,33,54,.45);margin-bottom:30px;}
+  .speech .quote-lead{margin:0;color:var(--navy-deep);}
+  .speech::after{content:"";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-top:18px solid #fff;}
+
+  /* reviews */
+  .reviews img{width:100%;height:auto;border-radius:8px;display:block;}
+  .review-quotes p{font-size:1.22rem;font-family:"Nunito",sans-serif;color:var(--navy-deep);margin-bottom:1.1rem;}
+
+  /* contact */
+  .contact{position:relative;}
+  .contact-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+  .contact .wrap{position:relative;max-width:1200px;padding:84px 24px;}
+  .contact-card{background:#fff;padding:46px 54px;}
+  .contact-card h2{color:var(--navy);margin-bottom:30px;}
+  .c-label{display:block;color:#2b3a47;font-size:1rem;margin-bottom:14px;}
+  .signup2{display:flex;max-width:940px;}
+  .signup2 input{flex:1;min-width:0;border:0;border-bottom:1px solid #2b3a47;background:#fafafa;padding:16px 14px;font-size:1rem;font-family:"Nunito Sans",sans-serif;}
+  .signup2 button{background:var(--navy);color:#fff;border:0;padding:0 56px;font-size:1rem;cursor:pointer;font-family:"Nunito",sans-serif;}
+  .signup2 button:hover{background:#0a3457;}
+  @media (max-width:620px){ .contact-card{padding:30px 22px;} .signup2{flex-direction:column;} .signup2 button{padding:14px;margin-top:12px;} }
+  /* testimonial carousel */
+  .tcarousel{position:relative;max-width:1140px;margin:8px auto 0;padding:0 56px;}
+  .t-viewport{overflow:hidden;}
+  .t-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+  .tslide{min-width:100%;box-sizing:border-box;display:flex;gap:44px;align-items:center;padding:14px 6px;}
+  .t-img{flex:0 0 40%;max-width:400px;}
+  .t-img img{width:100%;height:auto;display:block;background:#fff;border-radius:200px 200px 10px 10px;}
+  .t-text{flex:1;background:#fff;padding:34px 40px;border-radius:4px;box-shadow:0 16px 44px -28px rgba(7,33,54,.42);}
+  .t-text p{font-size:1.02rem;line-height:1.62;margin:0 0 1rem;color:#14202b;}
+  .t-text p:last-child{margin-bottom:0;}
+  .t-text.navy p,.t-text.navy h3{color:var(--navy);}
+  .t-text h3{font-family:"Nunito",sans-serif;font-weight:400;color:var(--navy);font-size:1.55rem;margin:0 0 1.1rem;}
+  .q-div{border:0;border-top:1.5px solid #d7dce2;width:56px;margin:1.4rem 0;}
+  .q-by{font-size:.95rem;color:#5a6b7a;}
+  .t-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;cursor:pointer;padding:8px;z-index:3;}
+  .t-arrow.prev{left:0;} .t-arrow.next{right:0;}
+  .t-arrow:hover svg path{stroke:var(--navy);}
+  .t-dots{display:flex;gap:12px;justify-content:center;margin-top:28px;}
+  .t-dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--navy);background:transparent;cursor:pointer;padding:0;}
+  .t-dot.active{background:var(--navy);}
+  @media (max-width:860px){
+    .tslide{flex-direction:column;gap:26px;}
+    .t-img{order:-1;flex:none;width:100%;max-width:300px;margin:0 auto;}
+    .t-text{padding:28px 24px;}
+    .tcarousel{padding:0 38px;}
+  }
+
+  /* footer */
+  footer.site{background:var(--navy-deep);color:rgba(255,255,255,.82);}
+  footer.site .wrap{padding:52px 24px 30px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+  footer.site img.flogo{height:52px;margin-bottom:16px;display:block;}
+  footer.site h4{font-family:"Nunito",sans-serif;color:#fff;font-size:1rem;margin:0 0 12px;font-weight:700;}
+  footer.site p{font-size:.95rem;line-height:1.7;margin:0 0 .6rem;}
+  footer.site a:hover{color:#fff;}
+  .social{display:flex;gap:12px;margin-top:14px;}
+  .social a{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.10);display:grid;place-items:center;}
+  .social a:hover{background:var(--green);}
+  .fbar{border-top:1px solid rgba(255,255,255,.14);}
+  .fbar .wrap{display:block;padding:18px 24px;text-align:center;font-size:.86rem;color:rgba(255,255,255,.6);}
+
+  /* whatsapp float */
+  .wa{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:60;}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    footer.site .wrap{grid-template-columns:1fr;}
+    nav.primary{gap:14px;}
+  }
+  @media (max-width:520px){
+    .why-grid{grid-template-columns:1fr;}
+    .band{padding:48px 0;}
+  }
+
+  /* shared inner page styles */
+  header.site{top:env(safe-area-inset-top,0px);}
+  .wrap{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));}
+  nav.primary a.active{color:var(--navy);box-shadow:inset 0 -2px 0 var(--green);padding-bottom:3px;}
+  .page-title{text-align:center;font-weight:700;font-size:clamp(2.3rem,5vw,3.4rem);color:var(--navy-deep);}
+  .lead{font-size:1.16rem;}
+  .copy p{font-size:1.02rem;line-height:1.7;color:#14202b;}
+  .copy p:last-child{margin-bottom:0;}
+  .fade-rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#EA6A4C,#8BD27D);}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .split > *{min-width:0;}
+  .split img{width:100%;height:auto;display:block;border-radius:8px;}
+  .btn-outline{background:#fff;color:var(--navy-deep);border:2px solid var(--green);border-radius:50px;}
+  .btn-outline:hover{background:var(--green);opacity:1;}
+  .btn:focus-visible,.btn-portal:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:2px;}
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .field label{font-size:.95rem;color:#2b3a47;}
+  .field input,.field textarea{font:inherit;font-size:1rem;border:0;border-bottom:1px solid #2b3a47;background:#fafafa;padding:12px 12px;color:var(--navy-deep);border-radius:0;width:100%;}
+  .field textarea{min-height:110px;resize:vertical;}
+  header.site .wrap{max-width:1180px;}
+  footer.site .fbar .wrap{display:block;text-align:center;}
+  .menu-toggle{display:none;background:none;border:1.6px solid #dfe4ea;border-radius:6px;width:46px;height:42px;cursor:pointer;align-items:center;justify-content:center;padding:0;}
+  .menu-toggle span{display:block;width:20px;height:2px;background:var(--navy-deep);border-radius:2px;position:relative;}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--navy-deep);border-radius:2px;transition:transform .2s;}
+  .menu-toggle span::before{top:-6px;} .menu-toggle span::after{top:6px;}
+  header.site.open .menu-toggle span{background:transparent;}
+  header.site.open .menu-toggle span::before{transform:translateY(6px) rotate(45deg);}
+  header.site.open .menu-toggle span::after{transform:translateY(-6px) rotate(-45deg);}
+  @media (max-width:1080px){
+    .navrow{flex-wrap:wrap;min-height:72px;}
+    .menu-toggle{display:inline-flex;}
+    nav.primary{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:6px 0 16px;}
+    header.site.open nav.primary{display:flex;}
+    nav.primary a{padding:12px 2px;border-top:1px solid #eef1f4;}
+    nav.primary a.active{box-shadow:inset 3px 0 0 var(--green);padding-left:12px;}
+    nav.primary a.btn-portal{margin-top:12px;text-align:center;border:1.6px solid var(--green);padding:.7rem 1rem;}
+  }
+  @media (max-width:860px){ .split{grid-template-columns:1fr;gap:36px;} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;scroll-behavior:auto!important;} }
+
+  /* about page */
+  nav.primary a.active{color:var(--navy);box-shadow:inset 0 -2px 0 var(--green);padding-bottom:3px;}
+  .page-title{text-align:center;font-weight:700;letter-spacing:.04em;font-size:clamp(2.4rem,5vw,3.6rem);margin-bottom:44px;}
+  section.about-intro{padding-top:72px;padding-bottom:72px;}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;}
+  .about-copy p{font-size:1.02rem;line-height:1.7;color:#14202b;}
+  .about-img .standard{font-family:"Nunito",sans-serif;font-weight:700;color:var(--navy-deep);font-size:clamp(1.4rem,2.4vw,1.85rem);line-height:1.3;margin:40px 0 0;text-wrap:balance;}
+  .about-img .standard::before{content:"";display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#F26B4F,#8BD27D);margin-bottom:18px;}
+  .about-copy p:last-child{margin-bottom:0;}
+  .about-img img{width:100%;height:auto;display:block;border-radius:8px;}
+  section.team{padding-top:24px;}
+  .team-title{font-weight:700;letter-spacing:.04em;}
+  .team-sub{margin-top:12px;color:#14202b;}
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px 36px;margin-top:52px;align-items:start;}
+  .member{perspective:1600px;}
+  .member .card{position:relative;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.4,0,.2,1),height .45s ease;}
+  .member.flipped .card{transform:rotateY(180deg);}
+  .member .face{position:relative;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:8px;}
+  .member .front{background:#fff;border:1px solid #e3e8ed;padding:10px 10px 0;cursor:pointer;box-shadow:0 14px 34px -28px rgba(7,33,54,.5);}
+  .member .back{position:absolute;top:0;left:0;right:0;min-height:100%;transform:rotateY(180deg);background:var(--navy);color:#fff;padding:34px 36px 78px;}
+  .member .photo{aspect-ratio:370/318;background:#fff;overflow:hidden;border-radius:4px;}
+  .member .photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+  .member .info{padding:22px 76px 30px 14px;}
+  .member h3{font-family:"Nunito",sans-serif;font-weight:400;font-size:1.6rem;color:#000;margin:0;}
+  .member .role{font-family:"Nunito",sans-serif;font-weight:800;color:var(--navy-deep);font-size:1.08rem;margin:4px 0 0;}
+  .member .rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#F26B4F,#8BD27D);margin-top:16px;}
+  .member .back h3{color:#fff;font-size:1.35rem;}
+  .member .back .role{color:var(--green);font-size:1rem;margin:2px 0 18px;}
+  .member .back p:not(.role){font-size:.98rem;line-height:1.68;color:rgba(255,255,255,.92);margin:0 0 .9rem;}
+  .member .flip{position:absolute;right:16px;bottom:16px;width:48px;height:48px;border-radius:50%;border:0;background:transparent;color:#9aa6b2;display:grid;place-items:center;cursor:pointer;transition:color .15s,background .15s,transform .3s;}
+  .member .front .flip:hover{color:var(--navy);background:#f1f4f7;transform:rotate(-40deg);}
+  .member .back .flip{color:rgba(255,255,255,.75);}
+  .member .back .flip:hover{color:#fff;background:rgba(255,255,255,.1);transform:rotate(-40deg);}
+  @media (max-width:860px){ .about-grid,.team-grid{grid-template-columns:1fr;} .team-grid{gap:32px;} .about-img{max-width:480px;margin:0 auto;} }
+
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap navrow">
+    <a class="brand" href="./" aria-label="Momentum Sales Progression"><img src="images/c33c975353a5.svg" alt="Momentum Sales Progression"></a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+    <nav class="primary" id="siteNav">
+      <a href="./">Home</a>
+      <a class="active" href="about" aria-current="page">About</a>
+      <a href="estate-agents">Estate Agents</a>
+      <a href="contact-4">Contact</a>
+      <a href="about-5">Discovery Meeting</a>
+      <a href="news">News</a>
+      <a href="careers">Careers</a>
+      <a class="btn-portal" href="https://portal.momentumsp.co.uk">Client Portal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ABOUT INTRO -->
+  <section class="band about-intro">
+    <div class="wrap">
+      <h1 class="page-title">ABOUT</h1>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p>At Momentum Sales Progression, we are dedicated to driving successful property transactions, safeguarding and growing our clients’ sales revenue.</p>
+          <p>Our values-led team brings additional property expertise across legal conveyancing, estate agency, chartered surveying and business operations, offering a true depth of knowledge, integrity and professionalism for those who seek to differentiate with offering a high-touch service.</p>
+          <p>Our ethos is one of true partnership, delivering a high level of customer interaction that integrates seamlessly so that we become a natural extension of your team.</p>
+          <p>We also offer a 'white label' service option whereby your customers can directly interact with a named and dedicated person operating under your own branding. We do this by incorporating key branding elements such as email address, logo, and phone extension. Therefore, our service can seamlessly blend into your everyday business operations. The choice is yours.</p>
+          <p>Our team adopt a mindset of extreme ownership and provide unwavering support at every step, helping to ensure a stand-out experience for your customers and key stakeholders.</p>
+        </div>
+        <div class="about-img"><img src="images/af191fc3ff3c.webp" alt="Velocity case management platform shown on desktop and mobile">
+          <p class="standard">We exist to set a new standard in sales progression.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEET THE TEAM -->
+  <section class="band team" id="team">
+    <div class="wrap">
+      <div class="center">
+        <h2 class="team-title">MEET THE TEAM</h2>
+        <p class="team-sub">Meet our passionate individuals who are dedicated to helping our clients grow</p>
+      </div>
+
+      <div class="team-grid">
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/7933b288a5ad.webp" alt="Mark Emerson"></div>
+            <div class="info">
+              <h3>Mark Emerson</h3>
+              <p class="role">Commercial Director</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Mark's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Mark Emerson</h3>
+            <p class="role">Commercial Director</p>
+            <p>Mark leads on commercial aspects for Momentum Sales Progression for our growing client base. After obtaining an MSc in 'Real Estate Investment &amp; Finance' in 2008 from Henley Business School, Mark went on to become a Chartered Surveyor (MRICS) in 2008 after completing his APC (Assessment of Professional Competence) with The Royal Institution of Chartered Surveyors working for Lambert Smith Hampton and based in their central London office. Prior to building a career in property, Mark worked in the Automotive Engineering industry as a Global Programme Manager and also built and led an Executive Search firm for strategic management consulting talent and still enjoys building high performance teams of talented and caring individuals.</p>
+            <button class="flip" type="button" aria-label="Back to Mark's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/da1949cda580.webp" alt="Rachel Emerson"></div>
+            <div class="info">
+              <h3>Rachel Emerson</h3>
+              <p class="role">Director of Sales Progression</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Rachel's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Rachel Emerson</h3>
+            <p class="role">Director of Sales Progression</p>
+            <p>Rachel started her career in Financial Services back in 1997 at Chase Bank, later moving to the Bank of New York, based in Canary Wharf, progressing her role from Client Services into Relationship Management, becoming Senior VP within the bank. After a career break to raise her 2 children, Rachel pivoted to work in recruitment, helping to place top tier strategy consulting talent and managing the entire research function. Rachel has also managed a portfolio of residential property and is no stranger to the often problem riddled and frustrating sales transaction process. As the Operations Director, she is now dedicated to leading our sales progression operations and fully committed to providing our clients and their customers with an exceptional service.</p>
+            <button class="flip" type="button" aria-label="Back to Rachel's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/f79612760121.webp" alt="Marie Smith, Licensed Conveyancer"></div>
+            <div class="info">
+              <h3>Marie Smith</h3>
+              <p class="role">In-House Legal Advisor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Marie's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Marie Smith</h3>
+            <p class="role">In-House Legal Advisor</p>
+            <p>Marie has been a Licensed Conveyancer since 2008, and has &gt;20 years of working in highly regarded law firms and has dealt with all aspects of conveyancing. Over the years she has acquired in-depth knowledge of the end-to-end legal conveyancing process and provides Momentum Sales Progression with in-house advice and expert knowledge in line with our strong commitment to ongoing learning and continuous improvement. Marie is an integral part of the business and also assumed the role of Head of Learning &amp; Development ensuring that we stay one step ahead of every industry development and assisting with our staff onboarding and continuous improvement development training programmes; helping to ensure that we always stay one step ahead!</p>
+            <button class="flip" type="button" aria-label="Back to Marie's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/8b14cbd27bb1.webp" alt="Joanne Cockram, Sales Progressor"></div>
+            <div class="info">
+              <h3>Joanne Cockram</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Joanne's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Joanne Cockram</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Joanne "Jo" started her career in luxury travel agency at World Odyssey, serving HNW individuals where client service and delivery was paramount for their discerning client base. Her career later pivoted into Estate Agency working within the sales function across Hertfordshire &amp; Essex for Russell Property, an independent firm of property specialists. Over the years Jo has developed a wealth of knowledge and experience in the estate agency sector and retrained as a Sales Progressor, completing a Level 3 Certificate in Sales Progression with an Ofqual Regulated provider. Jo has experience working for both individual ("personal") estate agents and also independent companies. Her commitment to customer care is unwavering!</p>
+            <button class="flip" type="button" aria-label="Back to Joanne's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/39ee4e9a2b0a.webp" alt="Alexandra Young, Sales Progressor"></div>
+            <div class="info">
+              <h3>Alexandra Young</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Alexandra's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Alexandra Young</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Alexandra is a highly motivated property professional with over 7 years’ experience across sales negotiation, residential valuations and completion management. Alexandra brings a broad and highly practical skillset across all types of property transactions, including private treaty sales, auction sales, and modern method of auction. Previously a Completion Specialist managing fast-paced pipelines, Alexandra brings deep understanding of the conveyancing process and the importance of proactive, consistent communication. With a Master’s degree in Planning &amp; Development from Queen’s University Belfast, she combines strong commercial insight with hands-on estate agency expertise, ensuring every transaction is handled with professionalism, efficiency and integrity.</p>
+            <button class="flip" type="button" aria-label="Back to Alexandra's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/9ab174b88684.webp" alt="Jennie Lewis, Sales Progressor"></div>
+            <div class="info">
+              <h3>Jennie Lewis</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Jennie's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Jennie Lewis</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Jennie began her career in financial services with Nationwide before moving into estate agency with Black Horse Agencies. She later transitioned into the mortgage lending sector at Mortgage Trust, where she gained valuable experience across new business, repossessions, and mortgage packaging, working closely with brokers, lenders, and solicitors. Over the past 18 years, Jennie has specialised in progression; initially as a mortgage sales progressor, where she developed deep expertise in property transactions and specialist lending, and more recently in sales progression serving estate agents. She is committed to delivering outstanding customer service and takes pride in building strong relationships with stakeholders to ensure a smooth and successful customer journey.</p>
+            <button class="flip" type="button" aria-label="Back to Jennie's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/3790b963a168.webp" alt="Victoria Carter, Sales Progressor"></div>
+            <div class="info">
+              <h3>Victoria Carter</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Victoria's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Victoria Carter</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Victoria (Vix) has worked in the property market for over 30 years progressing through roles including Sales Negotiator, Sales Progressor, Valuer, Branch Manager, New Build Sales Adviser and Area Sales Progression Manager for a leading estate agent. Ultimately, Sales Progression is where she feels most at home, and has now worked within the specialism for the last 15 years. Victoria prides herself on excellent customer service and empathy, and likes to find a solution to every problem. Victoria’s interests outside of work include theatre, snooker, camping and being outdoors and surrounded by nature.</p>
+            <button class="flip" type="button" aria-label="Back to Victoria's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/1ad28318d565.webp" alt="Helen Fitzgerald, Sales Progressor"></div>
+            <div class="info">
+              <h3>Helen Fitzgerald</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Helen's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Helen Fitzgerald</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Helen is an experienced Sales Progressor with a genuine passion for people and property. With over a decade in estate agency, mainly in South London and Surrey, she brings exceptional communication, negotiation, and client care skills to every transaction. Known for her professionalism and proactive approach, Helen expertly navigates sales from offer to completion, ensuring a smooth and efficient process for all parties. Energetic, trustworthy, and driven, she thrives in fast-paced environments and is dedicated to achieving first-class results. Outside of work, Helen enjoys yoga, cooking, and travelling.</p>
+            <button class="flip" type="button" aria-label="Back to Helen's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/7b1d41ba9ac6.webp" alt="Russell Ball, Senior Strategy Advisor"></div>
+            <div class="info">
+              <h3>Russell Ball</h3>
+              <p class="role">Senior Strategy Advisor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Russell's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Russell Ball</h3>
+            <p class="role">Senior Strategy Advisor</p>
+            <p>Russell is a part-time Senior Strategy Advisor at Momentum Sales Progression. Russell gained decades of experience in growing, scaling and managing an estate agent having founded Banbury Ball in 1994 in Bloomsbury where they became the leading experts in the sale of residential property within the West End. The company grew with two further offices located in Covent Garden and Fitzrovia. Banbury Ball achieved number one market share in their areas of operation by offering dependable and honest advice and providing the highest levels of client care. Highlights included the sale of a Georgian period development at £18m and work for estates including Freshwater and The Bedford Estate. Russell exited the business when they sold to Dexters in 2015.</p>
+            <button class="flip" type="button" aria-label="Back to Russell's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/ef064c675fa5.webp" alt="Kirsty Botten, Sales Progressor"></div>
+            <div class="info">
+              <h3>Kirsty Botten</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Kirsty's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Kirsty Botten</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Kirsty brings over 20 years of experience in the property industry, building an impressive career that spans from working as an Estate Agent in various functions including sales progression, through to becoming a Business Development Manager for a reputable UK property finance lender. Kirsty specialises in effective and customer led progression which has been an extensive focus in her career; liaising with solicitors on a regular basis to keep deals on track and to deliver efficient, successful outcomes. Her in-depth industry knowledge and tenacious, hands-on approach make her a trusted and reliable professional within the property finance sector.</p>
+            <button class="flip" type="button" aria-label="Back to Kirsty's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/38a72942111d.webp" alt="Simon Alff, Sales Progressor"></div>
+            <div class="info">
+              <h3>Simon Alff</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Simon's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Simon Alff</h3>
+            <p class="role">Sales Progressor</p>
+            <p>With over 25 years in estate agency, Simon has an exceptional depth of experience across every stage of the sales process; from his early career as a Trainee Negotiator through to Area Director level, working across both corporate and independent agencies. This journey has given him an outstanding understanding of sales pipelines, chain management and the conveyancing process over many years. Most recently he spent over a decade as Land and New Homes Area Director at LSL Property Services, supporting multiple estate agency brands across the South East. Now specialising in sales progression, Simon brings that wealth of hands-on experience to every case he manages, understanding the pressures of keeping chains moving, the common pitfalls in conveyancing, and the importance of proactive communication with all parties to get transactions over the line.</p>
+            <button class="flip" type="button" aria-label="Back to Simon's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/98817fed5828.webp" alt="Poppy Potts, Sales Progressor"></div>
+            <div class="info">
+              <h3>Poppy Potts</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Poppy's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Poppy Potts</h3>
+            <p class="role">Sales Progressor</p>
+            <p>Since entering the world of Estate Agency in 2017, Poppy now brings a sharp commercial mindset and a genuine passion for seeing transactions through to completion. She began her career as a Sales Negotiator, developing a strong foundation in sales progression, chain management and solicitor liaison before moving to specialise as a Completion Specialist where she has diligently managed hundreds of cases from sale agreed through to completion, keeping all parties informed, aligned and on track. Poppy is highly organised, customer-focused and thrives in a fast-paced environment, consistently recognised for her communication skills and ability to drive transactions forward. She understands the importance of proactive progression, clear updates and keeping momentum going, no matter what challenges arise along the way.</p>
+            <button class="flip" type="button" aria-label="Back to Poppy's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/a2bb339d3f1c.webp" alt="Megan Tonks, Sales Progressor"></div>
+            <div class="info">
+              <h3>Megan Tonks</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Megan's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Megan Tonks</h3>
+            <p class="role">Sales Progressor</p>
+            <p>With extensive experience across both private treaty and auction sales progression, Megan has built a career around getting complex transactions over the line under pressure. Having managed sales pipelines at both Yopa and iamproperty, she progressed to a Senior Completions Specialist at iamsold, where she handled high-volume auction property sales to strict 56-day deadlines alongside traditional private treaty completions. Megan regularly takes on the most complex and high-risk cases, including title defects, probate, short leases and unregistered land, and has been a trusted team leader supporting colleagues with difficult or stalled files. Suffice to say, Megan knows what it takes to keep even the most challenging transactions moving forward proactively and with a truly customer-led approach.</p>
+            <button class="flip" type="button" aria-label="Back to Megan's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+        <article class="member">
+        <div class="card">
+          <div class="face front">
+            <div class="photo"><img src="images/236a91005af0.webp" alt="Zara Brewer, Sales Progressor"></div>
+            <div class="info">
+              <h3>Zara Brewer</h3>
+              <p class="role">Sales Progressor</p>
+              <span class="rule" aria-hidden="true"></span>
+            </div>
+            <button class="flip" type="button" aria-expanded="false" aria-label="Read Zara's bio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+          <div class="face back" aria-hidden="true" inert>
+            <h3>Zara Brewer</h3>
+            <p class="role">Sales Progressor</p>
+            <p>With hands on experience in sales progression and estate agency more broadly, Zara has built a strong understanding of what it takes to move a transaction from agreed to completion. She started as a Sales Negotiator and Progressor at CJ Hole in Southville, working closely with buyers, sellers, mortgage brokers and solicitors and building a solid grasp of property law and the situations that can arise along the way.</p>
+            <p>Zara went on to broaden her expertise through commercial property work and a Master's in Real Estate at UWE Bristol, giving her a rounded view of the market. She brings a proactive, detail focused approach to her work, along with a genuine enthusiasm for property that shows in how she deals with clients.</p>
+            <button class="flip" type="button" aria-label="Back to Zara's photo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.64-6.36"/><path d="M3 4v5h5"/></svg></button>
+          </div>
+        </div>
+      </article>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <img class="flogo" src="images/1778f851d40d.png" alt="Momentum Sales Progression">
+      <p>Momentum Sales Progression Ltd.</p>
+      <p>The Residence, New Mead Barn, Wickham Hall,<br>Hadham Road, Bishop's Stortford,<br>Hertfordshire CM23 1JG</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61569226383040" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12Z"/></svg></a>
+        <a href="https://www.linkedin.com/company/momentum-sales-progression/" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.25 8.25h4.5V24h-4.5V8.25ZM8.5 8.25h4.31v2.15h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V24h-4.5v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V24H8.5V8.25Z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <p><a href="about">About</a></p>
+      <p><a href="estate-agents">Estate Agents</a></p>
+      <p><a href="about-5">Discovery Meeting</a></p>
+      <p><a href="news">News</a></p>
+      <p><a href="careers">Careers</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:01279905805">01279 905 805</a></p>
+      <p><a href="mailto:info@momentumsp.co.uk">info@momentumsp.co.uk</a></p>
+      <p><a href="https://portal.momentumsp.co.uk">Client Portal</a></p>
+    </div>
+  </div>
+  <div class="fbar"><div class="wrap">© 2026 Momentum Sales Progression Ltd. Company no. 16099402. &nbsp;|&nbsp; <a href="privacy-policy">Privacy Policy</a> &nbsp;|&nbsp; <a href="cookie-policy">Cookie Policy</a> &nbsp;|&nbsp; <a href="#" data-cookie-settings>Cookie settings</a></div></div>
+</footer>
+
+<a class="wa" hidden data-whatsapp style="right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px))" href="#" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.15-.19.29-.74.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.23-.45-2.34-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.42s1.04 2.81 1.18 3c.14.19 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34ZM12 2a10 10 0 0 0-8.6 15.07L2 22l5.05-1.32A10 10 0 1 0 12 2Z"/></svg></a>
+
+<script>
+(function(){
+  var h=document.querySelector('header.site'), b=h&&h.querySelector('.menu-toggle'); if(!b) return;
+  b.addEventListener('click',function(){ var o=h.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false'); b.setAttribute('aria-label',o?'Close menu':'Open menu'); });
+})();
+(function(){
+  document.querySelectorAll('.member').forEach(function(m){
+    var front=m.querySelector('.front'), back=m.querySelector('.back');
+    var open=front.querySelector('.flip'), close=back.querySelector('.flip');
+    var card=m.querySelector('.card');
+    function size(on){ card.style.height = on ? Math.max(front.offsetHeight, back.scrollHeight)+'px' : front.offsetHeight+'px'; }
+    function set(on){
+      size(on);
+      m.classList.toggle('flipped',on);
+      open.setAttribute('aria-expanded',on?'true':'false');
+      if(on){ front.setAttribute('inert',''); front.setAttribute('aria-hidden','true'); back.removeAttribute('inert'); back.removeAttribute('aria-hidden'); close.focus({preventScroll:true}); }
+      else { back.setAttribute('inert',''); back.setAttribute('aria-hidden','true'); front.removeAttribute('inert'); front.removeAttribute('aria-hidden'); open.focus({preventScroll:true}); }
+    }
+    card.addEventListener('transitionend',function(e){ if(e.propertyName==='height' && !m.classList.contains('flipped')) card.style.height=''; });
+    window.addEventListener('resize',function(){ if(m.classList.contains('flipped')) size(true); });
+    front.addEventListener('click',function(){ set(true); });
+    close.addEventListener('click',function(){ set(false); });
+  });
+})();
+</script>
+</body>
+</html>

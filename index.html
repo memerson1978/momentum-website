@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Momentum Sales Progression | Outsourced Sales Progression for Estate Agents</title>
+<meta name="description" content="Outsourced sales progression for estate agents and house builders. Expert progressors, 24/7 case tracking and a no exchange, no fee model.">
+<link rel="canonical" href="https://www.momentumsp.co.uk/">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<script src="assets/site.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+  :root{
+    color-scheme: light;
+    --navy:#0C3C60;
+    --navy-deep:#072136;
+    --green:#8BD27D;
+    --green-bright:#96E487;
+    --grey:#F7F7F7;
+    --white:#FFFFFF;
+    --ink:#072136;
+    --maxw:1000px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--white);color:var(--ink);
+    font-family:"Nunito Sans","Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Nunito","Segoe UI",sans-serif;color:var(--navy-deep);font-weight:400;line-height:1.18;margin:0;text-wrap:balance;}
+  h1{font-size:clamp(2.2rem,4.4vw,2.9rem);}
+  h2{font-size:clamp(1.7rem,3.2vw,2.4rem);}
+  h3{font-size:1.25rem;font-weight:700;}
+  p{margin:0 0 1rem;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+  .band{padding:64px 0;}
+  .center{text-align:center;}
+  .navy{background:var(--navy);color:#fff;}
+  .navy h1,.navy h2,.navy h3{color:#fff;}
+  .deep{background:var(--navy-deep);color:#fff;}
+  .green{background:var(--green);color:var(--navy-deep);}
+  .greybg{background:var(--grey);}
+  .narrow{max-width:760px;margin-left:auto;margin-right:auto;}
+  section.hero{padding-bottom:38px;}
+  section.intro{padding-top:16px;padding-bottom:54px;}
+  section.green.intro-width{padding-top:58px;padding-bottom:58px;}
+  section.intro p{font-size:1.16rem;}
+
+  /* buttons */
+  .btn{display:inline-block;font-family:"Nunito",sans-serif;font-weight:700;font-size:1rem;padding:.7rem 1.6rem;border-radius:6px;border:2px solid transparent;cursor:pointer;transition:opacity .15s;}
+  .btn:hover{opacity:.88;}
+  .btn-green{background:var(--green);color:var(--navy-deep);}
+  .btn-navy{background:var(--navy);color:#fff;}
+  .btn-portal{background:#fff;color:var(--navy);border:1.6px solid var(--green);padding:.46rem 1.05rem;font-size:.92rem;border-radius:6px;transition:background .15s,color .15s;}
+  .btn-portal:hover{background:var(--green);color:var(--navy-deep);}
+
+  /* header */
+  header.site{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #eef1f4;}
+  .navrow{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px;flex-wrap:wrap;}
+  .brand img{height:63px;display:block;}
+  nav.primary{display:flex;align-items:center;gap:24px;flex-wrap:wrap;}
+  nav.primary a{font-family:"Nunito",sans-serif;font-weight:600;font-size:.98rem;color:var(--navy-deep);}
+  nav.primary a:hover{color:var(--navy);}
+
+  /* hero */
+  .hero .wrap{display:grid;grid-template-columns:1fr 1fr;gap:44px;align-items:center;}
+  .hero h1{color:#fff;}
+  .hero p{color:#fff;font-size:1.16rem;}
+  .hero img{width:100%;height:auto;border-radius:8px;display:block;}
+
+  /* why grid */
+  .why-divider{width:74px;height:3px;background:var(--navy);border-radius:2px;margin:16px auto 0;}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 26px;margin-top:38px;}
+  .why-item{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;}
+  .why-item .ic{height:90px;display:grid;place-items:center;flex:none;margin-bottom:4px;}
+  .why-item .ic svg{height:90px !important;width:auto !important;display:block;}
+  .why-item b{font-family:"Nunito",sans-serif;font-weight:800;font-size:1.05rem;color:var(--navy-deep);line-height:1.3;}
+
+  /* bullets */
+  ul.tick{list-style:none;padding:0;margin:1.2rem 0;display:flex;flex-direction:column;gap:.7rem;}
+  ul.tick li{position:relative;padding-left:1.8rem;}
+  ul.tick li::before{content:"•";position:absolute;left:.3rem;top:-.05rem;color:var(--green);font-size:1.3rem;line-height:1;}
+  .navy ul.tick li::before{color:var(--green);}
+
+  /* testimonial green */
+  .quote-lead{font-size:1.18rem;line-height:1.6;}
+  .quote-by{font-family:"Nunito",sans-serif;font-weight:700;margin-top:1rem;}
+  .speech{background:#fff;color:var(--navy-deep);border-radius:20px;padding:30px 40px;position:relative;box-shadow:0 16px 42px -26px rgba(7,33,54,.45);margin-bottom:30px;}
+  .speech .quote-lead{margin:0;color:var(--navy-deep);}
+  .speech::after{content:"";position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);width:0;height:0;border-left:18px solid transparent;border-right:18px solid transparent;border-top:18px solid #fff;}
+
+  /* reviews */
+  .reviews img{width:100%;height:auto;border-radius:8px;display:block;}
+  .review-quotes p{font-size:1.22rem;font-family:"Nunito",sans-serif;color:var(--navy-deep);margin-bottom:1.1rem;}
+
+  /* contact */
+  .contact{position:relative;}
+  .contact-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
+  .contact .wrap{position:relative;max-width:1200px;padding:84px 24px;}
+  .contact-card{background:#fff;padding:46px 54px;}
+  .contact-card h2{color:var(--navy);margin-bottom:30px;}
+  .c-label{display:block;color:#2b3a47;font-size:1rem;margin-bottom:14px;}
+  .signup2{display:flex;max-width:940px;}
+  .signup2 input{flex:1;min-width:0;border:0;border-bottom:1px solid #2b3a47;background:#fafafa;padding:16px 14px;font-size:1rem;font-family:"Nunito Sans",sans-serif;}
+  .signup2 button{background:var(--navy);color:#fff;border:0;padding:0 56px;font-size:1rem;cursor:pointer;font-family:"Nunito",sans-serif;}
+  .signup2 button:hover{background:#0a3457;}
+  @media (max-width:620px){ .contact-card{padding:30px 22px;} .signup2{flex-direction:column;} .signup2 button{padding:14px;margin-top:12px;} }
+  /* testimonial carousel */
+  .tcarousel{position:relative;max-width:1140px;margin:8px auto 0;padding:0 56px;}
+  .t-viewport{overflow:hidden;}
+  .t-track{display:flex;transition:transform .55s cubic-bezier(.4,0,.2,1);}
+  .tslide{min-width:100%;box-sizing:border-box;display:flex;gap:44px;align-items:center;padding:14px 6px;}
+  .t-img{flex:0 0 40%;max-width:400px;}
+  .t-img img{width:100%;height:auto;display:block;background:#fff;border-radius:200px 200px 10px 10px;}
+  .t-text{flex:1;background:#fff;padding:34px 40px;border-radius:4px;box-shadow:0 16px 44px -28px rgba(7,33,54,.42);}
+  .t-text p{font-size:1.02rem;line-height:1.62;margin:0 0 1rem;color:#14202b;}
+  .t-text p:last-child{margin-bottom:0;}
+  .t-text.navy p,.t-text.navy h3{color:var(--navy);}
+  .t-text h3{font-family:"Nunito",sans-serif;font-weight:400;color:var(--navy);font-size:1.55rem;margin:0 0 1.1rem;}
+  .q-div{border:0;border-top:1.5px solid #d7dce2;width:56px;margin:1.4rem 0;}
+  .q-by{font-size:.95rem;color:#5a6b7a;}
+  .t-arrow{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;cursor:pointer;padding:8px;z-index:3;}
+  .t-arrow.prev{left:0;} .t-arrow.next{right:0;}
+  .t-arrow:hover svg path{stroke:var(--navy);}
+  .t-dots{display:flex;gap:12px;justify-content:center;margin-top:28px;}
+  .t-dot{width:12px;height:12px;border-radius:50%;border:1.5px solid var(--navy);background:transparent;cursor:pointer;padding:0;}
+  .t-dot.active{background:var(--navy);}
+  @media (max-width:860px){
+    .tslide{flex-direction:column;gap:26px;}
+    .t-img{order:-1;flex:none;width:100%;max-width:300px;margin:0 auto;}
+    .t-text{padding:28px 24px;}
+    .tcarousel{padding:0 38px;}
+  }
+
+  /* footer */
+  footer.site{background:var(--navy-deep);color:rgba(255,255,255,.82);}
+  footer.site .wrap{padding:52px 24px 30px;display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;}
+  footer.site img.flogo{height:52px;margin-bottom:16px;display:block;}
+  footer.site h4{font-family:"Nunito",sans-serif;color:#fff;font-size:1rem;margin:0 0 12px;font-weight:700;}
+  footer.site p{font-size:.95rem;line-height:1.7;margin:0 0 .6rem;}
+  footer.site a:hover{color:#fff;}
+  .social{display:flex;gap:12px;margin-top:14px;}
+  .social a{width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.10);display:grid;place-items:center;}
+  .social a:hover{background:var(--green);}
+  .fbar{border-top:1px solid rgba(255,255,255,.14);}
+  .fbar .wrap{display:block;padding:18px 24px;text-align:center;font-size:.86rem;color:rgba(255,255,255,.6);}
+
+  /* whatsapp float */
+  .wa{position:fixed;right:20px;bottom:20px;width:56px;height:56px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.25);z-index:60;}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr 1fr;}
+    footer.site .wrap{grid-template-columns:1fr;}
+    nav.primary{gap:14px;}
+  }
+  @media (max-width:520px){
+    .why-grid{grid-template-columns:1fr;}
+    .band{padding:48px 0;}
+  }
+
+  /* shared inner page styles */
+  header.site{top:env(safe-area-inset-top,0px);}
+  .wrap{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));}
+  nav.primary a.active{color:var(--navy);box-shadow:inset 0 -2px 0 var(--green);padding-bottom:3px;}
+  .page-title{text-align:center;font-weight:700;font-size:clamp(2.3rem,5vw,3.4rem);color:var(--navy-deep);}
+  .lead{font-size:1.16rem;}
+  .copy p{font-size:1.02rem;line-height:1.7;color:#14202b;}
+  .copy p:last-child{margin-bottom:0;}
+  .fade-rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#EA6A4C,#8BD27D);}
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;}
+  .split > *{min-width:0;}
+  .split img{width:100%;height:auto;display:block;border-radius:8px;}
+  .btn-outline{background:#fff;color:var(--navy-deep);border:2px solid var(--green);border-radius:50px;}
+  .btn-outline:hover{background:var(--green);opacity:1;}
+  .btn:focus-visible,.btn-portal:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--green);outline-offset:2px;}
+  .field{display:flex;flex-direction:column;gap:6px;min-width:0;}
+  .field label{font-size:.95rem;color:#2b3a47;}
+  .field input,.field textarea{font:inherit;font-size:1rem;border:0;border-bottom:1px solid #2b3a47;background:#fafafa;padding:12px 12px;color:var(--navy-deep);border-radius:0;width:100%;}
+  .field textarea{min-height:110px;resize:vertical;}
+  header.site .wrap{max-width:1180px;}
+  footer.site .fbar .wrap{display:block;text-align:center;}
+  .menu-toggle{display:none;background:none;border:1.6px solid #dfe4ea;border-radius:6px;width:46px;height:42px;cursor:pointer;align-items:center;justify-content:center;padding:0;}
+  .menu-toggle span{display:block;width:20px;height:2px;background:var(--navy-deep);border-radius:2px;position:relative;}
+  .menu-toggle span::before,.menu-toggle span::after{content:"";position:absolute;left:0;width:20px;height:2px;background:var(--navy-deep);border-radius:2px;transition:transform .2s;}
+  .menu-toggle span::before{top:-6px;} .menu-toggle span::after{top:6px;}
+  header.site.open .menu-toggle span{background:transparent;}
+  header.site.open .menu-toggle span::before{transform:translateY(6px) rotate(45deg);}
+  header.site.open .menu-toggle span::after{transform:translateY(-6px) rotate(-45deg);}
+  @media (max-width:1080px){
+    .navrow{flex-wrap:wrap;min-height:72px;}
+    .menu-toggle{display:inline-flex;}
+    nav.primary{display:none;width:100%;flex-direction:column;align-items:stretch;gap:0;padding:6px 0 16px;}
+    header.site.open nav.primary{display:flex;}
+    nav.primary a{padding:12px 2px;border-top:1px solid #eef1f4;}
+    nav.primary a.active{box-shadow:inset 3px 0 0 var(--green);padding-left:12px;}
+    nav.primary a.btn-portal{margin-top:12px;text-align:center;border:1.6px solid var(--green);padding:.7rem 1rem;}
+  }
+  @media (max-width:860px){ .split{grid-template-columns:1fr;gap:36px;} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;scroll-behavior:auto!important;} }
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="wrap navrow">
+    <a class="brand" href="./" aria-label="Momentum Sales Progression"><img src="images/c33c975353a5.svg" alt="Momentum Sales Progression"></a>
+    <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="siteNav"><span></span></button>
+    <nav class="primary" id="siteNav">
+      <a class="active" href="./" aria-current="page">Home</a>
+      <a href="about">About</a>
+      <a href="estate-agents">Estate Agents</a>
+      <a href="contact-4">Contact</a>
+      <a href="about-5">Discovery Meeting</a>
+      <a href="news">News</a>
+      <a href="careers">Careers</a>
+      <a class="btn-portal" href="https://portal.momentumsp.co.uk">Client Portal</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="band hero navy">
+    <div class="wrap">
+      <div>
+        <h1>Professional Sales Progression That You Can Trust!</h1>
+        <p style="margin-top:1.2rem">Reliable, outsourced sales progression that delivers speed and certainty from sale-agreed to completion.</p>
+        <p>We protect your pipeline, giving you more time to grow your business.</p>
+      </div>
+      <div><img src="images/d6f77041e365.jpg" alt="Sales Progressor working"></div>
+    </div>
+  </section>
+
+  <!-- INTRO -->
+  <section class="band navy intro" id="about">
+    <div class="wrap">
+      <p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p>
+      <p style="margin-bottom:0">Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We ensure your pipeline moves at speed, with the confidence that it will complete, leaving you time to focus on closing more deals and growing your business.</p>
+    </div>
+  </section>
+
+  <!-- NICOLA TESTIMONIAL (green) -->
+  <section class="vt-reviews" aria-label="Google reviews"><div class="wrap"><script defer src='https://admin.verifytrusted.com/loader.js?a830489c-c16c-40da-84d3-744e68d6bd02'></script></div></section>
+
+  <section class="band green intro-width">
+    <div class="wrap center">
+      <div class="speech">
+      <p class="quote-lead">We absolutely LOVE working with Mark and Alexandra - they are professional and efficient at all times, and a delight to call part of our team. We did a lot of research into sales progression companies when we were choosing and it's genuinely a minefield, so we had to go with gut instinct and who we thought we could build a meaningful working relationship with - we are utterly delighted with our choice. This is a hard, difficult and often stressful part of the process and Alex makes it a breeze! Well done team!</p>
+      </div>
+      <p class="quote-by" style="margin-bottom:0">- Nicola, MD, Spencers Estate Agents</p>
+    </div>
+  </section>
+
+  <!-- WHY MOMENTUM -->
+  <section class="band">
+    <div class="wrap center">
+      <h2>Why Momentum?</h2>
+      <div class="why-divider"></div>
+      <div class="why-grid">
+        <div class="why-item"><span class="ic"><svg preserveAspectRatio="xMidYMid meet" data-bbox="36.374 13.001 439.255 485.997" xmlns="http://www.w3.org/2000/svg" viewBox="36.374 13.001 439.255 485.997" data-type="color" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path fill="#d8ecfe" d="M288.381 404.002c0 17.876-14.491 32.367-32.367 32.367s-32.367-14.491-32.367-32.367 14.491-32.367 32.367-32.367 32.367 14.491 32.367 32.367" data-color="1"></path>
+        <path d="M426.184 260.529h-8.146c13.635-9.933 20.823-28.883 20.823-47.05 0-23.543-19.154-42.697-42.697-42.697s-42.726 19.154-42.726 42.697c0 18.167 7.193 37.117 20.837 47.05h-8.159c-3.473 0-6.902.339-10.25 1.012-12.396-16.536-32.893-27.375-56.055-27.375H283.49c6.73-4.381 12.672-10.456 17.536-18.102 8.654-13.602 13.617-31.479 13.617-49.048 0-32.328-26.301-58.628-58.628-58.628s-58.628 26.301-58.628 58.628c0 16.887 4.921 34.952 13.163 48.324 4.959 8.045 10.94 14.338 17.761 18.825h-16.12c-23.154 0-43.644 10.84-56.034 27.378a52 52 0 0 0-10.271-1.015h-8.146c13.635-9.933 20.823-28.883 20.823-47.05 0-23.543-19.154-42.697-42.697-42.697s-42.697 19.154-42.697 42.697c0 18.167 7.188 37.117 20.823 47.05h-8.174c-27.264 0-49.444 20.845-49.444 46.468v52.556a8 8 0 0 0 16 0v-52.556c0-16.8 15.003-30.468 33.444-30.468h60.068c.639 0 1.271.042 1.906.074a60.2 60.2 0 0 0-4.038 21.69v61.259a8 8 0 0 0 16 0v-61.259c0-8.261 2.281-16.041 6.293-22.841q.347-.474.625-1.005c9.047-14.49 26.055-24.281 45.519-24.281h87.622c19.49 0 36.519 9.806 45.565 24.315q.267.506.597.959c4.018 6.803 6.303 14.587 6.303 22.853v61.259a8 8 0 0 0 16 0v-61.259c0-7.611-1.43-14.913-4.04-21.691.625-.032 1.249-.073 1.879-.073h60.068c18.441 0 33.444 13.668 33.444 30.468v52.556a8 8 0 0 0 16 0v-52.556c0-25.623-22.18-46.468-49.444-46.468zm-30.02-73.748c14.721 0 26.697 11.977 26.697 26.697 0 15.817-8.283 38.093-26.697 38.093s-26.726-22.275-26.726-38.093c0-14.721 11.989-26.697 26.726-26.697m-182.778-19.765c0-23.505 19.123-42.628 42.628-42.628s42.628 19.123 42.628 42.628c0 22.915-11.573 59.269-42.628 59.269-13.221 0-23.935-6.507-31.845-19.34-6.752-10.955-10.784-25.881-10.784-39.929zm-97.521 19.765c14.721 0 26.697 11.977 26.697 26.697 0 15.817-8.283 38.093-26.697 38.093s-26.697-22.275-26.697-38.093c0-14.721 11.977-26.697 26.697-26.697m-27.73-77.336-3.092 21.331a8 8 0 0 0 11.445 8.327l19.375-9.52 19.347 9.518a8 8 0 0 0 11.45-8.316l-3.069-21.339 15.036-15.492a8 8 0 0 0-4.381-13.455l-21.26-3.667-10.042-19.077a8 8 0 0 0-7.075-4.273h-.004a8 8 0 0 0-7.076 4.267L98.72 76.832l-21.266 3.667a8 8 0 0 0-4.376 13.46l15.056 15.488zm17.185-17.517a8 8 0 0 0 5.716-4.15l4.822-9.139 4.807 9.131a8 8 0 0 0 5.719 4.158l10.205 1.76-7.215 7.434a8 8 0 0 0-2.178 6.71l1.469 10.218-9.268-4.559a8 8 0 0 0-7.059-.002l-9.283 4.561 1.48-10.209a8 8 0 0 0-2.181-6.724l-7.225-7.432zm122.965-22.987-3.091 21.327a8 8 0 0 0 11.446 8.327l19.375-9.52 19.347 9.518a8.002 8.002 0 0 0 11.45-8.317l-3.068-21.335 15.032-15.463a8 8 0 0 0-4.376-13.46l-21.261-3.667-10.042-19.077a8 8 0 0 0-7.075-4.273h-.004a8 8 0 0 0-7.076 4.267l-10.069 19.083-21.265 3.667a8.001 8.001 0 0 0-4.372 13.464l15.051 15.459zm17.185-17.493a8 8 0 0 0 5.716-4.15l4.822-9.139 4.807 9.132a8 8 0 0 0 5.719 4.157l10.19 1.757-7.197 7.404a8 8 0 0 0-2.182 6.715l1.469 10.217-9.268-4.559a7.99 7.99 0 0 0-7.059-.002l-9.282 4.561 1.48-10.208a8 8 0 0 0-2.186-6.729l-7.207-7.401 10.176-1.755zm122.965 55.025-3.092 21.355a8.002 8.002 0 0 0 11.446 8.327l19.375-9.52 19.347 9.518a7.998 7.998 0 0 0 11.449-8.316l-3.069-21.364 15.032-15.463a8 8 0 0 0-4.376-13.46l-21.26-3.667-10.042-19.077a8 8 0 0 0-7.075-4.273h-.004a8 8 0 0 0-7.076 4.267l-10.069 19.083-21.266 3.668a8.001 8.001 0 0 0-4.372 13.465l15.052 15.458zM385.62 88.98a8 8 0 0 0 5.716-4.15l4.822-9.139 4.807 9.131a8 8 0 0 0 5.719 4.158l10.19 1.758-7.197 7.403a8 8 0 0 0-2.182 6.714l1.472 10.248-9.27-4.56a8 8 0 0 0-7.059-.002l-9.285 4.562 1.482-10.239a8 8 0 0 0-2.186-6.728l-7.207-7.401zM256.016 355.635c-26.669 0-48.367 21.697-48.367 48.367s21.697 48.367 48.367 48.367 48.367-21.697 48.367-48.367-21.697-48.367-48.367-48.367m0 80.734c-17.847 0-32.367-14.52-32.367-32.367s14.52-32.367 32.367-32.367 32.367 14.52 32.367 32.367-14.52 32.367-32.367 32.367m90.348-50.83-14.615-6.738-4.356-10.544 5.555-15.098a8 8 0 0 0-1.851-8.419l-10.753-10.753v-25.431a8 8 0 0 0-16 0v19.44l-12.578 4.628-10.577-4.381-6.739-14.594a8 8 0 0 0-7.263-4.646h-22.366a8 8 0 0 0-7.263 4.646l-6.74 14.596-10.551 4.377-12.604-4.637v-19.43a8 8 0 0 0-16 0v25.459l-10.725 10.725a8 8 0 0 0-1.851 8.419l5.552 15.092-4.377 10.55-14.596 6.74a8 8 0 0 0-4.646 7.263v22.395a8 8 0 0 0 4.646 7.263l14.596 6.74 4.377 10.55-5.552 15.092a8 8 0 0 0 1.851 8.419l15.818 15.818a8 8 0 0 0 8.419 1.851l15.092-5.552 10.551 4.377 6.74 14.596a8 8 0 0 0 7.263 4.646h22.366a8 8 0 0 0 7.263-4.646l6.739-14.594 10.577-4.381 15.094 5.553a8 8 0 0 0 8.419-1.851l15.818-15.818a8 8 0 0 0 1.851-8.419l-5.555-15.098 4.356-10.544 14.615-6.738a8 8 0 0 0 4.651-7.265v-22.395a8 8 0 0 0-4.651-7.265zm-11.349 24.539-12.812 5.906a8 8 0 0 0-4.044 4.21l-6.747 16.328a8 8 0 0 0-.114 5.817l4.867 13.228-8.583 8.583-13.228-4.867a8 8 0 0 0-5.824.117l-16.356 6.775a8 8 0 0 0-4.202 4.037L262.067 483h-12.13l-5.905-12.788a8 8 0 0 0-4.197-4.035l-16.328-6.775a8 8 0 0 0-5.828-.119l-13.228 4.867-8.583-8.583 4.867-13.228a8 8 0 0 0-.119-5.828l-6.775-16.328a8 8 0 0 0-4.035-4.197l-12.788-5.905v-12.16l12.788-5.905a8 8 0 0 0 4.035-4.197l6.775-16.328a8 8 0 0 0 .119-5.828l-4.867-13.228 8.583-8.583 13.228 4.867a8 8 0 0 0 5.828-.119l16.328-6.775a8 8 0 0 0 4.197-4.035l5.905-12.788h12.13l5.905 12.788a8 8 0 0 0 4.202 4.037l16.356 6.775a8 8 0 0 0 5.824.117l13.228-4.867 8.583 8.583-4.867 13.228a8 8 0 0 0 .114 5.817l6.747 16.328a8 8 0 0 0 4.044 4.21l12.812 5.906zm-60.205-21.63a8 8 0 0 1 .531 11.301l-17.547 19.276a7.995 7.995 0 0 1-11.457.384l-9.298-8.929a8 8 0 0 1 11.083-11.541l3.372 3.238 12.016-13.2a8 8 0 0 1 11.301-.531z" fill="#000000" data-color="2"></path>
+        <path d="M115.865 186.782c-14.721 0-26.697 11.977-26.697 26.697 0 15.817 8.283 38.093 26.697 38.093s26.697-22.275 26.697-38.093c0-14.721-11.977-26.697-26.697-26.697" fill="#f6dccd" data-color="3"></path>
+        <path d="M256.014 124.389c-23.505 0-42.628 19.123-42.628 42.628 0 14.047 4.031 28.974 10.784 39.929 7.91 12.833 18.624 19.34 31.845 19.34 31.055 0 42.628-36.354 42.628-59.269 0-23.505-19.123-42.628-42.628-42.628z" fill="#f6dccd" data-color="3"></path>
+        <path d="M396.164 186.782c-14.736 0-26.726 11.977-26.726 26.697 0 15.817 8.292 38.093 26.726 38.093s26.697-22.275 26.697-38.093c0-14.721-11.977-26.697-26.697-26.697" fill="#f6dccd" data-color="3"></path>
+        <path fill="#ffc338" d="m177.016 410.082 12.788 5.905a8 8 0 0 1 4.035 4.197l6.775 16.328a8 8 0 0 1 .119 5.828l-4.867 13.228 8.583 8.583 13.228-4.867a8 8 0 0 1 5.828.119l16.328 6.775a8 8 0 0 1 4.197 4.035l5.905 12.788h12.13l5.905-12.788a8 8 0 0 1 4.202-4.037l16.356-6.775a8 8 0 0 1 5.824-.117l13.228 4.867 8.583-8.583-4.867-13.228a8 8 0 0 1 .114-5.817l6.747-16.328a8 8 0 0 1 4.044-4.21l12.812-5.906v-12.153l-12.812-5.906a8 8 0 0 1-4.044-4.21l-6.747-16.328a8 8 0 0 1-.114-5.817l4.867-13.228-8.583-8.583-13.228 4.867a8 8 0 0 1-5.824-.117l-16.356-6.775a8 8 0 0 1-4.202-4.037l-5.905-12.788h-12.13l-5.905 12.788a8 8 0 0 1-4.197 4.035l-16.328 6.775a8 8 0 0 1-5.828.119l-13.228-4.867-8.583 8.583 4.867 13.228a8 8 0 0 1-.119 5.828l-6.775 16.328a8 8 0 0 1-4.035 4.197l-12.788 5.905v12.16zm78.998-54.447c26.669 0 48.367 21.697 48.367 48.367s-21.697 48.367-48.367 48.367-48.367-21.697-48.367-48.367 21.697-48.367 48.367-48.367" data-color="4"></path>
+        <path fill="#ffe177" d="m120.663 87.771-4.807-9.131-4.822 9.139a8 8 0 0 1-5.716 4.15l-10.19 1.757 7.225 7.432a8 8 0 0 1 2.181 6.724l-1.48 10.209 9.283-4.561a8 8 0 0 1 7.059.002l9.268 4.559-1.469-10.218a8 8 0 0 1 2.178-6.71l7.215-7.434-10.205-1.76a8 8 0 0 1-5.719-4.158z" data-color="5"></path>
+        <path fill="#ffe177" d="m260.813 47.291-4.807-9.132-4.822 9.139a8 8 0 0 1-5.716 4.15l-10.176 1.755 7.207 7.401a8 8 0 0 1 2.186 6.729l-1.48 10.208 9.282-4.561a8 8 0 0 1 7.059.002l9.268 4.559-1.469-10.217a8 8 0 0 1 2.182-6.715l7.197-7.404-10.19-1.757a8 8 0 0 1-5.719-4.157z" data-color="5"></path>
+        <path fill="#ffe177" d="m400.962 84.822-4.807-9.131-4.822 9.139a8 8 0 0 1-5.716 4.15l-10.177 1.755 7.207 7.401a8 8 0 0 1 2.186 6.728l-1.482 10.239 9.285-4.562a8 8 0 0 1 7.059.002l9.27 4.56-1.472-10.248a8 8 0 0 1 2.182-6.714l7.197-7.403-10.19-1.758a8 8 0 0 1-5.719-4.158z" data-color="5"></path>
+        <path fill="#8ac9fe" d="M143.752 359.553v-61.259c0-7.61 1.43-14.912 4.038-21.69-.634-.033-1.267-.074-1.906-.074H85.816c-18.441 0-33.444 13.668-33.444 30.468v52.556a8 8 0 0 1-8 8h107.38a8 8 0 0 1-8-8z" data-color="6"></path>
+        <path fill="#8ac9fe" d="M459.628 359.553v-52.556c0-16.8-15.003-30.468-33.444-30.468h-60.068c-.631 0-1.254.041-1.879.073a60.2 60.2 0 0 1 4.04 21.691v61.259a8 8 0 0 1-8 8h107.352a8 8 0 0 1-8-8z" data-color="6"></path>
+        <path fill="#d8ecfe" d="M352.276 359.553v-61.259c0-8.266-2.285-16.05-6.303-22.853a8 8 0 0 1-.597-.959c-9.046-14.509-26.075-24.315-45.565-24.315h-87.622c-19.464 0-36.472 9.791-45.519 24.281q-.278.531-.625 1.005c-4.012 6.8-6.293 14.581-6.293 22.841v61.259a8 8 0 0 1-8 8h32.626l-5.295-14.394a8 8 0 0 1 1.851-8.419l10.725-10.725v-25.459a8 8 0 0 1 16 0v19.43l12.604 4.637 10.551-4.377 6.74-14.596a8 8 0 0 1 7.263-4.646h22.366a8 8 0 0 1 7.263 4.646l6.739 14.594 10.577 4.381 12.578-4.627v-19.44a8 8 0 0 1 16 0v25.431l10.753 10.753a8 8 0 0 1 1.851 8.419l-5.295 14.394h32.627a8 8 0 0 1-8-8z" data-color="1"></path>
+        <path d="m400.962 84.822-4.806-9.13v34.029a8 8 0 0 1 3.539.821l9.27 4.56-1.472-10.248a8 8 0 0 1 2.182-6.714l7.197-7.403-10.19-1.758a8 8 0 0 1-5.719-4.158z" fill="#ffd064" data-color="7"></path>
+        <path d="m120.663 87.771-4.807-9.131-.006.012v34.02a8 8 0 0 1 3.546.821l9.268 4.559-1.469-10.218a8 8 0 0 1 2.178-6.71l7.215-7.434-10.205-1.76a8 8 0 0 1-5.719-4.158z" fill="#ffd064" data-color="7"></path>
+        <path d="m260.813 47.291-4.807-9.132-.006.011v33.992h.014a8 8 0 0 1 3.531.822l9.268 4.559-1.469-10.217a8 8 0 0 1 2.182-6.715l7.197-7.404-10.19-1.757a8 8 0 0 1-5.719-4.157z" fill="#ffd064" data-color="7"></path>
+    </g>
+</svg></span><b>Expert Team Of Legal &amp; Property Professionals</b></div>
+        <div class="why-item"><span class="ic"><svg preserveAspectRatio="xMidYMid meet" data-bbox="25.454 16 461.098 479.998" xmlns="http://www.w3.org/2000/svg" viewBox="25.454 16 461.098 479.998" data-type="color" role="presentation" aria-hidden="true" aria-label="">
+    <g fill-rule="evenodd">
+        <path d="m107.361 330.229 78.475-27.2a55.43 55.43 0 0 1 37.01-.2l117.76 39.439a29.94 29.94 0 0 1 16.459 13.453l84.835-43.949a31.46 31.46 0 0 1 22.854-2.454 29.4 29.4 0 0 1 17.884 13.916c3.868 7.306 5.014 14.783 2.786 22.826A29.96 29.96 0 0 1 471.3 364.2l-142.519 82.262a55.4 55.4 0 0 1-39.362 8.621L184.69 439.955l-5.769 3.365 4.66 7.364a6.37 6.37 0 0 1-2 8.783L125.4 495.02a6.37 6.37 0 0 1-8.784-2L26.432 350.5a6.37 6.37 0 0 1 2-8.784l56.186-35.553a6.37 6.37 0 0 1 8.783 2l13.964 22.067zM318.891 16c-6.756 0-12.08 3.432-17.338 6.82-2.977 1.919-5.927 3.821-8.38 4.4-2.492.584-6.031.144-9.552-.3-5.976-.745-11.918-1.485-17.7 1.35S257.1 36.3 254.07 41.473c-1.737 2.965-3.47 5.924-5.364 7.444s-5.159 2.566-8.419 3.608c-5.7 1.822-11.4 3.645-15.379 8.6s-4.534 10.918-5.087 16.888c-.32 3.454-.641 6.914-1.724 9.122-1.056 2.153-3.58 4.543-6.115 6.945-4.422 4.188-8.875 8.405-10.372 14.79-1.478 6.3.559 12.062 2.617 17.89 1.215 3.44 2.441 6.91 2.441 9.711s-1.226 6.272-2.441 9.71c-2.058 5.83-4.095 11.6-2.617 17.892 1.5 6.384 5.95 10.6 10.372 14.79 2.536 2.4 5.059 4.792 6.115 6.945 1.083 2.206 1.4 5.667 1.724 9.12.553 5.971 1.106 11.929 5.087 16.89a21.9 21.9 0 0 0 9.2 6.442L204.6 270.017a6.377 6.377 0 0 0 6.711 9.649l31.252-6.618 10.18 30.135a6.369 6.369 0 0 0 11.614 1.23l32.572-57.129c1.488.812 3.054 1.821 4.626 2.834 5.258 3.389 10.582 6.821 17.338 6.821s12.081-3.432 17.338-6.821c1.648-1.062 3.288-2.118 4.839-2.948l32.638 57.243a6.368 6.368 0 0 0 11.613-1.23l10.18-30.135 31.253 6.618a6.376 6.376 0 0 0 6.71-9.649L403.9 218.165a21.7 21.7 0 0 0 8.977-6.349c3.981-4.961 4.535-10.919 5.087-16.89.32-3.453.641-6.914 1.724-9.12 1.055-2.153 3.579-4.544 6.116-6.946 4.421-4.187 8.874-8.405 10.372-14.789 1.477-6.3-.56-12.062-2.618-17.892-1.215-3.438-2.441-6.909-2.441-9.71s1.226-6.271 2.441-9.711c2.058-5.828 4.095-11.594 2.618-17.89-1.5-6.386-5.951-10.6-10.372-14.79-2.537-2.4-5.061-4.792-6.116-6.945-1.083-2.208-1.4-5.667-1.724-9.12-.552-5.971-1.106-11.929-5.087-16.89s-9.679-6.776-15.379-8.6c-3.26-1.042-6.521-2.084-8.419-3.608s-3.627-4.479-5.363-7.444c-3.03-5.174-6.069-10.365-11.855-13.2s-11.722-2.1-17.7-1.35c-3.522.439-7.061.879-9.553.3-2.454-.575-5.4-2.476-8.38-4.4-5.256-3.389-10.58-6.821-17.337-6.821" fill="#000000" data-color="1"></path>
+        <path fill="#fbc979" d="M328.146 34.742c-3.681-2.373-7.407-4.774-10.451-4.774s-6.77 2.4-10.45 4.774c-3.909 2.519-7.78 5.015-12.373 6.092-4.729 1.11-9.373.53-13.994-.045-4.14-.515-8.256-1.028-10.56.1-2.325 1.138-4.4 4.68-6.464 8.21-2.34 4-4.674 7.982-8.358 10.938-3.705 2.973-8.132 4.388-12.562 5.8-3.842 1.228-7.686 2.457-9.291 4.456s-1.967 6.015-2.341 10.052c-.429 4.623-.859 9.253-2.972 13.563-2.1 4.278-5.421 7.424-8.761 10.589-3.041 2.879-6.1 5.779-6.728 8.451s.786 6.7 2.219 10.755c1.588 4.494 3.189 9.029 3.189 13.952s-1.6 9.458-3.189 13.952c-1.433 4.056-2.85 8.067-2.219 10.755.627 2.672 3.688 5.572 6.728 8.451 3.34 3.164 6.663 6.31 8.761 10.588 2.113 4.31 2.543 8.941 2.972 13.564.374 4.036.747 8.065 2.341 10.05 2.144 2.671 17.42 6.7 21.853 10.261 3.684 2.956 6.018 6.941 8.358 10.937 2.067 3.529 4.139 7.071 6.464 8.211 2.3 1.13 6.42.618 10.56.1 4.622-.577 9.266-1.155 13.994-.046 4.593 1.077 8.464 3.572 12.373 6.093 3.68 2.372 7.406 4.773 10.45 4.773s6.771-2.4 10.451-4.773c3.909-2.521 7.781-5.016 12.373-6.093 4.728-1.11 9.373-.531 13.993.046 4.141.515 8.255 1.027 10.561-.1 2.324-1.14 4.4-4.682 6.464-8.211 2.34-4 4.674-7.981 8.358-10.937 4.356-3.5 19.722-7.606 21.851-10.261 1.6-1.986 1.969-6.014 2.343-10.052.429-4.621.858-9.252 2.972-13.562 2.1-4.278 5.42-7.424 8.761-10.588 3.04-2.879 6.1-5.779 6.728-8.451.631-2.688-.787-6.7-2.22-10.755-1.587-4.494-3.188-9.029-3.188-13.952s1.6-9.458 3.188-13.952c1.433-4.057 2.85-8.069 2.22-10.755s-3.688-5.572-6.728-8.451c-3.341-3.165-6.664-6.311-8.761-10.589-2.114-4.31-2.543-8.94-2.972-13.562-.374-4.037-.748-8.065-2.343-10.053s-5.448-3.228-9.29-4.456c-4.43-1.415-8.856-2.83-12.561-5.8-3.684-2.956-6.018-6.942-8.358-10.938-2.067-3.53-4.14-7.072-6.464-8.21-2.306-1.132-6.422-.618-10.561-.1-4.622.575-9.265 1.155-13.993.045-4.593-1.077-8.464-3.573-12.373-6.092M317.7 62.505a75.155 75.155 0 1 1-53.143 22.013A74.93 74.93 0 0 1 317.7 62.505" data-color="2"></path>
+        <path d="M361.8 93.551a62.383 62.383 0 1 0 18.27 44.11 62.18 62.18 0 0 0-18.27-44.11m-38.34 2.561 10.749 22.882 25.112 3.156a6.386 6.386 0 0 1 3.3 11.259l-18.17 17.042 4.76 24.865a6.377 6.377 0 0 1-9.333 6.787l-22.178-12.21-22.184 12.207a6.376 6.376 0 0 1-9.332-6.79l4.759-24.862-18.467-17.318a6.374 6.374 0 0 1-.275-9.008c.255-.271 3.869-1.968 3.868-1.972l25.112-3.156 10.75-22.882a6.364 6.364 0 0 1 11.529 0" fill="#f1b24f" data-color="3"></path>
+        <path d="M281.742 247.293c-5.746.711-11.455 1.292-17.014-1.434-5.784-2.837-8.825-8.028-11.854-13.2-1.736-2.966-3.47-5.924-5.364-7.444a11.8 11.8 0 0 0-2.4-1.429l-23.75 41.656 22.905-4.841a6.37 6.37 0 0 1 7.359 4.209l7.491 22.174z" fill="#f1b24f" data-color="3"></path>
+        <path d="M390.5 223.682a12.4 12.4 0 0 0-2.624 1.531c-1.894 1.52-3.627 4.478-5.363 7.444-3.03 5.173-6.069 10.365-11.855 13.2-5.462 2.679-11.069 2.165-16.713 1.472l22.608 39.651 7.49-22.174a6.37 6.37 0 0 1 7.359-4.209l22.906 4.841z" fill="#f1b24f" data-color="3"></path>
+        <path fill="#fbc979" d="m324.186 127.589-6.486-13.818-6.265 13.335a6.38 6.38 0 0 1-5.217 4.126l-15.105 1.9 10.938 10.259a6.38 6.38 0 0 1 2.083 6.014l-2.867 14.978 13.3-7.324a6.37 6.37 0 0 1 6.2-.034l13.363 7.358-2.864-14.983a6.37 6.37 0 0 1 1.892-5.839l11.124-10.433-15.1-1.92a6.36 6.36 0 0 1-4.996-3.619" data-color="2"></path>
+        <path fill="#ffcbc1" d="M234.3 371.65a6.368 6.368 0 1 1 4.042-12.077l86.022 28.808a15.34 15.34 0 0 0 11.936-.9c8.9-4.433 13.7-13.833 9.024-23.228a17.26 17.26 0 0 0-9.959-8.716L217.609 316.1a42.73 42.73 0 0 0-28.826.147l-75.632 26.212 57.755 91.273 7.907-4.614a6.35 6.35 0 0 1 4.3-.916l106.907 15.445a42.96 42.96 0 0 0 30.657-6.691s130.89-75.565 142.811-82.448c4.333-2.8 7.036-5.51 8.46-10.651a17.26 17.26 0 0 0-1.588-13.142 16.75 16.75 0 0 0-10.2-7.929 18.76 18.76 0 0 0-13.622 1.507L359.8 369.238c1.179 12.764-6.291 23.941-17.8 29.676a27.82 27.82 0 0 1-21.669 1.544z" data-color="4"></path>
+        <path fill="#689ff2" d="m39.415 350.276 83.372 131.757 45.42-28.742q-41.685-65.878-83.373-131.755z" data-color="5"></path>
+    </g>
+</svg></span><b>'No Sale, No Fee' Guarantee*</b></div>
+        <div class="why-item"><span class="ic"><svg preserveAspectRatio="xMidYMid meet" data-bbox="0 64.458 512 383.086" xmlns="http://www.w3.org/2000/svg" width="512" viewBox="0 64.458 512 383.086" height="512" data-type="color" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path fill="#fb9927" d="m414.518 108.3 29.543 12.82-21.369 49.239-29.542-12.821z" data-color="1"></path>
+        <path fill="#fee265" d="M504.487 287.997c0 83.964-68.066 152.03-152.03 152.03s-152.03-68.066-152.03-152.03 68.066-152.03 152.03-152.03 152.03 68.066 152.03 152.03" data-color="2"></path>
+        <path fill="#fdd330" d="M504.482 288.002c0 83.954-68.063 152.028-152.028 152.028-5.3 0-10.54-.27-15.701-.81 76.584-7.86 136.317-72.564 136.317-151.218s-59.733-143.367-136.317-151.228c5.16-.54 10.401-.81 15.701-.81 83.965 0 152.028 68.073 152.028 152.038" data-color="3"></path>
+        <path fill="#f8f3f1" d="M475.167 287.997c0 67.77-54.94 122.71-122.71 122.71s-122.71-54.94-122.71-122.71 54.94-122.71 122.71-122.71 122.71 54.94 122.71 122.71" data-color="4"></path>
+        <path fill="#e5e1e5" d="M475.171 288.002c0 67.763-54.943 122.706-122.716 122.706-5.32 0-10.561-.34-15.701-1 60.343-7.71 106.995-59.263 106.995-121.706 0-62.453-46.652-114.006-106.995-121.716 5.14-.66 10.381-1 15.701-1 67.773 0 122.716 54.942 122.716 122.716" data-color="5"></path>
+        <path fill="#fee265" d="m459.378 140.142-72.087-31.29c-5.627-2.443-8.209-8.985-5.767-14.612l6.774-15.606c2.443-5.627 8.985-8.209 14.612-5.767l72.087 31.29c5.627 2.443 8.209 8.985 5.767 14.612l-6.774 15.606c-2.443 5.628-8.985 8.21-14.612 5.767" data-color="2"></path>
+        <path fill="#fdd330" d="m480.762 118.763-6.774 15.607c-2.445 5.632-8.98 8.219-14.612 5.775l-25.067-10.881c5.622 2.44 12.167-.142 14.612-5.775l6.774-15.607c2.44-5.622-.143-12.167-5.765-14.608l25.067 10.881c5.632 2.445 8.205 8.986 5.765 14.608" data-color="3"></path>
+        <path fill="#fb9927" d="M370.116 287.997c0 9.753-7.906 17.659-17.659 17.659s-17.659-7.906-17.659-17.659 7.906-17.659 17.659-17.659 17.659 7.906 17.659 17.659" data-color="1"></path>
+        <path d="M491.718 210.137a7.5 7.5 0 0 0-13.085 7.333C490.649 238.911 497 263.305 497 288.015c0 79.694-64.836 144.529-144.53 144.529-66.412 0-122.497-45.029-139.349-106.157h14.928a130 130 0 0 0 25.85 46.707c20.189 23.369 48.027 38.843 78.385 43.57a7.5 7.5 0 1 0 2.307-14.821c-26.849-4.181-51.475-17.873-69.342-38.555-18.049-20.893-27.99-47.625-27.99-75.273 0-63.527 51.683-115.209 115.209-115.209S467.68 224.488 467.68 288.015a115.12 115.12 0 0 1-28.298 75.626c-18.074 20.749-42.936 34.367-70.007 38.346a7.501 7.501 0 0 0 2.181 14.841c30.609-4.499 58.714-19.888 79.137-43.334a130.12 130.12 0 0 0 31.987-85.479c0-71.798-58.412-130.209-130.209-130.209-46.096 0-86.672 24.079-109.817 60.318h-16.652c24.673-44.469 72.111-74.639 126.469-74.639 40.331 0 77.757 16.206 105.384 45.633a7.5 7.5 0 0 0 10.601.334 7.5 7.5 0 0 0 .334-10.601 159 159 0 0 0-30.611-25.319l5.261-12.12 12.965 5.628a18.6 18.6 0 0 0 7.405 1.549c2.31 0 4.622-.436 6.835-1.309a18.5 18.5 0 0 0 10.238-9.9l6.774-15.606a18.5 18.5 0 0 0 .24-14.24 18.5 18.5 0 0 0-9.9-10.238l-16.994-7.377a7.5 7.5 0 0 0-5.972 13.76l16.995 7.377c1.192.518 1.714 1.466 1.919 1.985s.472 1.568-.046 2.761l-6.774 15.607a3.6 3.6 0 0 1-1.985 1.919 3.6 3.6 0 0 1-2.761-.046l-72.088-31.291c-1.192-.518-1.714-1.466-1.919-1.985s-.471-1.568.047-2.761l6.774-15.606a3.61 3.61 0 0 1 4.746-1.873l21.229 9.214c3.8 1.65 8.217-.094 9.866-3.894s-.094-8.217-3.894-9.866l-21.229-9.214a18.5 18.5 0 0 0-14.24-.24 18.5 18.5 0 0 0-10.239 9.9l-6.774 15.606c-1.979 4.559-2.064 9.616-.24 14.24s5.34 8.259 9.899 10.238l15.82 6.867-5.086 11.716a159 159 0 0 0-41.877-5.838c-.232-.022-316.219-.036-316.219-.036a7.5 7.5 0 0 0 0 15h248.084c-33.037 15.472-59.934 41.938-75.952 74.665H7.5a7.5 7.5 0 0 0 0 15h195.173a158 158 0 0 0-4.906 15.906H48.898a7.5 7.5 0 0 0 0 15h145.845a160.1 160.1 0 0 0-.086 47.357H77.559a7.5 7.5 0 0 0 0 15h120.058c17.224 69.49 80.114 121.157 154.853 121.157 87.965 0 159.53-71.564 159.53-159.529 0-27.272-7.013-54.201-20.282-77.878m-77.821-81.548 15.782 6.85-4.604 10.606a161 161 0 0 0-15.718-7zM207.94 288.015c0-10.101 1.046-19.963 3.028-29.485q.105-.382.17-.779a143 143 0 0 1 7.641-24.627h15.635c-7.791 16.69-12.154 35.289-12.154 54.891 0 7.886.718 15.707 2.116 23.372H209.84a145 145 0 0 1-1.9-23.372" fill="#000000" data-color="6"></path>
+        <path d="M366.841 254.906a30 30 0 0 0 11.99 2.498c11.68 0 22.826-6.809 27.765-18.187 6.635-15.286-.403-33.12-15.689-39.754-7.405-3.215-15.618-3.353-23.126-.389-7.509 2.963-13.414 8.673-16.628 16.078-6.635 15.285.403 33.119 15.688 39.754m-3.806 55.934c8.608-4 14.594-12.724 14.594-22.825 0-13.873-11.286-25.159-25.159-25.159s-25.159 11.286-25.159 25.159c0 12.404 9.025 22.732 20.852 24.782l8.318 63.276a7.5 7.5 0 1 0 14.872-1.956zm-20.723-22.825c0-5.602 4.557-10.159 10.159-10.159s10.159 4.557 10.159 10.159-4.557 10.159-10.159 10.159-10.159-4.558-10.159-10.159m22.601-66.891a15.13 15.13 0 0 1 8.375-8.098 15.2 15.2 0 0 1 5.59-1.071 15.2 15.2 0 0 1 9.555 3.394l-8.356 3.298a7.5 7.5 0 0 0 5.506 13.953l8.357-3.298a15.3 15.3 0 0 1-1.103 3.942c-3.341 7.698-12.324 11.244-20.022 7.902-7.7-3.341-11.244-12.323-7.902-20.022" fill="#000000" data-color="6"></path>
+        <path d="M174.671 185.295a7.5 7.5 0 0 0 0-15H83.928a7.5 7.5 0 0 0 0 15z" fill="#000000" data-color="6"></path>
+        <path d="M184.375 100.793h159.988a7.5 7.5 0 0 0 0-15H184.375a7.5 7.5 0 0 0 0 15" fill="#000000" data-color="6"></path>
+    </g>
+</svg></span><b>Speed Up Transactions &amp; Reduce Fall Through Rates</b></div>
+        <div class="why-item"><span class="ic"><svg preserveAspectRatio="xMidYMid meet" data-bbox="7.007 7.009 495.987 495.983" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 510" stroke-miterlimit="2" stroke-linejoin="round" fill-rule="evenodd" clip-rule="evenodd" data-type="ugc" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path fill="#ffe177" d="M290.247 107.289a151 151 0 0 1 44.249 18.34l28.754-12.756 33.877 33.877-12.756 28.754a151 151 0 0 1 18.339 44.249l29.34 11.293v47.93l-29.34 11.292a151 151 0 0 1-18.339 44.228l12.756 28.754-33.877 33.898-28.754-12.777a151 151 0 0 1-44.249 18.361l-11.293 29.318h-47.93l-11.292-29.339a151 151 0 0 1-44.229-18.34l-28.753 12.777-33.899-33.898 12.778-28.733c-8.428-13.697-14.639-28.628-18.361-44.249L77.95 278.976v-47.93l29.318-11.293a151 151 0 0 1 18.361-44.249l-12.778-28.754 33.899-33.877 28.732 12.756a151.5 151.5 0 0 1 44.25-18.34l11.292-29.339h47.93z"></path>
+        <path fill="#ffd064" d="m353.588 117.16 9.662-4.287 33.877 33.877-12.756 28.754a151 151 0 0 1 18.339 44.249l29.34 11.293v47.93l-29.34 11.292a151 151 0 0 1-18.339 44.228l12.756 28.754-33.877 33.898-9.662-4.287L383.2 363.25l-12.778-28.754a151 151 0 0 0 18.34-44.228l29.339-11.292v-47.93l-29.339-11.293a150.9 150.9 0 0 0-18.34-44.249L383.2 146.75zm-211.125 0 4.287-4.287 28.732 12.756a132 132 0 0 0-6.001 3.534zm147.784-9.871a151 151 0 0 1 44.249 18.34l-7.926 3.534c-13.676-8.427-34.63-18.151-50.272-21.874L265.006 77.95h13.948zM175.503 384.371l-28.753 12.777-4.287-4.287 27.018-12.003a141 141 0 0 0 6.022 3.513m158.993 0a151 151 0 0 1-44.249 18.361l-11.293 29.318h-13.948l11.292-29.318c15.642-3.723 36.596-13.447 50.293-21.874z"></path>
+        <path fill="#eceff1" d="M255 369.093c62.837 0 114.1-51.248 114.1-114.086s-51.263-114.1-114.1-114.1c-62.838 0-114.1 51.262-114.1 114.1S192.162 369.093 255 369.093"></path>
+        <path fill="#d1d1d6" d="M161.194 255.007c0 23.34 7.008 45.036 19.028 63.121a114.6 114.6 0 0 0 16.05 19.189c18.219 17.492 42.233 28.987 68.875 31.332q-5.014.444-10.147.444c-5.539 0-10.997-.39-16.333-1.159a90 90 0 0 1-2.048-.31c-54.281-8.786-95.719-55.87-95.719-112.617 0-63.013 51.087-114.1 114.1-114.1q5.134 0 10.147.445c-58.27 5.134-103.953 54.051-103.953 113.655"></path>
+        <path fill="#8ac9fe" d="M255 266.003c-41.102 0-74.94 31.143-79.225 71.112 20.524 19.796 48.446 31.978 79.225 31.978 5.538 0 10.996-.39 16.332-1.159 24.257-3.476 46.061-14.594 62.879-30.819-4.272-39.983-38.11-71.112-79.211-71.112"></path>
+        <path fill="#60b7ff" d="M244.866 266.65c47.421 6.024 66.53 41.91 70.923 84.911a113.3 113.3 0 0 0 18.422-14.446c-4.272-39.983-38.11-71.112-79.211-71.112-3.437 0-6.819.216-10.134.647"></path>
+        <path fill="#f6dccd" d="M255 259.979c22.194 0 40.292-18.098 40.292-40.279 0-22.195-18.098-40.279-40.292-40.279-22.182 0-40.28 18.084-40.28 40.279 0 22.181 18.098 40.279 40.28 40.279"></path>
+        <path fill="#f1cbbc" d="M285.145 219.7c0 20.537-15.362 37.476-35.212 39.969 1.657.203 3.355.31 5.067.31 22.248 0 40.279-18.03 40.279-40.279S277.248 179.421 255 179.421c-1.712 0-3.41.108-5.067.31 19.85 2.493 35.212 19.432 35.212 39.969"></path>
+        <path d="M296.242 100.596a158.6 158.6 0 0 1 38.798 16.078l24.959-11.097a8 8 0 0 1 8.907 1.653l33.864 33.864a8 8 0 0 1 1.657 8.897l-11.057 24.962a158.3 158.3 0 0 1 16.086 38.857l25.455 9.797a8 8 0 0 1 5.127 7.466v47.902a8 8 0 0 1-5.127 7.466l-25.459 9.798c-3.622 13.588-9.051 26.619-16.086 38.798l11.061 24.972a8 8 0 0 1-1.657 8.897l-33.864 33.864a8 8 0 0 1-8.897 1.658l-24.956-11.055a158 158 0 0 1-38.814 16.08l-9.798 25.459a8 8 0 0 1-7.466 5.126h-47.902a8 8 0 0 1-7.466-5.126l-9.797-25.457c-13.627-3.622-26.664-9.052-38.847-16.089l-24.972 11.062a8 8 0 0 1-8.897-1.658l-33.864-33.864a8 8 0 0 1-1.653-8.907l11.095-24.952c-7.062-12.15-12.463-25.211-16.113-38.803l-25.471-9.803a8 8 0 0 1-5.126-7.466v-47.902a8 8 0 0 1 5.126-7.466l25.468-9.801a159.7 159.7 0 0 1 16.118-38.846l-11.097-24.959a8 8 0 0 1 1.653-8.907l33.864-33.864a8 8 0 0 1 8.907-1.653s24.959 11.097 24.958 11.098a158.6 158.6 0 0 1 38.806-16.081l9.845-25.512a8 8 0 0 1 7.463-5.12h47.902a8 8 0 0 1 7.467 5.13zm-13.447 9.613-9.317-24.247h-36.917L227.2 110.22a8 8 0 0 1-5.613 4.903 142.6 142.6 0 0 0-41.889 17.358 8 8 0 0 1-7.447.499l-23.729-10.55-26.093 26.092 10.551 23.729a8 8 0 0 1-.499 7.447c-7.998 12.98-13.846 27.102-17.411 41.954a8 8 0 0 1-4.905 5.599l-24.203 9.315v36.916l24.203 9.315a8 8 0 0 1 4.904 5.594c3.564 14.804 9.409 28.969 17.405 41.9a8 8 0 0 1 .506 7.458l-10.551 23.729 26.099 26.098 23.733-10.513a8 8 0 0 1 7.42.493c12.978 7.952 27.097 13.85 41.948 17.368a8 8 0 0 1 5.622 4.911l9.315 24.203h36.916l9.315-24.203a8 8 0 0 1 5.616-4.909c14.796-3.517 28.954-9.361 41.878-17.352a8 8 0 0 1 7.447-.511l23.734 10.513 26.104-26.104-10.513-23.734a8 8 0 0 1 .493-7.419c7.952-12.979 13.85-27.099 17.369-41.906a8 8 0 0 1 4.91-5.616l24.203-9.315v-36.916l-24.203-9.315a8 8 0 0 1-4.911-5.621 142.4 142.4 0 0 0-17.357-41.932 8 8 0 0 1-.504-7.436l10.513-23.734-26.098-26.098-23.73 10.55a8 8 0 0 1-7.447-.499 142.6 142.6 0 0 0-41.888-17.358 8 8 0 0 1-5.618-4.914M255 132.924c67.428 0 122.076 54.648 122.076 122.076S322.428 377.076 255 377.076 132.923 322.428 132.923 255 187.572 132.924 255 132.924m83.819 187.1c13.951-17.958 22.257-40.52 22.257-65.024 0-58.59-47.486-106.076-106.076-106.076-58.591 0-106.077 47.486-106.077 106.076 0 24.504 8.306 47.066 22.257 65.024 8.023-26.249 28.031-47.269 53.638-56.67-11.023-8.868-18.105-22.458-18.105-37.628 0-26.566 21.721-48.287 48.287-48.287s48.287 21.721 48.287 48.287c0 15.17-7.083 28.76-18.106 37.628 25.608 9.401 45.615 30.421 53.638 56.67m-154.523 14.059c18.765 16.787 43.541 26.993 70.704 26.993s51.939-10.206 70.703-26.993c-5.537-34.062-35.094-60.07-70.703-60.07s-65.166 26.008-70.704 60.07M255 258.013c17.763 0 32.287-14.524 32.287-32.287S272.763 193.439 255 193.439c-17.764 0-32.287 14.524-32.287 32.287s14.523 32.287 32.287 32.287M148.185 461.172c75.315 38.958 167.969 33.78 238.582-14.998a8.004 8.004 0 0 1 11.13 2.035 8.004 8.004 0 0 1-2.036 11.129c-75.634 52.248-174.925 57.701-255.522 15.787l5.161 9.238a8.003 8.003 0 0 1-3.083 10.885 8 8 0 0 1-10.885-3.082l-19.838-35.508a8 8 0 0 1 7.096-11.901l40.671.573a8.003 8.003 0 0 1 7.886 8.112 8.003 8.003 0 0 1-8.112 7.886zm312.451-98.326c39.602-75.563 34.468-168.76-14.469-239.616-2.509-3.633-1.597-8.62 2.036-11.129s8.62-1.597 11.129 2.036c51.982 75.266 57.73 174.111 16.267 254.612l8.267-4.817c3.815-2.223 8.717-.93 10.94 2.885s.93 8.717-2.885 10.939l-35.144 20.477a8 8 0 0 1-12.027-6.881l-.162-40.674a8.004 8.004 0 0 1 7.968-8.032 8.003 8.003 0 0 1 8.031 7.968zM368.423 34.237l-4.689-7.935c-2.246-3.801-.984-8.711 2.817-10.957s8.711-.984 10.957 2.817l20.694 35.016a8 8 0 0 1-6.806 12.07l-40.673.413c-4.415.045-8.036-3.503-8.081-7.918s3.503-8.036 7.918-8.081l12.606-.128C287.58 9.775 194.222 14.797 123.225 63.831c-3.633 2.509-8.62 1.597-11.129-2.036s-1.597-8.62 2.036-11.129C189.339-1.276 288.017-7.017 368.423 34.237M35.153 139.805l-9.819 5.34a8.004 8.004 0 0 1-10.85-3.205 8.004 8.004 0 0 1 3.205-10.85l35.731-19.434a8 8 0 0 1 11.82 7.231l-1.036 40.662a8.004 8.004 0 0 1-8.201 7.794 8.005 8.005 0 0 1-7.794-8.201l.262-10.265C9.9 224.06 15.194 316.375 63.825 386.774c2.509 3.632 1.597 8.619-2.035 11.129a8.004 8.004 0 0 1-11.129-2.036C-1.704 320.064-7.065 220.49 35.153 139.805"></path>
+    </g>
+</svg></span><b>Caring &amp; Dedicated Sales Progressors</b></div>
+        <div class="why-item"><span class="ic"><svg preserveAspectRatio="xMidYMid meet" data-bbox="2.007 7 59.993 49.999" xmlns="http://www.w3.org/2000/svg" width="512" viewBox="2.007 7 59.993 49.999" height="512" data-type="color" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path fill="#f5f5f5" d="M61 10v37a2 2 0 0 1-2 2H9a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h50a2 2 0 0 1 2 2" data-color="1"></path>
+        <path fill="#fbc02d" d="M15 32A12 12 0 0 0 4.434 49.69L15 44z" data-color="2"></path>
+        <path fill="#7cb342" d="M15 32v12h12a12 12 0 0 0-12-12" data-color="3"></path>
+        <path fill="#f44336" d="M4.434 49.69A12 12 0 0 0 27 44H15z" data-color="4"></path>
+        <path fill="#f44336" d="M37 32h2a1 1 0 0 1 1 1v12h-4V33a1 1 0 0 1 1-1" data-color="4"></path>
+        <path fill="#fbc02d" d="M44 29h2a1 1 0 0 1 1 1v15h-4V30a1 1 0 0 1 1-1" data-color="2"></path>
+        <path fill="#7cb342" d="M51 35h2a1 1 0 0 1 1 1v9h-4v-9a1 1 0 0 1 1-1" data-color="3"></path>
+        <path fill="#f44336" d="M9 26.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" data-color="4"></path>
+        <path fill="#fbc02d" d="M19 17.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" data-color="2"></path>
+        <path fill="#1976d2" d="M39 16.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" data-color="5"></path>
+        <path fill="#7cb342" d="M28 25.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0" data-color="3"></path>
+        <path d="M57 44h-2v-8a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v8h-1V30a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v14h-1V33a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v11a1 1 0 0 1-1-1V27a1 1 0 0 0-2 0v16a3.003 3.003 0 0 0 3 3h22a1 1 0 0 0 0-2m-20 0-.001-11H39v11zm7 0-.001-14H46v14zm7 0-.001-8H53v8zm-5-30a1 1 0 0 1 1-1h9a1 1 0 0 1 0 2h-9a1 1 0 0 1-1-1m-3 0a1 1 0 1 1 1 1 1 1 0 0 1-1-1m3 4a1 1 0 0 1 1-1h9a1 1 0 0 1 0 2h-9a1 1 0 0 1-1-1m0 4a1 1 0 0 1 1-1h9a1 1 0 0 1 0 2h-9a1 1 0 0 1-1-1m-3-4a1 1 0 1 1 1 1 1 1 0 0 1-1-1m0 4a1 1 0 1 1 1 1 1 1 0 0 1-1-1M59 7H9a3.003 3.003 0 0 0-3 3v13.05a3.483 3.483 0 0 0 0 6.9v4.69A12.989 12.989 0 1 0 26.521 50H59a3.003 3.003 0 0 0 3-3V10a3.003 3.003 0 0 0-3-3M5 26.5A1.5 1.5 0 1 1 6.5 28 1.5 1.5 0 0 1 5 26.5m9 6.55v10.352l-9.118 4.91A10.99 10.99 0 0 1 14 33.05m2 0A11.01 11.01 0 0 1 25.95 43H16zM15 55a11 11 0 0 1-9.164-4.93L15.253 45h10.696A11.01 11.01 0 0 1 15 55m45-8a1 1 0 0 1-1 1H27.364A12.98 12.98 0 0 0 8 33.063v-3.414a3.5 3.5 0 0 0 2-3.149 3.46 3.46 0 0 0-.357-1.511l5.06-4.498a3.5 3.5 0 0 0 3.14.238l4.407 3.48a3.498 3.498 0 1 0 6.469-.072l5.78-4.775a3.489 3.489 0 1 0-1.247-1.563l-5.805 4.796a3.5 3.5 0 0 0-3.953.047l-4.072-3.215a3.499 3.499 0 1 0-6.063-.417l-5.064 4.501a4 4 0 0 0-.295-.16V10a1 1 0 0 1 1-1h50a1 1 0 0 1 1 1zM17.56 18.56a1.5 1.5 0 1 1 0-2.12 1.5 1.5 0 0 1 0 2.12m9 8a1.5 1.5 0 1 1 0-2.12 1.5 1.5 0 0 1 0 2.12m8.88-11.12a1.5 1.5 0 1 1 0 2.12 1.5 1.5 0 0 1 0-2.12" fill="#000000" data-color="6"></path>
+    </g>
+</svg></span><b>24/7 Online Portal Access (Transparency in Real Time)</b></div>
+        <div class="why-item"><span class="ic"><svg preserveAspectRatio="xMidYMid meet" data-bbox="0 2.393 511.998 507.211" xmlns="http://www.w3.org/2000/svg" width="512" viewBox="0 2.393 511.998 507.211" height="512" data-type="color" role="presentation" aria-hidden="true" aria-label="">
+    <g>
+        <path fill="#8ac9fe" d="M425.858 69.468 314.752 58.073a16 16 0 0 0-12.952 4.605L12.188 352.289c-6.251 6.251-6.251 16.386 0 22.637L134.69 497.428c6.251 6.251 16.386 6.251 22.637 0l289.612-289.612a16 16 0 0 0 4.605-12.952L440.149 83.758a16.01 16.01 0 0 0-14.291-14.29" data-color="1"></path>
+        <path fill="#60b7ff" d="m446.941 207.813-289.61 289.62c-6.25 6.25-16.39 6.25-22.64 0l-14.63-14.63c6.1 6.07 15.97 6.06 22.06-.02l282.42-282.43c3.32-3.32 4.97-7.96 4.49-12.63l-11.11-108.35c-.49-4.78-3.12-8.92-6.92-11.42l14.86 1.52c7.55.77 13.51 6.74 14.29 14.29l11.39 111.1c.49 4.79-1.2 9.55-4.6 12.95" data-color="2"></path>
+        <path fill="#d8ecfe" d="M407.465 128.669c0 12.523-10.151 22.674-22.674 22.674s-22.674-10.151-22.674-22.674 10.151-22.674 22.674-22.674 22.674 10.151 22.674 22.674" data-color="3"></path>
+        <path fill="#b3dafe" d="M400.821 144.703c-8.85 8.85-23.21 8.85-32.06 0-2.2-2.2-3.85-4.73-4.96-7.44 7.99 2.83 17.24 1.06 23.64-5.34 6.65-6.65 8.31-16.42 4.95-24.62 3.08 1.09 5.97 2.87 8.43 5.33 8.86 8.86 8.86 23.21 0 32.07" data-color="4"></path>
+        <path d="M355.482 288.667 152.025 492.124c-3.317 3.316-8.714 3.316-12.031 0l-87.17-87.17a7.5 7.5 0 0 0-10.607 10.607l87.17 87.17c4.583 4.582 10.602 6.873 16.622 6.873s12.04-2.292 16.623-6.873L366.09 299.275a7.5 7.5 0 0 0-10.608-10.608" fill="#000000" data-color="5"></path>
+        <path d="M136.153 370.425a24.8 24.8 0 0 0-7.057-14.199h-.001c-9.724-9.722-25.549-9.724-35.274.001l-15.568 15.568a7.504 7.504 0 0 0-.001 10.608l53.601 53.601a7.5 7.5 0 0 0 5.304 2.197h.017a7.5 7.5 0 0 0 5.311-2.221c.001-.001 14.254-14.382 18.202-18.329 10.879-10.88 10.879-28.582 0-39.462-5.271-5.271-12.278-8.173-19.731-8.173-1.629 0-3.233.138-4.803.409m-27.917 20.749-14.075-14.075 10.266-10.266c3.877-3.877 10.187-3.877 14.062 0 3.877 3.876 3.877 10.184.001 14.06-1.149 1.148-10.254 10.281-10.254 10.281m41.842 15.87c-2.371 2.37-8.451 8.496-12.945 13.027l-18.272-18.273c1.47-1.482 12.969-13.003 12.969-13.003a12.8 12.8 0 0 1 9.124-3.779 12.82 12.82 0 0 1 9.124 3.78c5.03 5.031 5.03 13.217 0 18.248" fill="#000000" data-color="5"></path>
+        <path d="M168.542 319.559a7.504 7.504 0 0 0-10.313 2.48c-1.904 3.11-3.465 7.299-4.334 11.892a7.5 7.5 0 0 0-9.908 11.224l40.235 40.235c1.465 1.464 3.385 2.196 5.304 2.196s3.839-.732 5.304-2.196a7.5 7.5 0 0 0 0-10.607l-23.977-23.977c-3.967-3.966-3.257-15.341.169-20.936a7.497 7.497 0 0 0-2.48-10.311" fill="#000000" data-color="5"></path>
+        <path d="M260.905 242.863c5.75.003 11.657 5.32 15.592 9.48q.072.076.145.149l20.048 20.048a7.5 7.5 0 0 0 10.607-10.607l-19.977-19.976c-8.91-9.394-17.728-14.217-26.206-14.334l-.313-.002c-6.28 0-12.219 2.622-17.192 7.595-3.69 3.69-6.113 8.159-7.151 13.051a7.5 7.5 0 0 0-8.268 12.194l40.481 40.481c2.771 2.771 7.699 2.907 10.607 0a7.5 7.5 0 0 0 0-10.607l-19.539-19.539c-5.099-5.099-8.123-10.355-8.744-15.203-.494-3.852.59-7.14 3.22-9.77 2.115-2.113 4.39-2.962 6.69-2.96" fill="#000000" data-color="5"></path>
+        <path d="M181.92 313.926c0 8.806 3.429 17.084 9.655 23.31 6.227 6.227 14.505 9.656 23.311 9.656s17.084-3.429 23.311-9.656a32.77 32.77 0 0 0 8.928-16.477l.866.866c1.465 1.464 3.385 2.196 5.304 2.196s3.839-.732 5.304-2.196a7.5 7.5 0 0 0 0-10.607l-40.803-40.803a7.5 7.5 0 0 0-10.607 10.607l.847.847c-6.192 1.302-11.881 4.368-16.46 8.947-6.227 6.226-9.656 14.505-9.656 23.31m20.263-12.704c3.393-3.393 7.904-5.262 12.703-5.262s9.311 1.869 12.703 5.263l.074.074c6.929 7.011 6.905 18.353-.074 25.332-3.393 3.394-7.904 5.263-12.703 5.263s-9.311-1.869-12.703-5.263c-7.005-7.004-7.005-18.402 0-25.407" fill="#000000" data-color="5"></path>
+        <path d="M307.545 142.075a7.5 7.5 0 0 0-10.607 10.607l19.232 19.232a35.76 35.76 0 0 0-19.589 10.04c-14.016 14.017-14.016 36.825.001 50.843 7.009 7.008 16.215 10.512 25.421 10.512s18.413-3.504 25.422-10.513a35.76 35.76 0 0 0 10.046-19.631 7.48 7.48 0 0 0 4.768 1.71 7.5 7.5 0 0 0 5.304-12.803zm29.273 80.115c-8.17 8.168-21.462 8.167-29.63.001-8.169-8.169-8.169-21.462-.001-29.63 4.085-4.084 9.45-6.126 14.815-6.126 5.3 0 10.599 1.993 14.664 5.977l.302.302c8.018 8.181 7.967 21.359-.15 29.476" fill="#000000" data-color="5"></path>
+        <path d="M497.428 16.963C485.356 4.893 467.712.085 447.747 3.43c-19.037 3.187-38.084 13.505-53.634 29.054-7.41 7.41-13.611 15.564-18.483 24.293l-60.114-6.166a23.43 23.43 0 0 0-19.021 6.762L6.885 346.986C2.445 351.426 0 357.329 0 363.608s2.445 12.182 6.885 16.622l10.888 10.888c1.465 1.464 3.385 2.196 5.304 2.196s3.839-.732 5.304-2.196a7.5 7.5 0 0 0 0-10.607l-10.888-10.888C15.885 368.016 15 365.88 15 363.608s.885-4.408 2.492-6.015l289.61-289.612a8.47 8.47 0 0 1 6.884-2.447l65.008 6.667q.156.02.312.032l45.786 4.696c3.991.409 7.186 3.604 7.595 7.595l4.823 47.024c-8.014 2.852-15.96 4.168-23.313 3.849 2.221-9.781-.468-20.462-8.07-28.064-11.764-11.764-30.907-11.764-42.673 0-11.765 11.766-11.765 30.907.001 42.673 5.882 5.882 13.609 8.822 21.336 8.822s15.454-2.94 21.336-8.822h.001q.187-.187.369-.377c3.122.491 6.355.739 9.682.739 3.912 0 7.955-.343 12.096-1.036a84 84 0 0 0 10.796-2.566l5.012 48.865a8.47 8.47 0 0 1-2.447 6.883l-61.824 61.823a7.5 7.5 0 0 0 10.607 10.607l61.824-61.823a23.42 23.42 0 0 0 6.762-19.021l-5.454-53.175c10.125-5.075 19.774-12.064 28.356-20.647 15.55-15.549 25.868-34.596 29.055-53.633 3.343-19.967-1.464-37.61-13.534-49.682m-97.879 115.218c-3.859-1.671-7.35-3.993-10.348-6.991a7.5 7.5 0 0 0-10.607 10.607 47.6 47.6 0 0 0 9.888 7.585c-5.002 1.246-10.519-.081-14.42-3.984-5.917-5.916-5.917-15.542-.001-21.458 2.959-2.958 6.844-4.438 10.73-4.438s7.772 1.479 10.729 4.438c3.857 3.856 5.2 9.287 4.029 14.241m96.619-68.013c-2.676 15.983-11.507 32.143-24.867 45.502-6.073 6.073-12.65 11.129-19.406 15.109l-4.286-41.787c-1.132-11.028-9.957-19.854-20.985-20.985l-34.485-3.537c3.572-5.431 7.78-10.578 12.581-15.38 26.914-26.914 63.746-33.877 82.101-15.52 8.547 8.548 11.867 21.546 9.347 36.598" fill="#000000" data-color="5"></path>
+    </g>
+</svg></span><b>White Label Solutions With Your Own Branding</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WE GET IT (navy) -->
+  <section class="band navy">
+    <div class="wrap narrow">
+      <h2 class="center" style="margin-bottom:1.4rem">Dedicated sales progressors that ensure your sales are constantly moving forward!</h2>
+      <p>We get it. You want to ensure every client is treated professionally and with exceptional customer service, but you simply don't have time to achieve that if you want to sell more homes.</p>
+      <ul class="tick">
+        <li>You want to close more deals, but sales progression is taking up your time</li>
+        <li>You love the buzz of listing and closing deals, not sitting in the office chasing paperwork</li>
+        <li>You're trying to grow your business, but that won't happen unless you outsource some of your workload</li>
+        <li>You're worried that outsourcing may risk your pipeline and your relationships.</li>
+      </ul>
+      <p>Trusting someone else with your sales progression is a big step. How can you be sure they will do a good job, be reliable and prioritise your pipeline?</p>
+      <p style="margin-bottom:0">Momentum isn't a call centre; we don't treat you or your customers like a conveyor belt of deals. You'll work directly with an experienced member of our highly trained team dedicated solely to you and your clients. Acting as an extension of your team, your clients will receive seamless communication and transparency, ensuring 100% satisfaction.</p>
+    </div>
+  </section>
+
+  <!-- UNSURE (white) -->
+  <section class="band">
+    <div class="wrap narrow">
+      <h2 class="center" style="margin-bottom:1.4rem">Unsure about outsourcing your sales progression?</h2>
+      <p>We understand. Your main concern is that you need to ensure that every sale completes. Ideally, it should complete quickly and without issues.</p>
+      <p>You're worried that if you outsource, the deal may fall through due to a lack of diligence, speed or expertise.</p>
+      <p>Time is money and neither must be wasted. Every day counts in sales progression, and deadlines must be met, or it jeopardises the whole process.</p>
+      <p>You pride yourself on being bespoke and want full control of your sales progression to ensure transparency and high levels of customer service.</p>
+      <p>You're highly proactive and concerned that if you're not involved, something may be missed or misunderstood, hindering the sales progress or, worse, the sale itself.</p>
+      <p>You're anxious that if you outsource, progress may be slower because no one is more invested in completing the sale than you and your client.</p>
+      <p>You don't want your clients pushed from pillar to post with the modus operandi of call centre operatives, frustrated because they can't get the answer they need quickly.</p>
+      <p style="margin-bottom:0">There are lots of companies making bold claims. So how can you know who to trust?</p>
+    </div>
+  </section>
+
+  <!-- WHAT COULD I GAIN (navy) -->
+  <section class="band navy">
+    <div class="wrap narrow">
+      <p>These are all valid concerns. Concerns that we, at Momentum, take seriously too.</p>
+      <p>But have you asked yourself, what could I gain from outsourcing my sales progression to a company that shares my concerns and values?</p>
+      <ul class="tick">
+        <li>More time to focus on growing your business</li>
+        <li>More time to list new properties and close deals</li>
+        <li>Peace of mind that you've got a dedicated person to do your sales progression</li>
+        <li>A reliable solution that ensures your sales are moving forward every day</li>
+        <li>Regular updates on how fast the sale is moving</li>
+        <li>Confidence that your sales will complete on time</li>
+        <li>Better service for your clients because you have a dedicated sales progressor managing every inch of your pipeline</li>
+        <li>Positive feedback resulting from your associates and clients on how great the communication and service levels are</li>
+        <li>More time to meet and explore new business opportunities and grow your top line revenue</li>
+      </ul>
+      <p style="margin-bottom:0">With exceptional staff and in-house legal expertise, we are the reliable and trusted outsource solution. But don't just take our word for it...</p>
+    </div>
+  </section>
+
+  <!-- REVIEWS (grey carousel) -->
+  <section class="band greybg reviews" id="testimonials">
+    <div class="wrap center" style="margin-bottom:14px"><h2>What Our Clients Say</h2></div>
+    <div class="tcarousel">
+      <button class="t-arrow prev" aria-label="Previous testimonial"><svg width="48" height="20" viewBox="0 0 48 20" fill="none"><path d="M47 10H2m0 0 8-7m-8 7 8 7" stroke="#2b3a47" stroke-width="1.3" stroke-linecap="round"/></svg></button>
+      <div class="t-viewport">
+        <div class="t-track" id="tTrack">
+          <div class="tslide"><div class="t-img"><img src="images/40eeecd4feef.jpg" alt="Client testimonial"></div>
+        <div class="t-text">
+          <p>"I just wanted to send an email to say how <strong>brilliant</strong> Rachel is. ...<strong>She has been nothing short of amazing</strong> in chasing with me, particularly for <em>[confidential client address]</em>.</p>
+          <p><strong>All of the help she has given has been a huge part of getting these files exchanged.</strong> With the SDLT deadline, pressure has been massive and without her chasing the other parties in the chain we may not have achieved the desired timescales.</p>
+          <p>I know any future files that I have with Rachel will be the same and <strong>it's such a relief to work with someone who's very supportive and kind and really does go above and beyond!</strong></p>
+          <hr class="q-div">
+          <p class="q-by">-Sent by a Partner of a leading Hertfordshire based law firm to one of our estate agency clients.</p>
+        </div>
+          </div>
+          <div class="tslide">
+        <div class="t-text">
+          <p>"Jo has been fantastic! The updates she's shared with both us and our clients have been clear, consistent, and timely. She's maintained constant communication with us and the solicitors involved, which has made a real difference.</p>
+          <p>We've used a progression company before, and I can confidently say the experience this time around has been completely different – in the best possible way!<br>Thank you again for your continued support."</p>
+          <hr class="q-div">
+          <p class="q-by">-Sacha C. Northwood UK, Estate Agents</p>
+        </div><div class="t-img"><img src="images/3b79bfb6f4aa.jpg" alt="Client testimonial"></div>
+          </div>
+          <div class="tslide"><div class="t-img"><img src="images/7f8848db5b89.jpg" alt="Client testimonial"></div>
+        <div class="t-text navy">
+          <h3>Client Testimonial</h3>
+          <p>"Very responsive, very proactive"</p>
+          <p>"We're getting great feedback from our clients"</p>
+          <p>"I would definitely recommend the Momentum team"</p>
+          <p>"Super impressed and highly recommend"</p>
+          <hr class="q-div">
+          <p class="q-by">-Mario Panayiotou, Managing Director<br>&nbsp;Christopher Stokes Estate Agent, Hertfordshire</p>
+        </div>
+          </div>
+        </div>
+      </div>
+      <button class="t-arrow next" aria-label="Next testimonial"><svg width="48" height="20" viewBox="0 0 48 20" fill="none"><path d="M1 10h45m0 0-8-7m8 7-8 7" stroke="#2b3a47" stroke-width="1.3" stroke-linecap="round"/></svg></button>
+      <div class="t-dots">
+        <button class="t-dot active" aria-label="Go to testimonial 1"></button>
+        <button class="t-dot" aria-label="Go to testimonial 2"></button>
+        <button class="t-dot" aria-label="Go to testimonial 3"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (building banner) -->
+  <section class="contact" id="contact">
+    <div class="contact-bg" style="background-image:url('images/85291d6772d0.jpg')"></div>
+    <div class="wrap">
+      <div class="contact-card">
+        <h2>Contact us to learn more about our tailored service</h2>
+        <label class="c-label" for="cemail">Enter your email here *</label>
+        <form class="signup2" method="POST" data-form="newsletter"><input type="hidden" name="_subject" value="New newsletter sign up from the website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="" data-next="newsletter"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <input id="cemail" type="email" name="email" required autocomplete="email" aria-label="Enter your email here">
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+(function(){
+  var track=document.getElementById('tTrack'); if(!track) return;
+  var n=track.children.length, dots=[].slice.call(document.querySelectorAll('.t-dot')), i=0, timer;
+  function go(k){ i=(k+n)%n; track.style.transform='translateX(-'+(i*100)+'%)'; dots.forEach(function(d,x){d.classList.toggle('active',x===i);}); }
+  function start(){ timer=setInterval(function(){go(i+1);},7000); }
+  function reset(){ clearInterval(timer); start(); }
+  document.querySelector('.t-arrow.prev').addEventListener('click',function(){go(i-1);reset();});
+  document.querySelector('.t-arrow.next').addEventListener('click',function(){go(i+1);reset();});
+  dots.forEach(function(d,x){ d.addEventListener('click',function(){go(x);reset();}); });
+  var car=document.querySelector('.tcarousel');
+  car.addEventListener('mouseenter',function(){clearInterval(timer);});
+  car.addEventListener('mouseleave',start);
+  go(0); start();
+})();
+</script>
+
+<footer class="site">
+  <div class="wrap">
+    <div>
+      <img class="flogo" src="images/1778f851d40d.png" alt="Momentum Sales Progression">
+      <p>Momentum Sales Progression Ltd.</p>
+      <p>The Residence, New Mead Barn, Wickham Hall,<br>Hadham Road, Bishop's Stortford,<br>Hertfordshire CM23 1JG</p>
+      <div class="social">
+        <a href="https://www.facebook.com/profile.php?id=61569226383040" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M24 12a12 12 0 1 0-13.88 11.85v-8.38H7.08V12h3.04V9.36c0-3 1.79-4.67 4.53-4.67 1.31 0 2.68.24 2.68.24v2.95h-1.51c-1.49 0-1.96.93-1.96 1.87V12h3.33l-.53 3.47h-2.8v8.38A12 12 0 0 0 24 12Z"/></svg></a>
+        <a href="https://www.linkedin.com/company/momentum-sales-progression/" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="#fff"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.25 8.25h4.5V24h-4.5V8.25ZM8.5 8.25h4.31v2.15h.06c.6-1.14 2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.9V24h-4.5v-6.9c0-1.65-.03-3.77-2.3-3.77-2.3 0-2.65 1.8-2.65 3.65V24H8.5V8.25Z"/></svg></a>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <p><a href="about">About</a></p>
+      <p><a href="estate-agents">Estate Agents</a></p>
+      <p><a href="about-5">Discovery Meeting</a></p>
+      <p><a href="news">News</a></p>
+      <p><a href="careers">Careers</a></p>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <p><a href="tel:01279905805">01279 905 805</a></p>
+      <p><a href="mailto:info@momentumsp.co.uk">info@momentumsp.co.uk</a></p>
+      <p><a href="https://portal.momentumsp.co.uk">Client Portal</a></p>
+    </div>
+  </div>
+  <div class="fbar"><div class="wrap">© 2026 Momentum Sales Progression Ltd. Company no. 16099402. &nbsp;|&nbsp; <a href="privacy-policy">Privacy Policy</a> &nbsp;|&nbsp; <a href="cookie-policy">Cookie Policy</a> &nbsp;|&nbsp; <a href="#" data-cookie-settings>Cookie settings</a></div></div>
+</footer>
+
+<a class="wa" hidden data-whatsapp style="right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px))" href="#" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="#fff"><path d="M17.5 14.4c-.3-.15-1.7-.84-1.97-.93-.26-.1-.46-.15-.65.15-.19.29-.74.93-.9 1.12-.17.19-.33.22-.62.07-.29-.14-1.23-.45-2.34-1.44-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.14-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.9-2.15-.24-.57-.48-.49-.65-.5h-.56c-.19 0-.51.07-.77.36-.26.29-1.01.99-1.01 2.42s1.04 2.81 1.18 3c.14.19 2.03 3.1 4.92 4.35.69.3 1.22.47 1.64.6.69.22 1.31.19 1.81.11.55-.08 1.7-.69 1.94-1.36.24-.67.24-1.24.17-1.36-.07-.12-.26-.19-.55-.34ZM12 2a10 10 0 0 0-8.6 15.07L2 22l5.05-1.32A10 10 0 1 0 12 2Z"/></svg></a>
+
+<script>
+(function(){
+  var h=document.querySelector('header.site'), b=h&&h.querySelector('.menu-toggle'); if(!b) return;
+  b.addEventListener('click',function(){ var o=h.classList.toggle('open'); b.setAttribute('aria-expanded',o?'true':'false'); b.setAttribute('aria-label',o?'Close menu':'Open menu'); });
+})();
+</script>
+</body>
+</html>
