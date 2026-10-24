@@ -175,3 +175,27 @@
 }
 @media (min-width:1081px) and (max-width:1200px){nav.primary{gap:15px}nav.primary a{font-size:.93rem}}
 .f-hero .f-title{color:var(--navy-deep);font-weight:800;font-size:clamp(2rem,4.2vw,3rem);line-height:1.12;margin:0 0 18px;max-width:820px}
+
+/* ---- Blend with the main site's type and styling ---- */
+:root{--mist:var(--grey);--coral:#EA6A4C}
+.eyebrow{font-family:"Nunito",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:0;text-transform:none;color:var(--navy);margin:0 0 8px}
+.grad-rule{width:96px!important;background:linear-gradient(90deg,#EA6A4C,#8BD27D)}
+.f-hero .f-title,.f-split h2,.teaser h2{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.7rem,3.2vw,2.4rem);line-height:1.18;color:var(--navy-deep);letter-spacing:0}
+.teaser h2{font-weight:400}
+.f-hero .lede,.f-split p,.teaser .head-c p,.t-card p,.benefit p,.next p,.bigstat p span{color:var(--ink)}
+.f-hero .lede{font-size:1.06rem}
+.viewer-head h3,.t-card h3,.jump a,.benefit b{font-weight:700}
+.t-card h3{font-size:1.25rem}
+.bigstat p{font-weight:700}
+.bigstat .n{font-weight:700;color:#EA6A4C;font-size:clamp(3.5rem,8vw,5.5rem)}
+.ticks li{color:var(--ink)}
+.ticks li::before{background-color:var(--green);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m7 12.5 3.2 3.2L17 9' fill='none' stroke='%23072136' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+.stand .lab,.next .lab,.contact-card .lab,.steps-lab,.league th,.grid4 th,.head .lab{letter-spacing:.05em;font-weight:700}
+.tabs button{font-weight:700}
+.tabs button[aria-selected="true"]{background:var(--navy)}
+.card,.t-card,.bigstat,.benefit,.jump a,.head{border-radius:10px}
+.card,.t-card{box-shadow:0 12px 30px -24px rgba(7,33,54,.35)}
+.league .rk{background:var(--navy)}
+.head.opp .lab,.head.opp .v{color:#EA6A4C}
+.t-card .more::after{color:#EA6A4C}
+.jump .arrow{color:var(--navy)}
