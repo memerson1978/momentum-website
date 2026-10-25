@@ -47,6 +47,8 @@ window.MSP = {
       ad_user_data: "granted", ad_personalization: "granted"
     });
     if (store) try { localStorage.setItem("msp-consent", "granted"); } catch (e) {}
+    M.granted = true;
+    try { window.dispatchEvent(new Event("msp:consent")); } catch (e) {}
   }
   function deny() {
     gtag("consent", "update", {
