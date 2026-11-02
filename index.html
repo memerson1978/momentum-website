@@ -203,6 +203,23 @@
   }
   @media (max-width:860px){ .split{grid-template-columns:1fr;gap:36px;} }
   @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;scroll-behavior:auto!important;} }
+
+  /* CONCEPT A */
+  section.hero{padding-top:72px;padding-bottom:72px;}
+  .hero h1{color:#fff;line-height:1.15;margin:0;}
+  .hero p{font-size:1.16rem;line-height:1.7;margin:0;color:#fff;}
+  .hero p.lead{font-size:1.24rem;line-height:1.6;}
+  .hero .rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#EA6A4C,#8BD27D);}
+  .hero .wrap{display:block;}
+  .hero .top{text-align:center;max-width:920px;margin:0 auto;}
+  .hero .top h1{font-size:clamp(2.3rem,3.8vw,3rem);}
+  .hero .top .rule{margin:22px auto 22px;}
+  .hero .top p.lead{max-width:none;margin:0 auto;text-wrap:balance;}
+  .hero .row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:48px;align-items:stretch;}
+  .hero .pic{position:relative;contain:size;}
+  .hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;border-radius:8px;}
+  .hero .hstack p+p{margin-top:24px;}
+  @media (max-width:860px){.hero .row{grid-template-columns:1fr;gap:28px}.hero .pic{aspect-ratio:5/4;contain:none}}
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
 </head>
@@ -229,20 +246,15 @@
   <!-- HERO -->
   <section class="band hero navy">
     <div class="wrap">
-      <div>
+      <div class="top">
         <h1>Professional Sales Progression That You Can Trust!</h1>
-        <p style="margin-top:1.2rem">Reliable, outsourced sales progression that delivers speed and certainty from sale-agreed to completion.</p>
-        <p>We protect your pipeline, giving you more time to grow your business.</p>
+        <span class="rule" aria-hidden="true"></span>
+        <p class="lead">Reliable, outsourced sales progression that delivers speed and certainty from sale agreed to completion. We protect your pipeline, giving you more time to grow your business.</p>
       </div>
-      <div><img src="images/d6f77041e365.jpg" alt="Sales Progressor working"></div>
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="band navy intro" id="about">
-    <div class="wrap">
-      <p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p>
-      <p style="margin-bottom:0">Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We ensure your pipeline moves at speed, with the confidence that it will complete, leaving you time to focus on closing more deals and growing your business.</p>
+      <div class="row">
+        <div class="pic"><img src="images/d6f77041e365.jpg" alt="Sales Progressor working"></div>
+        <div class="hstack"><p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p><p>Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We keep your pipeline moving at speed, with the confidence that it will complete, leaving you time to grow your business.</p></div>
+      </div>
     </div>
   </section>
 
