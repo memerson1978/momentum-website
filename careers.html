@@ -205,14 +205,18 @@
   @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;scroll-behavior:auto!important;} }
 
   /* careers page */
-  section.car-intro{padding-block:64px 72px;}
+  section.car-intro{padding-block:64px 56px;}
   .car-intro .split{align-items:start;}
-  .car-intro h1{color:var(--navy);font-weight:700;font-size:clamp(2.3rem,5vw,3.4rem);margin-bottom:10px;}
+  .car-intro h1{color:var(--navy);font-weight:400;font-size:clamp(2.3rem,5vw,3.4rem);margin-bottom:10px;}
   .car-intro .sub{font-family:"Nunito",sans-serif;font-weight:700;color:var(--navy);font-size:1.22rem;margin-bottom:14px;}
   .car-intro .fade-rule{margin-bottom:28px;}
   .car-intro .copy p{color:var(--navy);}
-  .car-intro .copy p.ask{font-weight:700;margin-top:6px;}
-  .car-intro .btn{margin-top:14px;}
+  .ask-card{margin-top:22px;background:#EBE5E0;border-radius:12px;padding:24px 26px;}
+  .ask-card p.ask{font-family:"Nunito",sans-serif;font-weight:700;color:var(--navy);margin:0 0 16px;}
+  .ask-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;}
+  .jd-link{display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-family:"Nunito",sans-serif;font-weight:700;text-decoration:underline;text-underline-offset:3px;}
+  .jd-link:hover{color:#0a3457;}
+  
   .car-intro .media img{aspect-ratio:512/529;object-fit:cover;}
 
   section.jd{background:#EBE5E0;padding-block:64px;}
@@ -221,19 +225,19 @@
   .jd-card h3{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.6rem,3vw,2.1rem);color:var(--navy);margin:0;}
   .jd-card .btn{display:inline-flex;align-items:center;gap:10px;}
 
-  section.values{padding-block:80px;}
-  .values-grid{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:64px;align-items:center;}
+  section.values{padding-block:56px 60px;}
+  .values-grid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:48px;align-items:center;}
   .values-grid .dna img{width:100%;height:auto;display:block;border-radius:8px;aspect-ratio:358/524;object-fit:cover;}
-  .values h2{text-align:center;font-weight:700;color:var(--navy);margin-bottom:28px;}
+  .values h2{text-align:center;font-weight:400;color:var(--navy);margin-bottom:20px;}
   .tiles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;}
-  .tile{background:#1B2537;color:#fff;font-family:"Nunito",sans-serif;font-weight:600;font-size:clamp(.98rem,1.6vw,1.2rem);line-height:1.25;min-height:112px;display:grid;place-items:center;text-align:center;padding:14px;text-wrap:balance;}
+  .tile{background:#1B2537;color:#fff;font-family:"Nunito",sans-serif;font-weight:600;font-size:clamp(.98rem,1.6vw,1.2rem);line-height:1.25;min-height:92px;display:grid;place-items:center;text-align:center;padding:14px;text-wrap:balance;}
   .tile.hero{background:#93D04F;color:#111;font-size:clamp(1.25rem,2.4vw,1.75rem);font-weight:700;}
 
   section.eo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);}
-  .eo .l{background:#EA6A4C;display:grid;place-items:center;padding-block:56px;padding-inline:max(24px,env(safe-area-inset-left,0px)) 24px;}
-  .eo .l h2{color:#fff;font-weight:700;font-size:clamp(2rem,4vw,3rem);text-align:center;}
-  .eo .r{background:var(--green);display:flex;align-items:center;padding-block:48px;padding-inline:40px max(24px,env(safe-area-inset-right,0px));}
-  .eo .r p{margin:0;font-size:1.1rem;line-height:1.8;color:#111;max-width:620px;}
+  .eo .l{background:#EA6A4C;display:grid;place-items:center;padding-block:40px;padding-inline:max(24px,env(safe-area-inset-left,0px)) 24px;}
+  .eo .l h2{color:#fff;font-weight:400;font-size:clamp(1.8rem,3.4vw,2.6rem);text-align:center;}
+  .eo .r{background:var(--green);display:flex;align-items:center;padding-block:36px;padding-inline:40px max(24px,env(safe-area-inset-right,0px));}
+  .eo .r p{margin:0;font-size:1.05rem;line-height:1.7;color:#111;max-width:620px;}
   @media (max-width:860px){
     .values-grid{grid-template-columns:1fr;gap:36px;}
     .values-grid .dna{max-width:280px;margin:0 auto;}
@@ -274,23 +278,17 @@
           <p>Our mission is in setting a new standard in Sales Progression by being a truly trusted partner to our clients who are generally estate agents and homebuilders across the UK.</p>
           <p>We take ownership of the sales progression process to help manage the home moving process from end to end. We are a truly proactive team with backgrounds in legal conveyancing, surveying, estate agency and property more broadly.</p>
           <p>As part of our expansion plans we are now looking to recruit bright and highly motivated individuals. Ideally you already understand the conveyancing process inside-out, and understand how to navigate and progress buyers and sellers through this process. We also consider individuals with an estate agency background who embody our commitment to outstanding customer service.</p>
-          <p class="ask">If you are interested to learn more, please get in touch.</p>
-          <a class="btn btn-navy" href="mailto:hello@momentumsp.co.uk?subject=Job%20Opportunity%20Enquiry">Express Interest</a>
         </div>
-        <div class="media"><img src="images/309429a4393e.webp" alt="Sales progressor working at her desk"></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="jd">
-    <div class="wrap">
-      <h2 class="t">Job Description</h2>
-      <div class="jd-card">
-        <h3>Sales Progressor</h3>
-        <a class="btn btn-outline" href="files/momentum-sales-progressor-job-description.pdf" target="_blank" rel="noopener">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="#072136" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Download Job Description
-        </a>
+        <div class="media">
+          <img src="images/309429a4393e.webp" alt="Sales progressor working at her desk">
+          <div class="ask-card">
+            <p class="ask">If you are interested to learn more, please get in touch.</p>
+            <div class="ask-actions">
+              <a class="btn btn-navy" href="mailto:hello@momentumsp.co.uk?subject=Job%20Opportunity%20Enquiry">Express Interest</a>
+              <a class="jd-link" href="files/momentum-sales-progressor-job-description.pdf" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Sales Progressor job description</a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
