@@ -205,17 +205,15 @@
   @media (max-width:860px){ .split{grid-template-columns:1fr;gap:36px;} }
   @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;scroll-behavior:auto!important;} }
 
-  /* PROPOSAL v2: one connected hero block */
+  /* PROPOSAL v4: landscape photo beside heading, paragraphs on the same grid below */
   section.hero{padding-top:72px;padding-bottom:72px;}
-  section.hero{overflow:hidden;}
-  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:56px;align-items:stretch;}
+  .hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:56px;row-gap:40px;align-items:stretch;}
   .hero h1{font-size:clamp(2.2rem,3.4vw,2.75rem);line-height:1.15;margin:0 0 24px;}
-  .hero p{font-size:1.16rem;line-height:1.7;margin:0 0 16px;color:#fff;max-width:36em;}
-  .hero p:last-child{margin-bottom:0;}
+  .hero p{font-size:1.16rem;line-height:1.7;margin:0;color:#fff;}
   .hero p.lead{font-size:1.22rem;line-height:1.6;}
-  .hero .pic{position:relative;min-height:360px;margin:.5rem calc(-1 * (max(0px, (100vw - var(--maxw)) / 2) + 24px)) .3rem 0;}
-  .hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:58% center;border-radius:12px 0 0 12px;}
-  @media (max-width:860px){ section.hero{padding-top:48px;padding-bottom:56px;} .hero .wrap{grid-template-columns:1fr;gap:32px;} .hero .pic{min-height:0;aspect-ratio:4/3;margin:0;} .hero .pic img{border-radius:12px;} }
+  .hero .pic{position:relative;min-height:300px;margin:.5rem 0 .3rem;}
+  .hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;border-radius:8px;}
+  @media (max-width:860px){ section.hero{padding-top:48px;padding-bottom:56px;} .hero .wrap{grid-template-columns:1fr;row-gap:28px;} .hero .pic{min-height:0;aspect-ratio:5/4;margin:0;} }
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
 </head>
@@ -245,10 +243,10 @@
       <div class="copy">
         <h1>Professional Sales Progression That You Can Trust!</h1>
         <p class="lead">Reliable, outsourced sales progression that delivers speed and certainty from sale agreed to completion. We protect your pipeline, giving you more time to grow your business.</p>
-        <p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p>
-        <p>Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We ensure your pipeline moves at speed, with the confidence that it will complete, leaving you time to focus on closing more deals and growing your business.</p>
       </div>
       <div class="pic"><img src="images/d6f77041e365.jpg" alt="Sales Progressor working"></div>
+      <p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p>
+      <p>Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We ensure your pipeline moves at speed, with the confidence that it will complete, leaving you time to focus on closing more deals and growing your business.</p>
     </div>
   </section>
 
