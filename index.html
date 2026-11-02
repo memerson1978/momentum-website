@@ -101,15 +101,15 @@
   /* contact */
   .contact{position:relative;}
   .contact-bg{position:absolute;inset:0;background-size:cover;background-position:center;}
-  .contact .wrap{position:relative;max-width:1200px;padding:84px 24px;}
-  .contact-card{background:#fff;padding:46px 54px;}
-  .contact-card h2{color:var(--navy);margin-bottom:30px;}
-  .c-label{display:block;color:#2b3a47;font-size:1rem;margin-bottom:14px;}
-  .signup2{display:flex;max-width:940px;}
-  .signup2 input{flex:1;min-width:0;border:0;border-bottom:1px solid #2b3a47;background:#fafafa;padding:16px 14px;font-size:1rem;font-family:"Nunito Sans",sans-serif;}
-  .signup2 button{background:var(--navy);color:#fff;border:0;padding:0 56px;font-size:1rem;cursor:pointer;font-family:"Nunito",sans-serif;}
+  .contact .wrap{position:relative;max-width:1200px;padding:62px 24px;}
+  .cta-card{background:#fff;max-width:800px;margin:0 auto;padding:36px 40px 44px;}
+  .cta-card h2{color:var(--navy);font-size:clamp(1.45rem,2.35vw,1.9rem);font-weight:300;margin-bottom:26px;text-wrap:initial;}
+  .c-label{display:block;color:#2b3a47;font-size:.9rem;margin-bottom:6px;}
+  .signup2{display:flex;}
+  .signup2 input{flex:1;min-width:0;border:0;border-bottom:1px solid #2b3a47;background:#fafafa;padding:12px 14px;font-size:1rem;font-family:"Nunito Sans",sans-serif;}
+  .signup2 button{background:var(--navy);color:#fff;border:0;width:230px;padding:0 24px;font-size:.95rem;cursor:pointer;font-family:"Nunito",sans-serif;}
   .signup2 button:hover{background:#0a3457;}
-  @media (max-width:620px){ .contact-card{padding:30px 22px;} .signup2{flex-direction:column;} .signup2 button{padding:14px;margin-top:12px;} }
+  @media (max-width:620px){ .contact .wrap{padding:44px 20px;} .cta-card{padding:28px 22px;} .signup2{flex-direction:column;} .signup2 button{width:auto;padding:14px;margin-top:12px;} }
   /* testimonial carousel */
   .tcarousel{position:relative;max-width:1140px;margin:8px auto 0;padding:0 56px;}
   .t-viewport{overflow:hidden;}
@@ -482,7 +482,7 @@
   <section class="contact" id="contact">
     <div class="contact-bg" style="background-image:url('images/85291d6772d0.jpg')"></div>
     <div class="wrap">
-      <div class="contact-card">
+      <div class="cta-card">
         <h2>Contact us to learn more about our tailored service</h2>
         <label class="c-label" for="cemail">Enter your email here *</label>
         <form class="signup2" method="POST" data-form="newsletter"><input type="hidden" name="_subject" value="New newsletter sign up from the website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="" data-next="newsletter"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
