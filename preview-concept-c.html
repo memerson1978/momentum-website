@@ -214,12 +214,14 @@
   section.hero{padding-top:56px;}
   .hero .wrap{display:block;}
   .hero .banner{position:relative;border-radius:10px;overflow:hidden;}
-  .hero .banner img{display:block;width:100%;aspect-ratio:21/10;object-fit:cover;object-position:center 30%;}
-  .hero .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,60,96,.95) 0%,rgba(12,60,96,.85) 34%,rgba(12,60,96,0) 62%);}
-  .hero .banner .over{position:absolute;left:48px;top:50%;transform:translateY(-50%);z-index:2;max-width:430px;}
-  .hero .banner h1{font-size:clamp(2.1rem,3.3vw,2.7rem);}
-  .hero .banner .rule{margin-top:22px;}
-  .hero .cols3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;margin-top:44px;}
+  .hero .banner img{display:block;width:100%;aspect-ratio:2/1;object-fit:cover;object-position:70% 30%;}
+  .hero .banner::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,60,96,.97) 0%,rgba(12,60,96,.9) 38%,rgba(12,60,96,0) 60%);}
+  .hero .banner .over{position:absolute;left:44px;top:50%;transform:translateY(-50%);z-index:2;max-width:400px;}
+  .hero .banner .over .rule{margin:20px 0 20px;}
+  .hero .banner h1{font-size:clamp(2rem,3vw,2.45rem);}
+  .hero .banner p.lead{font-size:1.12rem;}
+  
+  .hero .cols3{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;margin-top:44px;}
   @media (max-width:860px){.hero .banner img{aspect-ratio:4/3}.hero .banner::after{background:linear-gradient(0deg,rgba(12,60,96,.95) 10%,rgba(12,60,96,0) 70%)}.hero .banner .over{top:auto;bottom:24px;transform:none;left:24px;right:24px}.hero .cols3{grid-template-columns:1fr;gap:20px}}
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
@@ -249,9 +251,9 @@
     <div class="wrap">
       <div class="banner">
         <img src="images/d6f77041e365.jpg" alt="Sales Progressor working">
-        <div class="over"><h1>Professional Sales Progression That You Can Trust!</h1><span class="rule" aria-hidden="true"></span></div>
+        <div class="over"><h1>Professional Sales Progression That You Can Trust!</h1><span class="rule" aria-hidden="true"></span><p class="lead">Reliable, outsourced sales progression that delivers speed and certainty from sale agreed to completion. We protect your pipeline, giving you more time to grow your business.</p></div>
       </div>
-      <div class="cols3"><p class="lead">Reliable, outsourced sales progression that delivers speed and certainty from sale agreed to completion. We protect your pipeline, giving you more time to grow your business.</p><p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p><p>Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We keep your pipeline moving at speed, with the confidence that it will complete, leaving you time to grow your business.</p></div>
+      <div class="cols3"><p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p><p>Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We keep your pipeline moving at speed, with the confidence that it will complete, leaving you time to grow your business.</p></div>
     </div>
   </section>
 
