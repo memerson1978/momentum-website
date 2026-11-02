@@ -205,19 +205,16 @@
   @media (max-width:860px){ .split{grid-template-columns:1fr;gap:36px;} }
   @media (prefers-reduced-motion:reduce){ *{transition:none!important;animation:none!important;scroll-behavior:auto!important;} }
 
-  /* PROPOSAL: hero rework */
+  /* PROPOSAL v2: one connected hero block */
   section.hero{padding-top:72px;padding-bottom:72px;}
-  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:64px;align-items:center;}
-  .hero h1{font-size:clamp(2.2rem,3.4vw,2.75rem);line-height:1.15;letter-spacing:-.01em;margin:0;max-width:16ch;}
-  .hero .lead{font-size:1.2rem;line-height:1.6;max-width:34em;margin:24px 0 0;color:rgba(255,255,255,.92);}
-  .hero .cta{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px;}
-  .hero .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.55);}
-  .hero .btn-ghost:hover{border-color:#fff;opacity:1;}
-  .hero img{aspect-ratio:4/3;object-fit:cover;border-radius:12px;}
-  section.intro{padding-top:56px;padding-bottom:64px;border-top:1px solid rgba(255,255,255,.14);}
-  .intro .wrap{max-width:calc(46rem + 48px);}
-  .intro p{font-size:1.12rem;line-height:1.75;}
-  @media (max-width:860px){ section.hero{padding-top:48px;padding-bottom:56px;} .hero .wrap{grid-template-columns:1fr;gap:36px;} .hero h1{max-width:none;} }
+  .hero .wrap{grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:64px;align-items:stretch;}
+  .hero h1{font-size:clamp(2.2rem,3.4vw,2.75rem);line-height:1.15;margin:0 0 24px;}
+  .hero p{font-size:1.1rem;line-height:1.7;margin:0 0 16px;color:#fff;max-width:36em;}
+  .hero p:last-child{margin-bottom:0;}
+  .hero p.lead{font-size:1.22rem;line-height:1.6;}
+  .hero .pic{position:relative;min-height:360px;}
+  .hero .pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:62% center;border-radius:12px;}
+  @media (max-width:860px){ section.hero{padding-top:48px;padding-bottom:56px;} .hero .wrap{grid-template-columns:1fr;gap:32px;} .hero .pic{min-height:0;aspect-ratio:4/3;} }
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
 </head>
@@ -244,23 +241,13 @@
   <!-- HERO -->
   <section class="band hero navy">
     <div class="wrap">
-      <div>
+      <div class="copy">
         <h1>Professional Sales Progression That You Can Trust!</h1>
         <p class="lead">Reliable, outsourced sales progression that delivers speed and certainty from sale agreed to completion. We protect your pipeline, giving you more time to grow your business.</p>
-        <div class="cta">
-          <a class="btn btn-green" href="about-5">Book a Discovery Meeting</a>
-          <a class="btn btn-ghost" href="estate-agents">How we work</a>
-        </div>
+        <p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p>
+        <p>Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We ensure your pipeline moves at speed, with the confidence that it will complete, leaving you time to focus on closing more deals and growing your business.</p>
       </div>
-      <div><img src="images/d6f77041e365.jpg" alt="Sales Progressor working"></div>
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="band navy intro" id="about">
-    <div class="wrap">
-      <p>Momentum's highly trained, tenacious team ensures every property sale is completed quickly and with the certainty that everything possible is done to ensure success. We are also committed to delivering an exceptional level of customer service.</p>
-      <p style="margin-bottom:0">Based in Bishop's Stortford, we work with estate agents and property developers as an extension of your in-house team. We ensure your pipeline moves at speed, with the confidence that it will complete, leaving you time to focus on closing more deals and growing your business.</p>
+      <div class="pic"><img src="images/d6f77041e365.jpg" alt="Sales Progressor working"></div>
     </div>
   </section>
 
