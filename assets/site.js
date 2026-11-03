@@ -3,10 +3,12 @@
    SETTINGS: this is the only block you should ever need to change.            */
 window.MSP = {
   ga4Id: "G-R5S38F7M3K", // Google Analytics 4 Measurement ID, e.g. "G-ABC123XYZ"
-  adsId: "",            // Google Ads tag ID, e.g. "AW-123456789"
-  adsLeadLabel: "",     // Google Ads conversion label for a contact form enquiry
-  adsBookingLabel: "",  // Google Ads conversion label for a Discovery Meeting booking
+  adsId: "AW-17391507691", // Google Ads tag ID (account 574-918-6464)
+  adsLeadLabel: "",     // Google Ads conversion label for a contact form enquiry (enquiries are imported from Analytics instead)
+  adsBookingLabel: "B_fpCNTTjrgcEOux9eRA",  // "TechSol - Discovery meeting 11674": a completed Calendly booking
   adsNewsletterLabel: "",// Google Ads conversion label for a newsletter sign up (optional)
+  adsAboutLabel: "aBg8CMOdpJMbEOux9eRA",    // "About Us page": a visit to the About page
+  adsWhatsappLabel: "QM2KCO-kj7gcEOux9eRA", // "TechSol - Whatsapp contact 22665": a click on the WhatsApp button
   formEmail: "info@momentumsp.co.uk", // where website forms are emailed
   whatsapp: "447932712565" // WhatsApp number in international format, e.g. "447700900123"
 };
@@ -98,11 +100,19 @@ window.MSP = {
       if (M.whatsapp) { a.href = "https://wa.me/" + M.whatsapp; a.target = "_blank"; a.rel = "noopener"; a.hidden = false; }
     });
 
-    // Track phone and email clicks.
+    // Google Ads: About page visit.
+    if (M.adsId && M.adsAboutLabel && /\/about(\.html)?\/?$/.test(location.pathname))
+      gtag("event", "conversion", { send_to: M.adsId + "/" + M.adsAboutLabel });
+
+    // Track phone, email and WhatsApp clicks.
     document.addEventListener("click", function (e) {
       var a = e.target.closest && e.target.closest("a[href]");
       if (!a) return;
       var h = a.getAttribute("href");
+      if (h.indexOf("https://wa.me/") === 0) {
+        gtag("event", "whatsapp_click", { link_url: h });
+        if (M.adsId && M.adsWhatsappLabel) gtag("event", "conversion", { send_to: M.adsId + "/" + M.adsWhatsappLabel });
+      }
       if (h.indexOf("tel:") === 0) gtag("event", "phone_click", { link_url: h });
       else if (h.indexOf("mailto:") === 0) gtag("event", "email_click", { link_url: h });
     });
