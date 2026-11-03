@@ -78,7 +78,7 @@ window.MSP = {
   // Conversion helper used by the thank you page and the booking calendar.
   M.convert = function (kind) {
     var label = { contact: M.adsLeadLabel, booking: M.adsBookingLabel, newsletter: M.adsNewsletterLabel }[kind];
-    var ev = { contact: "generate_lead", booking: "book_discovery_meeting", newsletter: "sign_up" }[kind] || kind;
+    var ev = { contact: "generate_lead", booking: "book_discovery_meeting", newsletter: "sign_up", report: "request_report" }[kind] || kind;
     gtag("event", ev, { form_type: kind });
     if (M.adsId && label) gtag("event", "conversion", { send_to: M.adsId + "/" + label });
     if (window.fbq) window.fbq("track", { contact: "Lead", booking: "Schedule", newsletter: "CompleteRegistration" }[kind] || "Lead");

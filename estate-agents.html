@@ -7,7 +7,7 @@
 <meta name="description" content="Proactive, expert led sales progression for estate agents. Free your time, secure your revenue and grow your business.">
 <link rel="canonical" href="https://www.momentumsp.co.uk/estate-agents">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<script src="assets/site.js?v=20261103d"></script>
+<script src="assets/site.js?v=20261103e"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
@@ -238,6 +238,13 @@
     .safe-row{grid-template-columns:1fr;gap:10px;}
     .team-band .split .media{order:-1;}
   }
+
+  .report-req{margin-top:22px;background:#fff;border:1px solid #e3e8ef;border-radius:12px;padding:26px 28px;max-width:900px;}
+  .report-req h3{font-family:"Nunito",sans-serif;font-weight:400;font-size:1.35rem;color:var(--navy-deep);margin:0 0 6px;}
+  .report-req > p{margin:0 0 16px;color:#2b3a47;}
+  .rr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:16px;}
+  .rr-note{font-size:.88rem;color:#5a6b7a;margin:12px 0 0;}
+  @media (max-width:760px){.rr-grid{grid-template-columns:1fr;}.report-req{padding:22px 18px;}}
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
 </head>
@@ -482,8 +489,8 @@
       </div>
 
       <div class="bigstat">
-        <div class="n">11<small>weeks</small></div>
-        <p>between the fastest and slowest conveyancer on the same board.<span>Same agent, same kind of sales. The firm handling the file made the biggest difference to time to exchange.</span></p>
+        <div class="n">?<small>weeks</small></div>
+        <p>between your fastest and slowest recommended conveyancer.<span>Do you know the answer? Most agents recommend preferred conveyancing firms without knowing how quickly each one gets to exchange, so weeks can be lost on every sale without anyone noticing. Our Conveyancing Performance Report shows you, firm by firm, so you can steer more of your sales to the firms that exchange fastest and realise your fees sooner.</span></p>
       </div>
 
       <div class="viewer" data-tabs>
@@ -536,8 +543,27 @@
       </div>
 
       <div class="cta-row">
-        <a class="btn btn-navy" href="files/conveyancing-performance-report-example.pdf" target="_blank" rel="noopener">Download the example report (PDF)</a>
+        <button type="button" class="btn btn-navy" data-report-open aria-expanded="false" aria-controls="report-req">Get the example report</button>
         <a class="btn btn-line" href="about-5">Book a Discovery Meeting</a>
+      </div>
+
+      <div class="report-req" id="report-req" hidden>
+        <h3>Get the example report by email</h3>
+        <p>Tell us where to send it and we will email you the example Conveyancing Performance Report straight away.</p>
+        <form method="POST" data-form="report" data-report-file="files/reports/momentum-conveyancing-report-example-f5ea397bf89b.pdf">
+          <input type="hidden" name="_subject" value="Example report request (Estate Agents page)">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_autoresponse" value="">
+          <input type="hidden" name="_next" value="" data-next="report">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+          <div class="rr-grid">
+            <div class="field"><label for="rr-name">Name *</label><input id="rr-name" name="name" type="text" required autocomplete="name"></div>
+            <div class="field"><label for="rr-email">Email *</label><input id="rr-email" name="email" type="email" required autocomplete="email"></div>
+            <div class="field"><label for="rr-agency">Agency *</label><input id="rr-agency" name="agency" type="text" required autocomplete="organization"></div>
+          </div>
+          <button type="submit" class="btn btn-navy">Email me the report</button>
+          <p class="rr-note">The example uses a fictitious agency and fictitious law firms to show the format. We will only use your details to send the report and follow up about it.</p>
+        </form>
       </div>
     </div>
   </section>
@@ -582,5 +608,15 @@
 })();
 </script>
 <script src="assets/features.js"></script>
+
+<script>
+(function(){
+  var b=document.querySelector('[data-report-open]'), box=document.getElementById('report-req');
+  if(!b||!box) return;
+  b.addEventListener('click',function(){ box.hidden=false; b.setAttribute('aria-expanded','true'); box.scrollIntoView({behavior:'smooth',block:'center'}); var f=document.getElementById('rr-name'); if(f) setTimeout(function(){f.focus()},400); });
+  var f=box.querySelector('form'); var link=new URL(f.getAttribute('data-report-file'), location.href).href;
+  f.querySelector('input[name="_autoresponse"]').value='Thank you for requesting the example Conveyancing Performance Report from Momentum Sales Progression. You can download it here: '+link+' . The example uses a fictitious agency and fictitious law firms to show the format. If you would like to see what a report for your own board would show, simply reply to this email or call us on 01279 905 805. Momentum Team';
+})();
+</script>
 </body>
 </html>
