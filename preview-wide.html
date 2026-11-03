@@ -232,6 +232,9 @@
   .wide p{font-size:1.06rem;}
   .wide ul.tick{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 44px;}
   .wide .cols2{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin:0 0 1rem;}
+  .wide h2{font-size:clamp(1.45rem,2.6vw,1.95rem);margin-bottom:1.1rem !important;}
+  .band:has(> .wide){padding:52px 0;}
+  @media (max-width:760px){.band:has(> .wide){padding:40px 0;}}
   @media (max-width:760px){.wide ul.tick,.wide .cols2{grid-template-columns:1fr;}}
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
