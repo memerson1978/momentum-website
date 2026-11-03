@@ -248,6 +248,43 @@
     .eo .r{padding-inline:max(24px,env(safe-area-inset-left,0px)) max(24px,env(safe-area-inset-right,0px));}
   }
   @media (max-width:520px){ .tiles{grid-template-columns:repeat(2,minmax(0,1fr));} .tile.hero{grid-column:1/-1;order:-1;} }
+
+  /* careers page (Design 2, 03/11/2026) */
+  .v-sec{padding-block:64px}
+  .v-h1{font-family:"Nunito",sans-serif;font-weight:400;color:var(--navy);font-size:clamp(2.3rem,5vw,3.2rem);margin:0 0 10px;line-height:1.1}
+  .v-h{font-family:"Nunito",sans-serif;font-weight:400;color:var(--navy);font-size:clamp(1.8rem,3vw,2.3rem);margin:0 0 12px;line-height:1.15}
+  .v-sub{font-family:"Nunito",sans-serif;font-weight:700;color:var(--navy);font-size:1.15rem;margin:0 0 14px}
+  .v-rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#EA6A4C,#8BD27D);margin:0 0 24px}
+  .v-copy p{color:var(--navy);margin:0 0 14px;line-height:1.7}
+  .car-intro .media img{width:100%;border-radius:10px;aspect-ratio:512/560;object-fit:cover;display:block}
+  .v-btns{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .v-btns .btn{display:inline-flex;align-items:center;gap:10px}
+  .btn-greenfill{background:#8BD27D;color:#172340}
+  .btn-white-line{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7);border-radius:6px}
+  .jd2{background:var(--navy-band,#172340);padding-block:40px;color:#fff}
+  .jd2 .row{display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
+  .jd2 h2{font-family:"Nunito",sans-serif;font-weight:400;color:#fff;font-size:clamp(1.5rem,2.6vw,1.9rem);margin:0 0 6px}
+  .jd2 .v-rule{margin-bottom:12px}
+  .jd2 p{margin:0;color:rgba(255,255,255,.85)}
+  .vgrid{display:grid;grid-template-columns:240px 1fr;gap:48px;align-items:center}
+  .vgrid .dna img{width:100%;height:auto;display:block;border-radius:10px}
+  .tiles3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+  .tl{background:#1B2537;color:#fff;font-family:"Nunito",sans-serif;font-weight:600;font-size:1.02rem;line-height:1.25;min-height:76px;display:grid;place-items:center;text-align:center;padding:12px;text-wrap:balance}
+  .tl.hero{background:#93D04F;color:#111;font-weight:700;font-size:1.2rem}
+  .eo1{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr)}
+  .eo1 .l{background:#EA6A4C;display:grid;place-items:center;padding:44px 24px}
+  .eo1 .l h2{color:#fff;font-family:"Nunito",sans-serif;font-weight:400;font-size:clamp(1.8rem,3.2vw,2.1rem);margin:0;text-align:center}
+  .eo1 .r{background:#8BD27D;display:flex;align-items:center;padding:44px 48px}
+  .eo1 .r p{margin:0;font-size:1.05rem;line-height:1.7;color:#111;max-width:600px}
+  @media (max-width:860px){
+    .v-sec{padding-block:48px}
+    .jd2 .row{grid-template-columns:1fr;gap:20px}
+    .vgrid{grid-template-columns:1fr;gap:28px}
+    .vgrid .dna{max-width:200px;margin:0 auto}
+    .eo1{grid-template-columns:1fr}
+    .eo1 .l{padding:32px 24px}.eo1 .r{padding:32px 24px}
+  }
+  @media (max-width:520px){ .tiles3{grid-template-columns:repeat(2,minmax(0,1fr))} .tl.hero{grid-column:span 2} }
 </style>
 </head>
 <body>
@@ -270,60 +307,50 @@
 
 <main id="top">
 
-  <section class="car-intro">
+  <section class="v-sec car-intro">
     <div class="wrap">
-      <div class="split">
-        <div class="copy">
-          <h1>Careers</h1>
-          <p class="sub">Register your interest for when we are hiring.</p>
-          <span class="fade-rule" aria-hidden="true"></span>
-          <p>Buying or selling a residential property is rarely plain sailing. Whilst we can't fix a largely broken system, we can make a real difference!</p>
-          <p>Our mission is in setting a new standard in Sales Progression by being a truly trusted partner to our clients who are generally estate agents and homebuilders across the UK.</p>
-          <p>We take ownership of the sales progression process to help manage the home moving process from end to end. We are a truly proactive team with backgrounds in legal conveyancing, surveying, estate agency and property more broadly.</p>
-          <p>As part of our expansion plans we are now looking to recruit bright and highly motivated individuals. Ideally you already understand the conveyancing process inside-out, and understand how to navigate and progress buyers and sellers through this process. We also consider individuals with an estate agency background who embody our commitment to outstanding customer service.</p>
+      <div class="split" style="align-items:start">
+        <div class="v-copy">
+          <h1 class="v-h1">Careers</h1>
+          <p class="v-sub">Register your interest for when we are hiring.</p>
+          <span class="v-rule" aria-hidden="true"></span>
+          <p>Buying or selling a residential property is rarely plain sailing. Whilst we can't fix a largely broken system, we can make a real difference!</p><p>Our mission is in setting a new standard in Sales Progression by being a truly trusted partner to our clients who are generally estate agents and homebuilders across the UK.</p><p>We take ownership of the sales progression process to help manage the home moving process from end to end. We are a truly proactive team with backgrounds in legal conveyancing, surveying, estate agency and property more broadly.</p><p>As part of our expansion plans we are now looking to recruit bright and highly motivated individuals. Ideally you already understand the conveyancing process inside-out, and understand how to navigate and progress buyers and sellers through this process. We also consider individuals with an estate agency background who embody our commitment to outstanding customer service.</p>
         </div>
         <div class="media"><img src="images/309429a4393e.webp" alt="Sales progressor working at her desk"></div>
       </div>
     </div>
   </section>
 
-  <section class="jd">
+  <section class="jd2">
     <div class="wrap">
-      <h2 class="t">Job Description</h2>
-      <div class="jd-card">
-        <h3>Sales Progressor</h3>
-        <p class="ask">If you are interested to learn more, please get in touch.</p>
-        <div class="jd-actions">
-          <a class="btn btn-navy" href="mailto:hello@momentumsp.co.uk?subject=Job%20Opportunity%20Enquiry">Express Interest</a>
-          <a class="btn btn-outline" href="files/momentum-sales-progressor-job-description.pdf" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Job Description</a>
+      <div class="row">
+        <div>
+          <h2>Job Description: Sales Progressor</h2>
+          <span class="v-rule" aria-hidden="true"></span>
+          <p>If you are interested to learn more, please get in touch.</p>
+        </div>
+        <div class="v-btns">
+          <a class="btn btn-greenfill" href="mailto:hello@momentumsp.co.uk?subject=Job%20Opportunity%20Enquiry">Express Interest</a>
+          <a class="btn btn-white-line" href="files/momentum-sales-progressor-job-description.pdf" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Job Description</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="values">
+  <section class="v-sec values2">
     <div class="wrap">
-      <div class="values-grid">
+      <div class="vgrid">
         <div class="dna"><img src="images/62316b305d45.webp" alt="Colourful thumbprint representing Momentum's values DNA"></div>
         <div>
-          <h2>Our Values</h2>
-          <div class="tiles">
-            <div class="tile">Accountability</div>
-            <div class="tile">Bias for Action</div>
-            <div class="tile">Continuous Improvement</div>
-            <div class="tile">Care Deeply</div>
-            <div class="tile hero">Customer Obsession</div>
-            <div class="tile">Integrity &amp; Trust</div>
-            <div class="tile">Quality</div>
-            <div class="tile">Deliver Results</div>
-            <div class="tile">Social Responsibility</div>
-          </div>
+          <h2 class="v-h">Our Values</h2>
+          <span class="v-rule" aria-hidden="true"></span>
+          <div class="tiles3"><div class="tl">Accountability</div><div class="tl">Bias for Action</div><div class="tl">Continuous Improvement</div><div class="tl">Care Deeply</div><div class="tl hero">Customer Obsession</div><div class="tl">Integrity &amp; Trust</div><div class="tl">Quality</div><div class="tl">Deliver Results</div><div class="tl">Social Responsibility</div></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="eo">
+  <section class="eo1">
     <div class="l"><h2>Equal Opportunity</h2></div>
     <div class="r"><p>At Momentum, we are focused on creating an inclusive culture that nurtures personal growth, contributing to collective progress. We believe the uniqueness of each individual increases the diversity, complementarity and effectiveness of our teams.</p></div>
   </section>
