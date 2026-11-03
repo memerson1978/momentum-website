@@ -209,10 +209,11 @@
   section.news-hero{position:relative;padding-block:84px;}
   .news-hero .bg{position:absolute;inset:0;background-size:cover;background-position:center 40%;}
   .news-hero .wrap{position:relative;}
-  .news-card{zoom:.85;max-width:760px;margin:0 auto;background:#fff;padding:44px 48px 46px;text-align:center;box-shadow:0 24px 60px -30px rgba(7,33,54,.55);}
+  .news-card{zoom:.78;max-width:800px;margin:0 auto;background:#fff;padding:40px 40px 42px;text-align:center;box-shadow:0 24px 60px -30px rgba(7,33,54,.55);}
   .news-card h1{font-size:clamp(1.7rem,3.4vw,2.2rem);font-weight:400;color:var(--navy-deep);margin-bottom:12px;}
   .news-card .fade-rule{margin:0 auto 20px;}
   .news-card p{color:#14202b;font-size:1.04rem;margin:0 0 .5rem;}
+  @media (min-width:860px){ .news-card .lead-line{white-space:nowrap;} }
   .news-card .c-label{text-align:left;margin:26px 0 10px;}
   .news-card .signup2{max-width:none;}
 
@@ -281,8 +282,8 @@
       <div class="news-card">
         <h1>Welcome to Momentum's News Feed!</h1>
         <span class="fade-rule" aria-hidden="true"></span>
-        <p>Expert insights, industry updates, and practical strategies to streamline property transactions.</p>
-        <p>Follow us to stay ahead and keep your pipeline moving.</p>
+        <p class="lead-line">Expert insights, industry updates, and practical strategies to streamline property transactions.</p>
+        <p class="lead-line">Follow us to stay ahead and keep your pipeline moving.</p>
         <label class="c-label" for="news-email">Enter your email to receive our quarterly newsletter *</label>
         <form class="signup2" method="POST" data-form="newsletter"><input type="hidden" name="_subject" value="New newsletter sign up from the website"><input type="hidden" name="_template" value="table"><input type="hidden" name="_captcha" value="false"><input type="hidden" name="_next" value="" data-next="newsletter"><input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
           <input id="news-email" name="email" type="email" required autocomplete="email" aria-label="Enter your email here">
