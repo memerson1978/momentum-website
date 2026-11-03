@@ -109,6 +109,37 @@ window.MSP = {
       f.action = "https://formsubmit.co/" + M.formEmail;
       var next = f.querySelector('input[name="_next"]');
       if (next) next.value = new URL("thank-you?type=" + next.getAttribute("data-next"), location.href).href;
+
+      // Show that the form is sending, and offer another way to get in touch in case the form service is slow.
+      var btn = f.querySelector('button[type="submit"], button:not([type])');
+      var help = document.createElement("p");
+      help.className = "form-help";
+      help.setAttribute("role", "status");
+      help.style.cssText = "font-size:.85em;margin:10px 0 0;line-height:1.5;flex:1 0 100%;width:100%";
+      help.hidden = true;
+      help.innerHTML = 'Sending your details. If you have any trouble, email <a href="mailto:info@momentumsp.co.uk">info@momentumsp.co.uk</a> or call <a href="tel:+441279905805" style="white-space:nowrap">01279 905 805</a>.';
+      f.appendChild(help);
+      f.addEventListener("submit", function () {
+        if (!btn) return;
+        btn.setAttribute("data-label", btn.textContent);
+        btn.textContent = "Sending...";
+        btn.setAttribute("aria-busy", "true");
+        btn.style.opacity = ".75";
+        btn.style.pointerEvents = "none";
+        if (getComputedStyle(f).display.indexOf("flex") > -1) f.style.flexWrap = "wrap";
+        help.hidden = false;
+      });
+    });
+
+    // If a visitor comes back to the page with the browser's back button, put the buttons back to normal.
+    window.addEventListener("pageshow", function () {
+      [].forEach.call(document.querySelectorAll("form[data-form] [data-label]"), function (b) {
+        b.textContent = b.getAttribute("data-label");
+        b.removeAttribute("aria-busy");
+        b.style.opacity = "";
+        b.style.pointerEvents = "";
+      });
+      [].forEach.call(document.querySelectorAll("form[data-form] .form-help"), function (p) { p.hidden = true; });
     });
 
     // WhatsApp button appears once a number is set above.
