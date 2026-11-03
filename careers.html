@@ -289,15 +289,6 @@
   .intro-wide{margin-top:8px}
   @media (max-width:860px){.intro-wide{margin-top:28px}}
   .intro-wide p{margin:0}
-  .jd-req{margin-top:24px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18)}
-  .jd2 .jd-req-lead{margin:0 0 16px;color:rgba(255,255,255,.9)}
-  .jd-grid{display:grid;grid-template-columns:1fr 1fr auto;gap:14px;align-items:end}
-  .jdf{display:flex;flex-direction:column;gap:6px}
-  .jdf label{font-size:.92rem;color:rgba(255,255,255,.85)}
-  .jdf input{font:inherit;font-size:1rem;border:0;border-bottom:2px solid #8BD27D;background:rgba(255,255,255,.08);color:#fff;padding:11px 12px;border-radius:0}
-  .jdf input:focus{outline:2px solid #8BD27D;outline-offset:2px}
-  .jd2 .jd-note{margin:14px 0 0;font-size:.86rem;color:rgba(255,255,255,.65)}
-  @media (max-width:760px){.jd-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -345,26 +336,10 @@
         </div>
         <div class="v-btns">
           <a class="btn btn-greenfill" href="mailto:hello@momentumsp.co.uk?subject=Job%20Opportunity%20Enquiry">Express Interest</a>
-          <button type="button" class="btn btn-white-line" data-jd-open aria-expanded="false" aria-controls="jd-req"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Get the Job Description</button>
+          <a class="btn btn-white-line" href="files/momentum-sales-progressor-job-description.pdf" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Download Job Description</a>
         </div>
       </div>
 
-      <div class="jd-req" id="jd-req" hidden>
-        <p class="jd-req-lead">Tell us where to send it and we will email you the Sales Progressor job description straight away.</p>
-        <form method="POST" data-form="jd" data-jd-file="files/reports/momentum-sales-progressor-job-description-ccec60282a44.pdf">
-          <input type="hidden" name="_subject" value="Job description request (Careers page)">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_autoresponse" value="">
-          <input type="hidden" name="_next" value="" data-next="jd">
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
-          <div class="jd-grid">
-            <div class="jdf"><label for="jd-name">Name *</label><input id="jd-name" name="name" type="text" required autocomplete="name"></div>
-            <div class="jdf"><label for="jd-email">Email *</label><input id="jd-email" name="email" type="email" required autocomplete="email"></div>
-            <button type="submit" class="btn btn-greenfill">Email me the job description</button>
-          </div>
-          <p class="jd-note">We will only use your details to send the job description and to follow up about roles at Momentum.</p>
-        </form>
-      </div>
     </div>
   </section>
 
@@ -426,14 +401,5 @@
 })();
 </script>
 
-<script>
-(function(){
-  var b=document.querySelector('[data-jd-open]'), box=document.getElementById('jd-req');
-  if(!b||!box) return;
-  b.addEventListener('click',function(){ box.hidden=false; b.setAttribute('aria-expanded','true'); var f=document.getElementById('jd-name'); if(f) setTimeout(function(){f.focus()},150); });
-  var f=box.querySelector('form'); var link=new URL(f.getAttribute('data-jd-file'), location.href).href;
-  f.querySelector('input[name="_autoresponse"]').value='Thank you for your interest in working at Momentum Sales Progression. You can download the Sales Progressor job description here: '+link+' . If you would like to register your interest, simply reply to this email with your CV, or call us on 01279 905 805. Momentum Team';
-})();
-</script>
 </body>
 </html>

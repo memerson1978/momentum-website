@@ -282,7 +282,6 @@
 <script>
 (function(){
   var t=(new URLSearchParams(location.search).get('type'))||'contact';
-  if(t==='jd'){document.getElementById('ty-msg').textContent='Thank you. We have emailed the Sales Progressor job description to you. If it does not arrive within a few minutes, please check your spam or junk folder.';}
   if(t==='report'){document.getElementById('ty-msg').textContent='Thank you. We have emailed the example report to you. If it does not arrive within a few minutes, please check your spam or junk folder.';}
   if(t==='newsletter'){document.getElementById('ty-msg').textContent='Thank you for signing up to our quarterly newsletter. You will receive the next edition by email.';}
   var key='msp-ty-'+t+'-'+(document.referrer||'');
