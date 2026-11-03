@@ -10,7 +10,7 @@ window.MSP = {
   adsAboutLabel: "aBg8CMOdpJMbEOux9eRA",    // "About Us page": a visit to the About page
   adsWhatsappLabel: "QM2KCO-kj7gcEOux9eRA", // "TechSol - Whatsapp contact 22665": a click on the WhatsApp button
   metaPixelId: "630243843042323", // Meta (Facebook) Pixel ID; loads only after cookie consent
-  formEmail: "722669ca90aae22765096ac0f2e0e0cc", // FormSubmit code for info@momentumsp.co.uk (hides the address from spammers)
+  formId: "", // Formspree form ID (the code after formspree.io/f/); submissions are emailed to info@momentumsp.co.uk
   whatsapp: "447932712565" // WhatsApp number in international format, e.g. "447700900123"
 };
 /* ------------------------------------------------------------------------------ */
@@ -104,30 +104,72 @@ window.MSP = {
       a.addEventListener("click", function (e) { e.preventDefault(); show(); });
     });
 
-    // Forms are emailed through FormSubmit, then the visitor lands on the thank you page.
+    // Forms are sent to Formspree in the background, then the visitor goes to the thank you page.
+    // If sending fails, the visitor stays on the page and is offered email and phone instead.
+    var contactLine = 'email <a href="mailto:info@momentumsp.co.uk">info@momentumsp.co.uk</a> or call <a href="tel:+441279905805" style="white-space:nowrap">01279 905 805</a>.';
     [].forEach.call(document.querySelectorAll("form[data-form]"), function (f) {
-      f.action = "https://formsubmit.co/" + M.formEmail;
-      var next = f.querySelector('input[name="_next"]');
-      if (next) next.value = new URL("thank-you?type=" + next.getAttribute("data-next"), location.href).href;
-
-      // Show that the form is sending, and offer another way to get in touch in case the form service is slow.
+      var kind = f.getAttribute("data-form");
+      var endpoint = "https://formspree.io/f/" + M.formId;
+      f.action = endpoint;
       var btn = f.querySelector('button[type="submit"], button:not([type])');
       var help = document.createElement("p");
       help.className = "form-help";
       help.setAttribute("role", "status");
       help.style.cssText = "font-size:.85em;margin:10px 0 0;line-height:1.5;flex:1 0 100%;width:100%";
       help.hidden = true;
-      help.innerHTML = 'Sending your details. If you have any trouble, email <a href="mailto:info@momentumsp.co.uk">info@momentumsp.co.uk</a> or call <a href="tel:+441279905805" style="white-space:nowrap">01279 905 805</a>.';
       f.appendChild(help);
-      f.addEventListener("submit", function () {
+
+      function reset() {
         if (!btn) return;
-        btn.setAttribute("data-label", btn.textContent);
-        btn.textContent = "Sending...";
-        btn.setAttribute("aria-busy", "true");
-        btn.style.opacity = ".75";
-        btn.style.pointerEvents = "none";
+        if (btn.hasAttribute("data-label")) btn.textContent = btn.getAttribute("data-label");
+        btn.removeAttribute("aria-busy");
+        btn.style.opacity = "";
+        btn.style.pointerEvents = "";
+      }
+
+      f.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (btn) {
+          if (!btn.hasAttribute("data-label")) btn.setAttribute("data-label", btn.textContent);
+          btn.textContent = "Sending...";
+          btn.setAttribute("aria-busy", "true");
+          btn.style.opacity = ".75";
+          btn.style.pointerEvents = "none";
+        }
         if (getComputedStyle(f).display.indexOf("flex") > -1) f.style.flexWrap = "wrap";
+        help.style.color = "";
+        help.innerHTML = "Sending your details. If you have any trouble, " + contactLine;
         help.hidden = false;
+
+        // Send only the visitor's answers, the subject line and the spam trap.
+        var data = new FormData(f);
+        [].slice.call(f.querySelectorAll("input[name^='_']")).forEach(function (i) {
+          if (i.name !== "_subject") data.delete(i.name);
+        });
+        var trap = f.querySelector('input[name="_honey"], input[name="_gotcha"]');
+        if (trap && trap.value) return; // a spam robot filled the hidden box: quietly do nothing
+        data.append("form", { contact: "Enquiry", newsletter: "Newsletter sign up", report: "Example report request" }[kind] || kind);
+        data.append("page", location.pathname);
+
+        var done = false;
+        var timer = setTimeout(function () { if (!done) fail(); }, 20000);
+        function fail() {
+          done = true;
+          clearTimeout(timer);
+          reset();
+          help.style.color = "#b42318";
+          help.innerHTML = "Sorry, your details could not be sent just now. Please try again, or " + contactLine;
+        }
+        if (!M.formId) return fail();
+        fetch(endpoint, { method: "POST", body: data, headers: { Accept: "application/json" } })
+          .then(function (r) {
+            if (done) return;
+            if (!r.ok) return fail();
+            done = true;
+            clearTimeout(timer);
+            location.href = new URL("thank-you?type=" + kind, location.href).href;
+          })
+          .catch(function () { if (!done) fail(); });
       });
     });
 
