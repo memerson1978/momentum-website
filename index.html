@@ -225,6 +225,13 @@
 
   /* Top section: flat deep navy */
   section.hero{background-color:var(--navy-band);}
+
+  /* Home text sections: 880px wide, smaller titles (03/11/2026) */
+  .wide{max-width:880px;margin-left:auto;margin-right:auto;}
+  .wide p{font-size:1.04rem;}
+  .wide h2{font-size:clamp(1.45rem,2.6vw,1.95rem);margin-bottom:1.1rem !important;}
+  .band:has(> .wide){padding:52px 0;}
+  @media (max-width:760px){.band:has(> .wide){padding:40px 0;}}
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
 </head>
@@ -378,7 +385,7 @@
 
   <!-- WE GET IT (navy) -->
   <section class="band navy">
-    <div class="wrap narrow">
+    <div class="wrap wide">
       <h2 class="center" style="margin-bottom:1.4rem">Dedicated sales progressors that ensure your sales are constantly moving forward!</h2>
       <p>We get it. You want to ensure every client is treated professionally and with exceptional customer service, but you simply don't have time to achieve that if you want to sell more homes.</p>
       <ul class="tick">
@@ -394,7 +401,7 @@
 
   <!-- UNSURE (white) -->
   <section class="band">
-    <div class="wrap narrow">
+    <div class="wrap wide">
       <h2 class="center" style="margin-bottom:1.4rem">Unsure about outsourcing your sales progression?</h2>
       <p>We understand. Your main concern is that you need to ensure that every sale completes. Ideally, it should complete quickly and without issues.</p>
       <p>You're worried that if you outsource, the deal may fall through due to a lack of diligence, speed or expertise.</p>
@@ -409,8 +416,8 @@
 
   <!-- WHAT COULD I GAIN (navy) -->
   <section class="band navy">
-    <div class="wrap narrow">
-      <h2 class="center" style="margin-bottom:1.4rem;width:min(980px,calc(100vw - 40px));margin-left:50%;transform:translateX(-50%)">These are all valid concerns. Concerns that we, at Momentum, take seriously too.</h2>
+    <div class="wrap wide">
+      <h2 class="center" style="margin-bottom:1.4rem">These are all valid concerns. Concerns that we, at Momentum, take seriously too.</h2>
       <p style="margin-bottom:.4rem">But have you asked yourself.</p>
       <p style="font-weight:700;color:#fff">What could I gain from outsourcing my sales progression to a company that shares my concerns and values?</p>
       <ul class="tick">
