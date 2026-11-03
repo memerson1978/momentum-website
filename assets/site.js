@@ -147,7 +147,8 @@ window.MSP = {
     [".team-title", "float", 0.8], [".team .center", "float", 0.8], [".member", "float", 0.8],
     [".safe h2", "arc", 1.2], [".safe-row", "fade", 0.5], [".grow .media", "float", 0.8], [".team-band .media", "float", 0.8],
     [".c-photo", "float", 1.2], [".c-form .btn", "fade", 1.2],
-    [".car-intro .btn", "expand", 1.2], [".jd-card", "float", 0.6], [".jd-card .btn", "expand", 0.6], [".values-grid .dna", "arc", 1.5]
+    [".about-intro .page-title", "fade", 1.2], [".about-copy p", "fade", 1.0], [".about-img", "float", 1.0],
+    [".car-intro .media", "float", 1.2], [".jd2 .btn", "expand", 0.8], [".vgrid .dna", "arc", 1.5], [".tiles3 .tl", "float", 0.7]
   ];
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (reduce || !("IntersectionObserver" in window)) return;
@@ -159,6 +160,7 @@ window.MSP = {
       expand: "opacity:0;transform:scale(.8)", arc: "opacity:0;transform:perspective(700px) rotateX(-35deg) translateY(30px)"
     }[a[1]] + "}\nhtml.anim-on " + a[0] + "{transition:opacity " + a[2] + "s ease, transform " + a[2] + "s cubic-bezier(.2,.7,.2,1)}\n";
   });
+  css += "html.anim-on .news-hero{overflow:hidden}html.anim-on .news-hero .bg{inset:-14% 0;will-change:transform}\n";
   var st = document.createElement("style"); st.textContent = css; document.head.appendChild(st);
   document.documentElement.classList.add("anim-on");
   document.addEventListener("DOMContentLoaded", function () {
@@ -173,5 +175,19 @@ window.MSP = {
         io.observe(el);
       });
     });
+    // News page: the townhouse photo drifts gently as the page scrolls.
+    var bg = document.querySelector(".news-hero .bg");
+    if (bg) {
+      var sec = bg.parentNode, tick = false;
+      var move = function () {
+        tick = false;
+        var r = sec.getBoundingClientRect(), vh = innerHeight;
+        if (r.bottom < 0 || r.top > vh) return;
+        var p = (vh - r.top) / (vh + r.height) - 0.5; // -0.5 to 0.5 while on screen
+        bg.style.transform = "translate3d(0," + (p * r.height * 0.2).toFixed(1) + "px,0)";
+      };
+      addEventListener("scroll", function () { if (!tick) { tick = true; requestAnimationFrame(move); } }, { passive: true });
+      addEventListener("resize", move); move();
+    }
   });
 })();
