@@ -2,7 +2,7 @@
    ------------------------------------------------------------------------------
    SETTINGS: this is the only block you should ever need to change.            */
 window.MSP = {
-  ga4Id: "",            // Google Analytics 4 Measurement ID, e.g. "G-ABC123XYZ"
+  ga4Id: "G-R5S38F7M3K", // Google Analytics 4 Measurement ID, e.g. "G-ABC123XYZ"
   adsId: "",            // Google Ads tag ID, e.g. "AW-123456789"
   adsLeadLabel: "",     // Google Ads conversion label for a contact form enquiry
   adsBookingLabel: "",  // Google Ads conversion label for a Discovery Meeting booking
