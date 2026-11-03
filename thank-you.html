@@ -8,7 +8,7 @@
 <meta name="description" content="Thank you for contacting Momentum Sales Progression.">
 <link rel="canonical" href="https://www.momentumsp.co.uk/thank-you">
 <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-<script src="assets/site.js?v=20261103e"></script>
+<script src="assets/site.js?v=20261103f"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap">
@@ -282,6 +282,7 @@
 <script>
 (function(){
   var t=(new URLSearchParams(location.search).get('type'))||'contact';
+  if(t==='jd'){document.getElementById('ty-msg').textContent='Thank you. We have emailed the Sales Progressor job description to you. If it does not arrive within a few minutes, please check your spam or junk folder.';}
   if(t==='report'){document.getElementById('ty-msg').textContent='Thank you. We have emailed the example report to you. If it does not arrive within a few minutes, please check your spam or junk folder.';}
   if(t==='newsletter'){document.getElementById('ty-msg').textContent='Thank you for signing up to our quarterly newsletter. You will receive the next edition by email.';}
   var key='msp-ty-'+t+'-'+(document.referrer||'');
