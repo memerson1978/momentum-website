@@ -282,7 +282,7 @@
 <script>
 (function(){
   var t=(new URLSearchParams(location.search).get('type'))||'contact';
-  if(t==='newsletter'){document.getElementById('ty-msg').textContent='You are now signed up to hear from us. Thank you for your interest.';}
+  if(t==='newsletter'){document.getElementById('ty-msg').textContent='Thank you for signing up to our quarterly newsletter. You will receive the next edition by email.';}
   var key='msp-ty-'+t+'-'+(document.referrer||'');
   try{ if(sessionStorage.getItem(key)) return; sessionStorage.setItem(key,'1'); }catch(e){}
   if(window.MSP&&MSP.convert) MSP.convert(t);
