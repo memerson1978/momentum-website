@@ -9,6 +9,7 @@ window.MSP = {
   adsNewsletterLabel: "",// Google Ads conversion label for a newsletter sign up (optional)
   adsAboutLabel: "aBg8CMOdpJMbEOux9eRA",    // "About Us page": a visit to the About page
   adsWhatsappLabel: "QM2KCO-kj7gcEOux9eRA", // "TechSol - Whatsapp contact 22665": a click on the WhatsApp button
+  metaPixelId: "630243843042323", // Meta (Facebook) Pixel ID; loads only after cookie consent
   formEmail: "info@momentumsp.co.uk", // where website forms are emailed
   whatsapp: "447932712565" // WhatsApp number in international format, e.g. "447700900123"
 };
@@ -50,7 +51,21 @@ window.MSP = {
     });
     if (store) try { localStorage.setItem("msp-consent", "granted"); } catch (e) {}
     M.granted = true;
+    loadPixel();
     try { window.dispatchEvent(new Event("msp:consent")); } catch (e) {}
+  }
+
+  // Meta (Facebook) Pixel, loaded only once the visitor accepts cookies.
+  function loadPixel() {
+    if (!M.metaPixelId || window.fbq) return;
+    var n = window.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
+    if (!window._fbq) window._fbq = n;
+    n.push = n; n.loaded = true; n.version = "2.0"; n.queue = [];
+    var f = document.createElement("script"); f.async = true;
+    f.src = "https://connect.facebook.net/en_US/fbevents.js";
+    document.head.appendChild(f);
+    window.fbq("init", M.metaPixelId);
+    window.fbq("track", "PageView");
   }
   function deny() {
     gtag("consent", "update", {
@@ -66,6 +81,7 @@ window.MSP = {
     var ev = { contact: "generate_lead", booking: "book_discovery_meeting", newsletter: "sign_up" }[kind] || kind;
     gtag("event", ev, { form_type: kind });
     if (M.adsId && label) gtag("event", "conversion", { send_to: M.adsId + "/" + label });
+    if (window.fbq) window.fbq("track", { contact: "Lead", booking: "Schedule", newsletter: "CompleteRegistration" }[kind] || "Lead");
   };
 
   document.addEventListener("DOMContentLoaded", function () {
