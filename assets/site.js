@@ -10,7 +10,7 @@ window.MSP = {
   adsAboutLabel: "aBg8CMOdpJMbEOux9eRA",    // "About Us page": a visit to the About page
   adsWhatsappLabel: "QM2KCO-kj7gcEOux9eRA", // "TechSol - Whatsapp contact 22665": a click on the WhatsApp button
   metaPixelId: "630243843042323", // Meta (Facebook) Pixel ID; loads only after cookie consent
-  formEmail: "info@momentumsp.co.uk", // where website forms are emailed
+  formEmail: "722669ca90aae22765096ac0f2e0e0cc", // FormSubmit code for info@momentumsp.co.uk (hides the address from spammers)
   whatsapp: "447932712565" // WhatsApp number in international format, e.g. "447700900123"
 };
 /* ------------------------------------------------------------------------------ */
