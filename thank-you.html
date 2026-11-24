@@ -276,7 +276,7 @@
 <h1 id="ty-title">Thank you</h1>
 <span class="fade-rule" aria-hidden="true"></span>
 <p id="ty-msg">Your message has been sent. A member of our team will be in touch shortly.</p>
-<p>If your enquiry is urgent, please call us on <a href="tel:01279905805">01279 905 805</a>.</p>
+<p id="ty-urgent">If your enquiry is urgent, please call us on <a href="tel:01279905805">01279 905 805</a>.</p>
 <p><a class="btn btn-navy" href="./" style="text-decoration:none;color:#fff">Back to the home page</a></p>
 </div></section>
 <script>
@@ -284,8 +284,21 @@
   var t=(new URLSearchParams(location.search).get('type'))||'contact';
   if(t==='report'){var m=document.getElementById('ty-msg');m.textContent='Thank you. Your example Conveyancing Performance Report is ready to download. It uses a fictitious agency and fictitious law firms to show the format.';var d=document.createElement('p');d.innerHTML='<a class="btn btn-green" href="files/reports/momentum-conveyancing-report-example-f5ea397bf89b.pdf" target="_blank" rel="noopener" style="text-decoration:none">Download the example report</a>';m.parentNode.insertBefore(d,m.nextSibling);}
   if(t==='newsletter'){document.getElementById('ty-msg').textContent='Thank you for signing up to our quarterly newsletter. You will receive the next edition by email.';}
+  if(t==='booking'){
+    document.title='Booking Confirmed | Momentum Sales Progression';
+    document.getElementById('ty-title').textContent='Thank you for booking';
+    document.getElementById('ty-msg').textContent='Your discovery call with Mark Emerson is booked. Calendly will email you a confirmation with the date, the time and how to join.';
+    document.getElementById('ty-urgent').innerHTML='If you need to change the time, use the link in your confirmation email, or call us on <a href="tel:01279905805">01279 905 805</a>.';
+  }
   var key='msp-ty-'+t+'-'+(document.referrer||'');
   try{ if(sessionStorage.getItem(key)) return; sessionStorage.setItem(key,'1'); }catch(e){}
+  if(t==='booking'){
+    // Calendly sends people here after a booking made from its own page (the direct link).
+    // A booking made in the calendar on /discovery-meeting has already been counted there, so do not count it again:
+    // that page leaves a note in this tab, and if Calendly shows this page inside its calendar we are in a frame.
+    if(window.top!==window.self) return;
+    try{ if(sessionStorage.getItem('msp-booking-counted')){ sessionStorage.removeItem('msp-booking-counted'); return; } }catch(e){}
+  }
   if(window.MSP&&MSP.convert) MSP.convert(t);
 })();
 </script>

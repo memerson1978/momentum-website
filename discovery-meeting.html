@@ -301,6 +301,13 @@
       </div>
       <div class="calendly-inline-widget" data-url="https://calendly.com/mark-emerson-momentumsp/30min?hide_gdpr_banner=1" style="min-width:320px;height:760px;max-width:1000px;margin:36px auto 0"></div>
       <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+      <script>
+      /* site.js counts a booking made in this calendar (book_discovery_meeting). Leave a note in this tab so that,
+         if Calendly then sends the visitor to /thank-you?type=booking, the thank you page does not count it again. */
+      window.addEventListener("message",function(e){
+        if(e.origin==="https://calendly.com"&&e.data&&e.data.event==="calendly.event_scheduled"){ try{ sessionStorage.setItem("msp-booking-counted","1"); }catch(x){} }
+      });
+      </script>
     </div>
   </section>
 
