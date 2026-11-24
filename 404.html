@@ -1,8 +1,25 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
-<meta name="robots" content="noindex">
 <meta charset="utf-8">
+<script>
+/* Old Wix addresses that have no page of their own: send the visitor straight to the right page,
+   keeping ?gclid=, ?utm_ codes and #anchors. Runs before anything else so the 404 page is never counted. */
+(function(){
+  var p=location.pathname.toLowerCase().replace(/\.html$/,'').replace(/\/+$/,'')||'/';
+  var map={'/home':'/','/index':'/','/about-5':'/discovery-meeting','/contact-4':'/contact',
+    '/copy-of-privacy-policy':'/cookie-policy','/insights':'/estate-agents#insights','/blog':'/news'};
+  ['/about','/estate-agents','/contact','/discovery-meeting','/news','/careers','/privacy-policy','/cookie-policy','/thank-you']
+    .forEach(function(k){map[k]=k;}); // same page typed with capitals or a trailing slash
+  var to=map[p];
+  if(!to&&/^\/(post|blog)\//.test(p)) to='/news'; // Wix blog posts, categories and tags
+  if(!to||to===location.pathname) return;
+  var t=to.split('#');
+  location.replace(t[0]+location.search+(location.hash||(t[1]?'#'+t[1]:'')));
+  document.write('<plaintext hidden>'); // stop the rest of this page (and its tags) from loading
+})();
+</script>
+<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Page Not Found | Momentum Sales Progression</title>
 <meta name="description" content="The page you were looking for could not be found.">
