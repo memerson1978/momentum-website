@@ -84,22 +84,54 @@ window.MSP = {
     var withdrawn = (gaOn && !c.analytics) || ((adsOn || window.fbq) && !c.advertising);
     choice = { analytics: !!c.analytics, advertising: !!c.advertising, date: new Date().toISOString().slice(0, 10) };
     try { localStorage.setItem(KEY, JSON.stringify(choice)); } catch (e) {}
-    if (!choice.analytics) clearCookies(/^(_ga|_gid)/);
-    if (!choice.advertising) clearCookies(/^(_gcl|_fbp|_fbc)/);
+    if (withdrawn) {
+      // Stop the tags already running on this page from writing their cookies again before the reload.
+      gtag("consent", "update", {
+        analytics_storage: choice.analytics ? "granted" : "denied",
+        ad_storage: choice.advertising ? "granted" : "denied",
+        ad_user_data: choice.advertising ? "granted" : "denied",
+        ad_personalization: choice.advertising ? "granted" : "denied"
+      });
+      if (!choice.advertising && window.fbq) { try { window.fbq("consent", "revoke"); } catch (e) {} }
+    }
+    clearRefused(choice);
     if (withdrawn) { location.reload(); return; }
     apply(choice);
   }
 
-  function clearCookies(re) {
+  // Cookies set by each optional category. Google sets its cookies on the top level domain
+  // (.momentumsp.co.uk), so each one is deleted for every domain it could have been set on.
+  var ANALYTICS_COOKIES = { names: ["_ga", "_gid", "_gat", "_ga_" + (M.ga4Id || "").replace(/^G-/, "")], prefix: /^(_ga|_gid|_gat)/ };
+  var ADVERTISING_COOKIES = { names: ["_gcl_au", "_gcl_aw", "_gcl_dc", "_fbp", "_fbc"], prefix: /^(_gcl_|_fbp|_fbc)/ };
+
+  function clearRefused(c) {
+    if (!c.analytics) clearCookies(ANALYTICS_COOKIES);
+    if (!c.advertising) clearCookies(ADVERTISING_COOKIES);
+  }
+
+  function cookieDomains() {
     var host = location.hostname, root = host.replace(/^www\./, "");
+    var list = ["", host, "." + host, root, "." + root], out = [];
+    list.forEach(function (d) { if (out.indexOf(d) < 0) out.push(d); });
+    return out;
+  }
+
+  function clearCookies(group) {
+    var names = group.names.slice();
     document.cookie.split(";").forEach(function (c) {
       var name = c.split("=")[0].trim();
-      if (!re.test(name)) return;
-      ["", "; domain=" + host, "; domain=." + root].forEach(function (d) {
-        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + d;
+      if (name && group.prefix.test(name) && names.indexOf(name) < 0) names.push(name);
+    });
+    var domains = cookieDomains();
+    names.forEach(function (name) {
+      domains.forEach(function (d) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; max-age=0; path=/" + (d ? "; domain=" + d : "");
       });
     });
   }
+  // Safety net: on every page, remove cookies from any category the visitor has turned off
+  // (a tag can write a cookie as the previous page closes).
+  if (choice) clearRefused(choice);
 
   // Meta (Facebook) Pixel, loaded only once the visitor accepts Advertising.
   function loadPixel() {
