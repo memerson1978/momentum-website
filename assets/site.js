@@ -21,41 +21,87 @@ window.MSP = {
   function gtag() { dataLayer.push(arguments); }
   window.gtag = gtag;
 
-  // Google Consent Mode v2: nothing is stored until the visitor accepts.
-  var saved = null;
-  try { saved = localStorage.getItem("msp-consent"); } catch (e) {}
+  /* Cookie choices: two separate switches, Analytics and Advertising (decided 13/11/2026).
+     Google basic consent mode: no Google or Meta script loads until the matching choice is accepted.
+       Analytics   = Google Analytics 4 (analytics_storage)
+       Advertising = Google Ads tag and the Meta Pixel (ad_storage, ad_user_data, ad_personalization)
+     The choice is kept in this browser under "msp-consent-v2". Choices made with the old single
+     Accept button ("msp-consent") are not carried over, so returning visitors are asked once more. */
+  var KEY = "msp-consent-v2";
+  var choice = null;
+  try { choice = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
+  try { localStorage.removeItem("msp-consent"); } catch (e) {}
+  if (!choice || typeof choice !== "object") choice = null;
+
   gtag("consent", "default", {
     ad_storage: "denied", analytics_storage: "denied",
-    ad_user_data: "denied", ad_personalization: "denied",
-    wait_for_update: 500
+    ad_user_data: "denied", ad_personalization: "denied"
   });
-  if (saved === "granted") grant(false);
   gtag("set", "ads_data_redaction", true);
   gtag("set", "url_passthrough", true);
 
-  var tagId = M.ga4Id || M.adsId;
-  if (tagId) {
-    var s = document.createElement("script");
-    s.async = true;
-    s.src = "https://www.googletagmanager.com/gtag/js?id=" + tagId;
-    document.head.appendChild(s);
-    gtag("js", new Date());
-    if (M.ga4Id) gtag("config", M.ga4Id);
-    if (M.adsId) gtag("config", M.adsId);
-  }
+  M.analytics = false; // visitor accepted Analytics
+  M.ads = false;       // visitor accepted Advertising
+  M.granted = false;   // kept for the News page Facebook feed: true once Advertising is accepted
+  var tagLoaded = false, gaOn = false, adsOn = false, waiting = [];
 
-  function grant(store) {
+  // Run fn now if the visitor has made a choice, otherwise once they do (on this page).
+  function whenDecided(fn) { if (choice) fn(); else waiting.push(fn); }
+
+  function apply(c) {
     gtag("consent", "update", {
-      ad_storage: "granted", analytics_storage: "granted",
-      ad_user_data: "granted", ad_personalization: "granted"
+      analytics_storage: c.analytics ? "granted" : "denied",
+      ad_storage: c.advertising ? "granted" : "denied",
+      ad_user_data: c.advertising ? "granted" : "denied",
+      ad_personalization: c.advertising ? "granted" : "denied"
     });
-    if (store) try { localStorage.setItem("msp-consent", "granted"); } catch (e) {}
-    M.granted = true;
-    loadPixel();
-    try { window.dispatchEvent(new Event("msp:consent")); } catch (e) {}
+    M.analytics = !!c.analytics;
+    M.ads = !!c.advertising;
+    M.granted = M.ads;
+    if ((M.analytics && M.ga4Id) || (M.ads && M.adsId)) {
+      if (!tagLoaded) {
+        tagLoaded = true;
+        var s = document.createElement("script");
+        s.async = true;
+        s.src = "https://www.googletagmanager.com/gtag/js?id=" + (M.analytics && M.ga4Id ? M.ga4Id : M.adsId);
+        document.head.appendChild(s);
+        gtag("js", new Date());
+      }
+      if (M.analytics && M.ga4Id && !gaOn) { gaOn = true; gtag("config", M.ga4Id); }
+      if (M.ads && M.adsId && !adsOn) { adsOn = true; gtag("config", M.adsId); }
+    }
+    if (M.ads) {
+      loadPixel();
+      try { window.dispatchEvent(new Event("msp:consent")); } catch (e) {}
+    }
+    var w = waiting; waiting = [];
+    w.forEach(function (fn) { fn(); });
   }
 
-  // Meta (Facebook) Pixel, loaded only once the visitor accepts cookies.
+  // Save a new choice. If something accepted earlier is now turned off, its tags are already
+  // running on this page, so clear their cookies and reload the page without them.
+  function save(c) {
+    var withdrawn = (gaOn && !c.analytics) || ((adsOn || window.fbq) && !c.advertising);
+    choice = { analytics: !!c.analytics, advertising: !!c.advertising, date: new Date().toISOString().slice(0, 10) };
+    try { localStorage.setItem(KEY, JSON.stringify(choice)); } catch (e) {}
+    if (!choice.analytics) clearCookies(/^(_ga|_gid)/);
+    if (!choice.advertising) clearCookies(/^(_gcl|_fbp|_fbc)/);
+    if (withdrawn) { location.reload(); return; }
+    apply(choice);
+  }
+
+  function clearCookies(re) {
+    var host = location.hostname, root = host.replace(/^www\./, "");
+    document.cookie.split(";").forEach(function (c) {
+      var name = c.split("=")[0].trim();
+      if (!re.test(name)) return;
+      ["", "; domain=" + host, "; domain=." + root].forEach(function (d) {
+        document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/" + d;
+      });
+    });
+  }
+
+  // Meta (Facebook) Pixel, loaded only once the visitor accepts Advertising.
   function loadPixel() {
     if (!M.metaPixelId || window.fbq) return;
     var n = window.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
@@ -67,41 +113,80 @@ window.MSP = {
     window.fbq("init", M.metaPixelId);
     window.fbq("track", "PageView");
   }
-  function deny() {
-    gtag("consent", "update", {
-      ad_storage: "denied", analytics_storage: "denied",
-      ad_user_data: "denied", ad_personalization: "denied"
-    });
-    try { localStorage.setItem("msp-consent", "denied"); } catch (e) {}
-  }
+
+  if (choice) apply(choice);
+
+  // Measurement helpers. Nothing is sent without the matching choice; if the visitor has not
+  // chosen yet, the event waits and is sent only if they accept while still on the page.
+  M.event = function (name, params) {
+    whenDecided(function () { if (M.analytics || M.ads) gtag("event", name, params || {}); });
+  };
+  M.adsConversion = function (label) {
+    if (!M.adsId || !label) return;
+    whenDecided(function () { if (M.ads) gtag("event", "conversion", { send_to: M.adsId + "/" + label }); });
+  };
+  M.pixel = function (ev) {
+    whenDecided(function () { if (M.ads && window.fbq) window.fbq("track", ev); });
+  };
 
   // Conversion helper used by the thank you page and the booking calendar.
   M.convert = function (kind) {
     var label = { contact: M.adsLeadLabel, booking: M.adsBookingLabel, newsletter: M.adsNewsletterLabel }[kind];
     var ev = { contact: "generate_lead", booking: "book_discovery_meeting", newsletter: "sign_up", report: "request_report", jd: "request_job_description" }[kind] || kind;
-    gtag("event", ev, { form_type: kind });
-    if (M.adsId && label) gtag("event", "conversion", { send_to: M.adsId + "/" + label });
-    if (window.fbq) window.fbq("track", { contact: "Lead", booking: "Schedule", newsletter: "CompleteRegistration" }[kind] || "Lead");
+    M.event(ev, { form_type: kind });
+    M.adsConversion(label);
+    M.pixel({ contact: "Lead", booking: "Schedule", newsletter: "CompleteRegistration" }[kind] || "Lead");
   };
 
   document.addEventListener("DOMContentLoaded", function () {
-    // Cookie banner
+    // Cookie banner: Accept all, Reject all, or Manage choices (two switches, both off until turned on).
     var bar = document.createElement("div");
     bar.className = "cookie-bar";
     bar.setAttribute("role", "dialog");
-    bar.setAttribute("aria-label", "Cookie preferences");
-    bar.innerHTML = '<p>We use cookies to understand how our website is used and to measure our advertising. ' +
-      'See our <a href="cookie-policy">cookie policy</a>.</p>' +
-      '<div class="cookie-actions"><button type="button" class="cb-reject">Reject</button>' +
-      '<button type="button" class="cb-accept">Accept</button></div>';
+    bar.setAttribute("aria-labelledby", "cb-title");
+    bar.setAttribute("aria-describedby", "cb-text");
+    bar.innerHTML =
+      '<p class="cb-title" id="cb-title">Cookies on this website</p>' +
+      '<p class="cb-text" id="cb-text">We would like to use optional cookies to see how our website is used and to measure our advertising. ' +
+      'We only set them if you agree. See our <a href="cookie-policy">cookie policy</a>.</p>' +
+      '<div class="cb-prefs" id="cb-prefs" hidden>' +
+        '<label class="cb-opt"><span class="cb-desc"><b>Analytics</b><span>Google Analytics. Tells us how visitors find and use our website.</span></span>' +
+          '<input type="checkbox" role="switch" class="cb-switch" data-cb="analytics"></label>' +
+        '<label class="cb-opt"><span class="cb-desc"><b>Advertising</b><span>Google Ads and the Meta Pixel. Tell us whether our adverts lead to enquiries and bookings.</span></span>' +
+          '<input type="checkbox" role="switch" class="cb-switch" data-cb="advertising"></label>' +
+        '<p class="cb-note">Strictly necessary storage, which remembers your choice, is always on.</p>' +
+      '</div>' +
+      '<div class="cookie-actions">' +
+        '<button type="button" class="cb-manage" aria-expanded="false" aria-controls="cb-prefs">Manage choices</button>' +
+        '<button type="button" class="cb-save" hidden>Save choices</button>' +
+        '<button type="button" class="cb-reject">Reject all</button>' +
+        '<button type="button" class="cb-accept">Accept all</button>' +
+      '</div>';
     document.body.appendChild(bar);
-    function show() { bar.classList.add("show"); }
+    var prefs = bar.querySelector(".cb-prefs"), manage = bar.querySelector(".cb-manage"), saveBtn = bar.querySelector(".cb-save");
+    var sw = { analytics: bar.querySelector('[data-cb="analytics"]'), advertising: bar.querySelector('[data-cb="advertising"]') };
+    function openPrefs(open) {
+      prefs.hidden = !open; saveBtn.hidden = !open; manage.hidden = open;
+      manage.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+    function show(withPrefs) {
+      sw.analytics.checked = !!(choice && choice.analytics);
+      sw.advertising.checked = !!(choice && choice.advertising);
+      openPrefs(!!withPrefs);
+      bar.classList.add("show");
+      if (withPrefs) sw.analytics.focus({ preventScroll: true }); // only when the visitor opened it themselves
+    }
     function hide() { bar.classList.remove("show"); }
-    if (!saved) show();
-    bar.querySelector(".cb-accept").onclick = function () { grant(true); hide(); };
-    bar.querySelector(".cb-reject").onclick = function () { deny(); hide(); };
+    if (!choice) show(false);
+    bar.querySelector(".cb-accept").onclick = function () { hide(); save({ analytics: true, advertising: true }); };
+    bar.querySelector(".cb-reject").onclick = function () { hide(); save({ analytics: false, advertising: false }); };
+    manage.onclick = function () { openPrefs(true); sw.analytics.focus(); };
+    saveBtn.onclick = function () { hide(); save({ analytics: sw.analytics.checked, advertising: sw.advertising.checked }); };
+    bar.addEventListener("keydown", function (e) { if (e.key === "Escape" && choice) hide(); });
+    // "Cookie settings" in the footer (and on the cookie policy page) reopens the banner with the switches showing.
     [].forEach.call(document.querySelectorAll("[data-cookie-settings]"), function (a) {
-      a.addEventListener("click", function (e) { e.preventDefault(); show(); });
+      a.setAttribute("role", "button");
+      a.addEventListener("click", function (e) { e.preventDefault(); show(true); });
     });
 
     // Forms are sent to Formspree in the background, then the visitor goes to the thank you page.
@@ -190,8 +275,7 @@ window.MSP = {
     });
 
     // Google Ads: About page visit.
-    if (M.adsId && M.adsAboutLabel && /\/about(\.html)?\/?$/.test(location.pathname))
-      gtag("event", "conversion", { send_to: M.adsId + "/" + M.adsAboutLabel });
+    if (/\/about(\.html)?\/?$/.test(location.pathname)) M.adsConversion(M.adsAboutLabel);
 
     // Track phone, email and WhatsApp clicks.
     document.addEventListener("click", function (e) {
@@ -199,11 +283,11 @@ window.MSP = {
       if (!a) return;
       var h = a.getAttribute("href");
       if (h.indexOf("https://wa.me/") === 0) {
-        gtag("event", "whatsapp_click", { link_url: h });
-        if (M.adsId && M.adsWhatsappLabel) gtag("event", "conversion", { send_to: M.adsId + "/" + M.adsWhatsappLabel });
+        M.event("whatsapp_click", { link_url: h });
+        M.adsConversion(M.adsWhatsappLabel);
       }
-      if (h.indexOf("tel:") === 0) gtag("event", "phone_click", { link_url: h });
-      else if (h.indexOf("mailto:") === 0) gtag("event", "email_click", { link_url: h });
+      if (h.indexOf("tel:") === 0) M.event("phone_click", { link_url: h });
+      else if (h.indexOf("mailto:") === 0) M.event("email_click", { link_url: h });
     });
   });
 
