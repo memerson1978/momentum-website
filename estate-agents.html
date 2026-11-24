@@ -245,15 +245,34 @@
   .rr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:16px;}
   .rr-note{font-size:.88rem;color:#5a6b7a;margin:12px 0 0;}
   @media (max-width:760px){.rr-grid{grid-template-columns:1fr;}.report-req{padding:22px 18px;}}
-  /* Ad landing: headline and offer line; booking and call buttons sit after the testimonial (24/11/2026) */
+  /* Report button on the left; booking and call pair aligned to the right edge of the report card (24/11/2026) */
+  .cr-actions{justify-content:space-between;align-items:stretch;}
+  .cr-pair{display:flex;flex-wrap:wrap;gap:14px;}
+  .cr-actions .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;line-height:1.3;}
+  @media (max-width:520px){
+    .cr-actions{flex-direction:column;max-width:360px;margin-left:auto;margin-right:auto;}
+    .cr-pair{flex-direction:column;}
+  }
+  /* Ad landing: headline and offer line in the navy top section; booking and call buttons in their own band just below (24/11/2026) */
   section.ea-hero{background:var(--navy-band);color:#fff;padding:46px 0 50px;text-align:center;}
   .ea-hero h1{color:#fff;font-size:clamp(1.95rem,4.2vw,2.9rem);line-height:1.15;max-width:860px;margin:0 auto;}
   .ea-hero .rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#EA6A4C,#8BD27D);margin:18px auto 16px;}
   .ea-hero p.offer{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.45;margin:0 auto;max-width:760px;color:#fff;}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:12px 14px;justify-content:center;}
   .hero-ctas .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;}
-  section.mid-cta{padding:44px 0 6px;text-align:center;}
-  .mid-cta p{font-family:"Nunito",sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy-deep);margin:0 0 16px;}
+  /* Button band under the navy top section (24/11/2026). The homepage band's coral and green ribbons,
+     scaled down to a slim sweep, pass behind the buttons; a white mat keeps them clear of the buttons. */
+  section.ea-cta{--coral-r:#ED5F49;--green-r:#8BD27D;background:#fff;padding:30px 0 34px;text-align:center;overflow:hidden;}
+  .ea-cta-line{font-family:"Nunito",sans-serif;font-weight:700;font-size:1.1rem;line-height:1.4;color:var(--navy-deep);margin:0 auto 14px;text-wrap:balance;}
+  .ea-cta-row{position:relative;}
+  .ea-swoosh{position:absolute;left:50%;width:100vw;transform:translateX(-50%);pointer-events:none;display:block;}
+  .ea-swoosh .s-coral{fill:var(--coral-r);}
+  .ea-swoosh .s-green{fill:var(--green-r);}
+  .ea-swoosh.s-desk{height:52px;top:calc(50% - 46px);}
+  .ea-swoosh.s-mob{display:none;}
+  .ea-cta .hero-ctas{position:relative;z-index:1;width:fit-content;margin:0 auto;padding:0 16px;background:#fff;}
+  .btn-call{background:#fff;color:var(--navy-deep);border-color:var(--navy-deep);}
+  .btn-call:hover{background:var(--green);color:var(--navy-deep);border-color:var(--green);opacity:1;}
   .m-cta{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #e3e8ef;box-shadow:0 -8px 24px -16px rgba(7,33,54,.45);}
   .m-cta .btn{flex:1 1 0;display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:.7rem .6rem;font-size:.98rem;min-height:46px;white-space:nowrap;}
   @media (min-width:761px){ .m-cta{display:none!important;} }
@@ -261,9 +280,17 @@
     body.mcta-on{padding-bottom:68px;}
     body.mcta-on .wa{bottom:calc(80px + env(safe-area-inset-bottom,0px))!important;}
   }
+  @media (max-width:620px){
+    .ea-swoosh.s-desk{display:none;}
+    .ea-swoosh.s-mob{display:block;height:24px;top:calc(50% - 12px);}
+    /* Stacked buttons: the ribbons thread through the gap between them */
+    .ea-cta .hero-ctas{flex-direction:column;align-items:stretch;width:auto;max-width:360px;padding:0;background:transparent;gap:26px;}
+  }
   @media (max-width:520px){
     section.ea-hero{padding:28px 0 32px;}
     .hero-ctas{flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto;}
+    section.ea-cta{padding:20px 0 24px;}
+    .ea-cta-line{font-size:1.04rem;margin-bottom:12px;}
   }
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
@@ -294,6 +321,21 @@
       <h1>Outsourced sales progression for estate agents</h1>
       <span class="rule" aria-hidden="true"></span>
       <p class="offer">Across England, Wales and Northern Ireland. No exchange, no fee.</p>
+    </div>
+  </section>
+
+  <!-- BOOKING AND CALL BUTTONS: slim coral and green ribbons, as on the homepage band, pass behind the buttons (24/11/2026) -->
+  <section class="ea-cta" aria-label="Book a call or phone us">
+    <div class="wrap">
+      <p class="ea-cta-line">See whether Momentum is the right fit for your agency.</p>
+      <div class="ea-cta-row">
+        <svg class="ea-swoosh s-desk" viewBox="0 36 1440 138" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="s-coral" d="M0,40.6C5,40.8 20,41.5 30,42C40,42.5 50,43.1 60,43.7C70,44.3 80,45 90,45.7C100,46.5 110,47.3 120,48.2C130,49.1 140,50 150,51.1C160,52.2 170,53.3 180,54.6C190,55.9 200,57.2 210,58.7C220,60.2 230,61.7 240,63.5C250,65.2 260,67.1 270,69.1C280,71.1 290,73.3 300,75.5C310,77.7 320,80 330,82.4C340,84.8 350,87.2 360,89.6C370,92.1 380,94.6 390,97C400,99.5 410,102 420,104.4C430,106.8 440,109.2 450,111.4C460,113.7 470,116 480,118.1C490,120.2 500,122.2 510,124.1C520,126 530,127.7 540,129.3C550,130.9 560,132.3 570,133.5C580,134.8 590,136 600,137C610,138 620,138.9 630,139.7C640,140.5 650,141.1 660,141.7C670,142.3 680,142.8 690,143.2C700,143.5 710,143.8 720,144.1C730,144.3 740,144.4 750,144.5C760,144.6 770,144.6 780,144.6C790,144.6 800,144.5 810,144.3C820,144.1 830,143.8 840,143.4C850,143 860,142.5 870,141.9C880,141.4 890,140.7 900,140.1C910,139.4 920,138.6 930,137.8C940,137.1 950,136.2 960,135.4C970,134.5 980,133.7 990,132.8C1000,131.9 1010,131 1020,130.2C1030,129.3 1040,128.4 1050,127.6C1060,126.7 1070,125.9 1080,125.1C1090,124.2 1100,123.3 1110,122.4C1120,121.5 1130,120.5 1140,119.5C1150,118.6 1160,117.5 1170,116.5C1180,115.5 1190,114.5 1200,113.5C1210,112.4 1220,111.4 1230,110.4C1240,109.4 1250,108.3 1260,107.4C1270,106.4 1280,105.4 1290,104.4C1300,103.5 1310,102.6 1320,101.6C1330,100.7 1340,99.7 1350,98.7C1360,97.8 1370,96.9 1380,96C1390,95.2 1400,94.4 1410,93.7C1420,93.1 1435,92.4 1440,92.1L1440,93.5C1435,93.8 1420,94.5 1410,95.2C1400,95.8 1390,96.6 1380,97.5C1370,98.3 1360,99.3 1350,100.2C1340,101.1 1330,102.2 1320,103.1C1310,104.1 1300,105.1 1290,106.1C1280,107.1 1270,108.1 1260,109.1C1250,110.1 1240,111.2 1230,112.3C1220,113.4 1210,114.4 1200,115.5C1190,116.6 1180,117.7 1170,118.8C1160,119.9 1150,121 1140,122.1C1130,123.1 1120,124.2 1110,125.2C1100,126.2 1090,127.2 1080,128.2C1070,129.1 1060,130 1050,131C1040,131.9 1030,132.9 1020,133.9C1010,134.9 1000,135.9 990,136.9C980,137.9 970,138.9 960,139.9C950,140.8 940,141.8 930,142.7C920,143.6 910,144.5 900,145.4C890,146.2 880,147 870,147.7C860,148.4 850,149 840,149.6C830,150.1 820,150.6 810,151C800,151.3 790,151.6 780,151.8C770,152 760,152.1 750,152.2C740,152.2 730,152.3 720,152.2C710,152.2 700,152 690,151.8C680,151.6 670,151.3 660,150.9C650,150.5 640,150 630,149.4C620,148.7 610,148 600,147.2C590,146.3 580,145.4 570,144.3C560,143.1 550,141.9 540,140.5C530,139.1 520,137.5 510,135.8C500,134.1 490,132.3 480,130.3C470,128.4 460,126.3 450,124.1C440,122 430,119.8 420,117.5C410,115.3 400,112.9 390,110.6C380,108.3 370,106 360,103.7C350,101.4 340,99.1 330,96.9C320,94.6 310,92.4 300,90.3C290,88.3 280,86.2 270,84.3C260,82.4 250,80.7 240,79C230,77.4 220,75.9 210,74.5C200,73.1 190,71.9 180,70.7C170,69.5 160,68.5 150,67.5C140,66.5 130,65.6 120,64.7C110,63.9 100,63.1 90,62.4C80,61.7 70,61.1 60,60.5C50,59.9 40,59.4 30,58.9C20,58.4 5,57.7 0,57.5Z"/><path class="s-green" d="M0,66.5C5,66.7 20,67.4 30,67.9C40,68.4 50,68.9 60,69.5C70,70.1 80,70.7 90,71.4C100,72.1 110,72.9 120,73.7C130,74.6 140,75.5 150,76.5C160,77.5 170,78.5 180,79.7C190,80.9 200,82.1 210,83.5C220,84.9 230,86.4 240,88C250,89.7 260,91.4 270,93.3C280,95.2 290,97.3 300,99.3C310,101.4 320,103.6 330,105.9C340,108.1 350,110.4 360,112.7C370,115 380,117.3 390,119.6C400,121.9 410,124.3 420,126.5C430,128.8 440,131 450,133.1C460,135.3 470,137.4 480,139.3C490,141.3 500,143.1 510,144.8C520,146.5 530,148.1 540,149.5C550,150.9 560,152.1 570,153.3C580,154.4 590,155.3 600,156.2C610,157 620,157.7 630,158.4C640,159 650,159.5 660,159.9C670,160.3 680,160.6 690,160.8C700,161 710,161.2 720,161.2C730,161.3 740,161.2 750,161.2C760,161.1 770,161 780,160.8C790,160.6 800,160.3 810,160C820,159.6 830,159.1 840,158.6C850,158 860,157.4 870,156.7C880,156 890,155.2 900,154.4C910,153.5 920,152.6 930,151.7C940,150.8 950,149.8 960,148.9C970,147.9 980,146.9 990,145.9C1000,144.9 1010,143.9 1020,142.9C1030,141.9 1040,140.9 1050,140C1060,139 1070,138.1 1080,137.2C1090,136.2 1100,135.2 1110,134.2C1120,133.2 1130,132.1 1140,131.1C1150,130 1160,128.9 1170,127.8C1180,126.7 1190,125.6 1200,124.5C1210,123.4 1220,122.4 1230,121.3C1240,120.2 1250,119.1 1260,118.1C1270,117.1 1280,116.1 1290,115.1C1300,114.1 1310,113.1 1320,112.1C1330,111.2 1340,110.1 1350,109.2C1360,108.3 1370,107.3 1380,106.5C1390,105.6 1400,104.8 1410,104.2C1420,103.5 1435,102.8 1440,102.5L1440,119.4C1435,119.7 1420,120.4 1410,121C1400,121.7 1390,122.5 1380,123.3C1370,124.1 1360,125 1350,125.9C1340,126.8 1330,127.8 1320,128.7C1310,129.6 1300,130.5 1290,131.4C1280,132.3 1270,133.3 1260,134.2C1250,135.2 1240,136.1 1230,137.1C1220,138.1 1210,139.1 1200,140.1C1190,141.1 1180,142 1170,143C1160,144 1150,145 1140,145.9C1130,146.8 1120,147.8 1110,148.6C1100,149.5 1090,150.4 1080,151.2C1070,152 1060,152.8 1050,153.6C1040,154.4 1030,155.2 1020,156C1010,156.9 1000,157.7 990,158.6C980,159.4 970,160.3 960,161.1C950,161.9 940,162.7 930,163.4C920,164.2 910,164.9 900,165.6C890,166.2 880,166.9 870,167.4C860,167.9 850,168.4 840,168.8C830,169.2 820,169.5 810,169.6C800,169.8 790,169.9 780,169.9C770,170 760,169.9 750,169.8C740,169.7 730,169.6 720,169.4C710,169.1 700,168.8 690,168.5C680,168.1 670,167.6 660,167C650,166.5 640,165.8 630,165C620,164.3 610,163.4 600,162.4C590,161.4 580,160.3 570,159C560,157.7 550,156.4 540,154.8C530,153.3 520,151.5 510,149.7C500,147.9 490,145.9 480,143.8C470,141.7 460,139.5 450,137.2C440,135 430,132.6 420,130.2C410,127.9 400,125.4 390,123C380,120.6 370,118.2 360,115.8C350,113.4 340,111 330,108.6C320,106.3 310,104 300,101.9C290,99.7 280,97.6 270,95.6C260,93.7 250,91.8 240,90.1C230,88.4 220,86.9 210,85.4C200,84 190,82.7 180,81.5C170,80.2 160,79.1 150,78.1C140,77.1 130,76.1 120,75.3C110,74.4 100,73.6 90,72.9C80,72.2 70,71.5 60,70.9C50,70.3 40,69.8 30,69.3C20,68.8 5,68.1 0,67.9Z"/></svg>
+        <svg class="ea-swoosh s-mob" viewBox="0 34 390 60" preserveAspectRatio="none" aria-hidden="true" focusable="false"><path class="s-coral" d="M0,37.4C2.5,37.7 10,38.4 15,39.1C20,39.8 25,40.6 30,41.5C35,42.4 40,43.4 45,44.4C50,45.4 55,46.5 60,47.6C65,48.7 70,49.8 75,51C80,52.1 85,53.2 90,54.3C95,55.3 100,56.4 105,57.4C110,58.3 115,59.2 120,60.1C125,60.9 130,61.8 135,62.6C140,63.5 145,64.4 150,65.2C155,66.1 160,66.9 165,67.7C170,68.5 175,69.3 180,70.1C185,70.8 190,71.5 195,72.1C200,72.7 205,73.3 210,73.8C215,74.3 220,74.7 225,75C230,75.3 235,75.6 240,75.6C245,75.7 250,75.6 255,75.4C260,75.2 265,74.9 270,74.5C275,74.1 280,73.6 285,73.1C290,72.5 295,71.9 300,71.3C305,70.7 310,70.1 315,69.5C320,68.9 325,68.4 330,67.8C335,67.2 340,66.6 345,65.9C350,65.2 355,64.4 360,63.6C365,62.9 370,62.1 375,61.4C380,60.8 387.5,60.2 390,59.9L390,61C387.5,61.3 380,61.9 375,62.5C370,63.2 365,64 360,64.8C355,65.5 350,66.4 345,67.2C340,67.9 335,68.5 330,69.2C325,69.8 320,70.4 315,71.1C310,71.8 305,72.5 300,73.2C295,73.9 290,74.6 285,75.2C280,75.9 275,76.5 270,77C265,77.5 260,78 255,78.3C250,78.7 245,78.9 240,79C235,79.1 230,79 225,78.8C220,78.7 215,78.4 210,78.1C205,77.8 200,77.4 195,76.9C190,76.5 185,75.9 180,75.4C175,74.8 170,74.2 165,73.6C160,72.9 155,72.3 150,71.6C145,70.9 140,70.2 135,69.5C130,68.8 125,68.1 120,67.4C115,66.7 110,66 105,65.2C100,64.4 95,63.5 90,62.5C85,61.6 80,60.6 75,59.6C70,58.6 65,57.5 60,56.6C55,55.6 50,54.5 45,53.6C40,52.7 35,51.7 30,50.9C25,50.1 20,49.3 15,48.6C10,48 2.5,47.3 0,47Z"/><path class="s-green" d="M0,53C2.5,53.3 10,54 15,54.6C20,55.3 25,56.1 30,56.9C35,57.7 40,58.7 45,59.6C50,60.5 55,61.6 60,62.6C65,63.5 70,64.6 75,65.6C80,66.6 85,67.6 90,68.5C95,69.5 100,70.4 105,71.2C110,72 115,72.7 120,73.4C125,74.1 130,74.8 135,75.5C140,76.2 145,76.9 150,77.6C155,78.3 160,78.9 165,79.6C170,80.2 175,80.8 180,81.4C185,81.9 190,82.5 195,82.9C200,83.4 205,83.8 210,84.1C215,84.4 220,84.7 225,84.8C230,85 235,85.1 240,85C245,84.9 250,84.7 255,84.3C260,84 265,83.5 270,83C275,82.5 280,81.9 285,81.2C290,80.6 295,79.9 300,79.2C305,78.5 310,77.8 315,77.1C320,76.4 325,75.8 330,75.2C335,74.5 340,73.9 345,73.2C350,72.4 355,71.5 360,70.8C365,70 370,69.2 375,68.5C380,67.9 387.5,67.3 390,67L390,76.6C387.5,76.9 380,77.5 375,78.1C370,78.7 365,79.5 360,80.2C355,80.9 350,81.7 345,82.4C340,83 335,83.6 330,84.1C325,84.7 320,85.2 315,85.7C310,86.3 305,86.9 300,87.4C295,88 290,88.6 285,89C280,89.5 275,90 270,90.4C265,90.7 260,91 255,91.2C250,91.4 245,91.4 240,91.3C235,91.2 230,91 225,90.7C220,90.3 215,89.9 210,89.4C205,88.9 200,88.3 195,87.7C190,87.1 185,86.4 180,85.7C175,85 170,84.2 165,83.4C160,82.6 155,81.8 150,80.9C145,80.1 140,79.3 135,78.4C130,77.6 125,76.8 120,75.9C115,75.1 110,74.3 105,73.4C100,72.4 95,71.4 90,70.4C85,69.4 80,68.3 75,67.2C70,66.1 65,65 60,64C55,62.9 50,61.8 45,60.9C40,59.9 35,58.9 30,58.1C25,57.2 20,56.4 15,55.8C10,55.1 2.5,54.4 0,54.1Z"/></svg>
+        <div class="hero-ctas">
+          <a class="btn btn-green" href="discovery-meeting">Book a brief discovery call</a>
+          <a class="btn btn-call" href="tel:01279905805"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call 01279 905 805</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -352,17 +394,6 @@
   <!-- QUOTE (green) -->
   <section class="tq"><div class="wrap"><p class="tq-head"><span class="qm o" aria-hidden="true">&ldquo;</span>She has been nothing short of amazing!<span class="qm c" aria-hidden="true">&rdquo;</span></p><div class="tq-stack"><div class="tq-card"><span class="tq-mark o" aria-hidden="true">&ldquo;</span><p>I just wanted to send an email to say how brilliant Rachel is. ...She has been nothing short of amazing!</p><p>All of the help she has given has been a huge part of getting these files exchanged. With the SDLT deadline, pressure has been massive and without her chasing the other parties in the chain we may not have achieved the desired timescales.</p><p>...It’s such a relief to work with someone who’s very supportive and kind and really does go above and beyond!</p><span class="tq-mark c" aria-hidden="true">&rdquo;</span></div></div>
 <div class="tq-by"><div class="tq-name">Lauren Layton</div><div class="tq-role">Partner, Barnes and Partners</div></div></div></section>
-
-  <!-- BOOKING PROMPT AFTER THE TESTIMONIAL -->
-  <section class="mid-cta">
-    <div class="wrap">
-      <p>See whether Momentum is the right fit for your agency.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-navy" href="discovery-meeting">Book a brief discovery call</a>
-        <a class="btn btn-line" href="tel:01279905805"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call 01279 905 805</a>
-      </div>
-    </div>
-  </section>
 
   <!-- GROW YOUR REVENUE -->
   <section class="grow">
@@ -573,9 +604,12 @@
         <p class="note">Example report. Firms and figures are illustrative.</p>
       </div>
 
-      <div class="cta-row">
+      <div class="cta-row cr-actions">
         <button type="button" class="btn btn-navy" data-report-open aria-expanded="false" aria-controls="report-req">Get the example report</button>
-        <a class="btn btn-line" href="discovery-meeting">Book a brief discovery call</a>
+        <div class="cr-pair">
+          <a class="btn btn-line" href="discovery-meeting">Book a brief discovery call</a>
+          <a class="btn btn-line" href="tel:01279905805"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call 01279 905 805</a>
+        </div>
       </div>
 
       <div class="report-req" id="report-req" hidden>
@@ -642,15 +676,16 @@
 </script>
 <script src="assets/features.js"></script>
 <script>
-/* Phones: slim Book and Call bar once the navy top section has scrolled off screen. */
+/* Phones: slim Book and Call bar once the button band under the navy top section has scrolled up
+   behind the sticky header, so the bar never shows while the band's own buttons are in view. */
 (function(){
-  var bar=document.querySelector('[data-mcta]'), top=document.querySelector('section.ea-hero');
-  if(!bar||!top||!('IntersectionObserver' in window)) return;
-  var mq=window.matchMedia('(max-width:760px)');
+  var bar=document.querySelector('[data-mcta]'), band=document.querySelector('section.ea-cta'), head=document.querySelector('header.site');
+  if(!bar||!band||!('IntersectionObserver' in window)) return;
+  var mq=window.matchMedia('(max-width:760px)'), hh=head?Math.round(head.getBoundingClientRect().height):0;
   new IntersectionObserver(function(es){
-    var gone=!es[0].isIntersecting&&es[0].boundingClientRect.top<0;
+    var gone=!es[0].isIntersecting&&es[0].boundingClientRect.top<hh;
     bar.hidden=!gone; document.body.classList.toggle('mcta-on',gone&&mq.matches);
-  }).observe(top);
+  },{rootMargin:'-'+hh+'px 0px 0px 0px'}).observe(band);
 })();
 </script>
 
