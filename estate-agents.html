@@ -245,15 +245,13 @@
   .rr-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:16px;}
   .rr-note{font-size:.88rem;color:#5a6b7a;margin:12px 0 0;}
   @media (max-width:760px){.rr-grid{grid-template-columns:1fr;}.report-req{padding:22px 18px;}}
-  /* Ad landing: headline, offer line and two actions visible without scrolling (24/11/2026) */
-  section.ea-hero{background:var(--navy-band);color:#fff;padding:46px 0 44px;text-align:center;}
+  /* Ad landing: headline and offer line; booking and call buttons sit after the testimonial (24/11/2026) */
+  section.ea-hero{background:var(--navy-band);color:#fff;padding:46px 0 50px;text-align:center;}
   .ea-hero h1{color:#fff;font-size:clamp(1.95rem,4.2vw,2.9rem);line-height:1.15;max-width:860px;margin:0 auto;}
   .ea-hero .rule{display:block;width:96px;height:4px;border-radius:2px;background:linear-gradient(90deg,#EA6A4C,#8BD27D);margin:18px auto 16px;}
-  .ea-hero p.offer{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.45;margin:0 auto 24px;max-width:760px;color:#fff;}
+  .ea-hero p.offer{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.45;margin:0 auto;max-width:760px;color:#fff;}
   .hero-ctas{display:flex;flex-wrap:wrap;gap:12px 14px;justify-content:center;}
   .hero-ctas .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;}
-  .btn-call{background:transparent;color:#fff;border-color:var(--green);}
-  .btn-call:hover{background:var(--green);color:var(--navy-deep);opacity:1;}
   section.mid-cta{padding:44px 0 6px;text-align:center;}
   .mid-cta p{font-family:"Nunito",sans-serif;font-weight:700;font-size:1.15rem;color:var(--navy-deep);margin:0 0 16px;}
   .m-cta{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;gap:10px;padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));background:#fff;border-top:1px solid #e3e8ef;box-shadow:0 -8px 24px -16px rgba(7,33,54,.45);}
@@ -264,7 +262,7 @@
     body.mcta-on .wa{bottom:calc(80px + env(safe-area-inset-bottom,0px))!important;}
   }
   @media (max-width:520px){
-    section.ea-hero{padding:28px 0 30px;}
+    section.ea-hero{padding:28px 0 32px;}
     .hero-ctas{flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto;}
   }
 </style>
@@ -296,10 +294,6 @@
       <h1>Outsourced sales progression for estate agents</h1>
       <span class="rule" aria-hidden="true"></span>
       <p class="offer">Across England, Wales and Northern Ireland. No exchange, no fee.</p>
-      <div class="hero-ctas">
-        <a class="btn btn-green" href="discovery-meeting">Book a brief discovery call</a>
-        <a class="btn btn-call" href="tel:01279905805"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call 01279 905 805</a>
-      </div>
     </div>
   </section>
 
@@ -648,9 +642,9 @@
 </script>
 <script src="assets/features.js"></script>
 <script>
-/* Phones: slim Book and Call bar once the top buttons have scrolled off screen. */
+/* Phones: slim Book and Call bar once the navy top section has scrolled off screen. */
 (function(){
-  var bar=document.querySelector('[data-mcta]'), top=document.querySelector('.ea-hero .hero-ctas');
+  var bar=document.querySelector('[data-mcta]'), top=document.querySelector('section.ea-hero');
   if(!bar||!top||!('IntersectionObserver' in window)) return;
   var mq=window.matchMedia('(max-width:760px)');
   new IntersectionObserver(function(es){
