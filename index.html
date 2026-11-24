@@ -233,17 +233,19 @@
   .band:has(> .wide){padding:52px 0;}
   @media (max-width:760px){.band:has(> .wide){padding:40px 0;}}
 
-  /* Top section: offer line and two actions visible without scrolling (24/11/2026) */
-  .hero p.offer{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.45;margin:0 auto 22px;color:#fff;}
-  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px 14px;justify-content:center;margin:0 0 30px;}
-  .hero-ctas .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;}
-  .btn-call{background:transparent;color:#fff;border-color:var(--green);}
-  .btn-call:hover{background:var(--green);color:var(--navy-deep);opacity:1;}
+  /* Top section: offer line above the lead paragraph (24/11/2026) */
+  .hero p.offer{font-family:"Nunito",sans-serif;font-weight:700;font-size:clamp(1.08rem,2vw,1.3rem);line-height:1.45;margin:0 auto 18px;color:#fff;}
   .hero .top .rule{margin-bottom:18px;}
+
+  /* Two actions above What Our Clients Say, on the grey band (24/11/2026) */
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px 14px;justify-content:center;margin:0 auto 40px;}
+  .hero-ctas .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;}
+  .btn-call{background:transparent;color:var(--navy-deep);border-color:var(--navy-deep);}
+  .btn-call:hover{background:var(--green);color:var(--navy-deep);border-color:var(--green);opacity:1;}
   @media (max-width:520px){
     section.hero{padding-top:30px;}
     .hero .top h1{font-size:clamp(1.85rem,7.4vw,2.3rem);}
-    .hero-ctas{flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto 26px;}
+    .hero-ctas{flex-direction:column;align-items:stretch;max-width:360px;margin:0 auto 32px;}
   }
 </style>
 <link rel="stylesheet" href="assets/features.css?v=20261102">
@@ -275,10 +277,6 @@
         <h1>Professional Sales Progression That You Can Trust!</h1>
         <span class="rule" aria-hidden="true"></span>
         <p class="offer">Outsourced sales progression for estate agents. No exchange, no fee.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-green" href="discovery-meeting">Book a brief discovery call</a>
-          <a class="btn btn-call" href="tel:01279905805"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call 01279 905 805</a>
-        </div>
         <p class="lead">Reliable, outsourced sales progression that delivers speed and certainty from sale agreed to completion. We protect your pipeline, giving you more time to grow your business.</p>
       </div>
       <div class="row">
@@ -471,6 +469,10 @@
 
   <!-- REVIEWS (grey carousel) -->
   <section class="band greybg reviews" id="testimonials">
+    <div class="hero-ctas">
+      <a class="btn btn-green" href="discovery-meeting">Book a brief discovery call</a>
+      <a class="btn btn-call" href="tel:01279905805"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z" fill="currentColor"/></svg>Call 01279 905 805</a>
+    </div>
     <div class="wrap center" style="margin-bottom:14px"><p style="margin:0 0 6px;color:#334155">Don't just take our word for it...</p><h2>What Our Clients Say</h2></div>
     <div class="tcarousel">
       <button class="t-arrow prev" aria-label="Previous testimonial"><svg width="48" height="20" viewBox="0 0 48 20" fill="none"><path d="M47 10H2m0 0 8-7m-8 7 8 7" stroke="#2b3a47" stroke-width="1.3" stroke-linecap="round"/></svg></button>
